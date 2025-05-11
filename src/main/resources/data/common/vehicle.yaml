@@ -1,0 +1,148 @@
+manufacturers:
+  - Toyota
+  - Ford
+  - Honda
+  - BMW
+  - Mercedes Benz
+  - Tesla
+  - Audi
+  - Chevrolet
+  - Nissan
+  - Volkswagen
+  - Renault
+  - Fiat
+  - Peugeot
+  - Citroën
+  - Hyundai
+  - Kia
+  - Mazda
+  - Subaru
+  - Mitsubishi
+  - Suzuki
+  - Volvo
+  - Land Rover
+  - Jaguar
+  - Porsche
+  - Ferrari
+  - Lamborghini
+  - Maserati
+  - Alfa Romeo
+  - Bugatti
+  - Bentley
+  - Rolls-Royce
+  - Aston Martin
+  - Lotus
+  - McLaren
+  - Koenigsegg
+  - Pagani
+  - Dacia
+  - Lada
+  - Skoda
+  - Seat
+  - Opel
+  - Vauxhall
+  - Mini
+  - Smart
+  - Jeep
+  - Dodge
+  - Chrysler
+  - Cadillac
+  - Lincoln
+  - Buick
+  - GMC
+
+models:
+  - Corolla
+  - Fiesta
+  - CBR600
+  - Focus
+  - Camaro
+  - Golf
+  - Clio
+  - Punto
+  - C3
+  - i30
+  - Rio
+  - MX-5
+  - Impreza
+  - Lancer
+  - Swift
+  - XC90
+  - Defender
+  - XE
+  - Huracan
+  - Ghibli
+  - Giulia
+  - Chiron
+  - Continental
+  - Phantom
+  - DB11
+  - Elise
+  - 720S
+  - Regera
+  - Huayra
+  - Sandero
+  - Niva
+  - Octavia
+  - Ibiza
+  - Corsa
+  - Astra
+  - Cooper
+  - Fortwo
+  - Wrangler
+  - Challenger
+  - 300C
+  - Escalade
+  - Navigator
+  - Enclave
+  - Sierra
+
+types:
+  - Sedan
+  - Hatchback
+  - Coupe
+  - Cabriolet
+  - Minivan
+  - Station Wagon
+  - Crossover
+  - Roadster
+  - Limuzin
+  - Fastback
+  - Shooting Brake
+  - Targa
+  - Spider
+  - Barchetta
+  - MPV
+  - SUV
+  - SAV
+  - SAC
+  - Off-Road
+  - All-Terrain
+  - Sports
+  - Grand Tourer
+  - Supercar
+  - Hypercar
+  - Muscle Car
+  - Hot Hatch
+  - Compact
+  - Subcompact
+  - Mid-size
+  - Full-size
+  - Luxury
+  - Premium
+  - Executive
+  - Family
+  - City Car
+  - Microcar
+  - Kei Car
+  - Classic
+  - Vintage
+  - Antique
+  - Concept
+  - Prototype
+  - Race Car
+  - Rally Car
+  - Drift Car
+  - Drag Car
+  - Track Car
+  - Show Car

@@ -1,0 +1,185 @@
+animal_names:
+  - Aslan
+  - Kaplan
+  - Fil
+  - Zürafa
+  - Zebra
+  - Gergedan
+  - Su aygırı
+  - Çita
+  - Leopar
+  - Puma
+  - Jaguar
+  - Kurt
+  - Ayı
+  - Goril
+  - Şempanze
+  - Orangutan
+  - Deve
+  - Lama
+  - Kanguru
+  - Koala
+  - Panda
+  - Kutup ayısı
+  - Penguen
+  - Kartal
+  - Şahin
+  - Baykuş
+  - Pelikan
+  - Flamingo
+  - Timsah
+  - Yılan
+  - Kertenkele
+  - Kaplumbağa
+  - Yunus
+  - Balina
+  - Köpekbalığı
+  - Vatoz
+  - Denizanası
+  - Ahtapot
+  - Istakoz
+  - Karides
+  - Vaşak
+  - Sırtlan
+  - Rakun
+  - Gelincik
+  - Sansar
+  - Samur
+  - Kunduz
+  - Kirpi
+  - Tavşan
+  - Sincap
+  - Fare
+  - Sıçan
+  - Köstebek
+  - Yarasa
+  - Tilki
+  - Çakal
+  - Kokarca
+  - Misk sıçanı
+  - Su samuru
+  - Deniz aslanı
+  - Mors
+  - Fok
+  - Deniz ayısı
+  - Dugong
+  - Manati
+  - Yaban domuzu
+  - Geyik
+  - Karaca
+  - Ceylan
+  - Antilop
+  - Bizon
+  - Bufalo
+  - Keçi
+  - Koyun
+  - İnek
+  - Manda
+  - At
+  - Eşek
+  - Katır
+  - Zebra
+  - Gergedan
+  - Tapir
+  - Zürafa
+  - Okapi
+  - Fil
+  - Mamut
+  - Mastodon
+  - Deniz fili
+  - Deniz ineği
+  - Deniz kaplumbağası
+  - Deniz yılanı
+  - Deniz kertenkelesi
+  - Deniz iguanası
+  - Deniz timsahı
+  - Deniz aslanı
+  - Deniz ayısı
+  - Deniz foku
+  - Deniz morsu
+  - Deniz dugongu
+  - Deniz manatisi
+  - Deniz yunusu
+  - Deniz balinası
+  - Deniz köpekbalığı
+  - Deniz vatozu
+  - Deniz anemonu
+  - Deniz mercanı
+  - Deniz süngeri
+  - Deniz yıldızı
+  - Deniz kestanesi
+  - Deniz hıyarı
+  - Deniz salyangozu
+  - Deniz midyesi
+  - Deniz istiridyesi
+  - Deniz tarak
+  - Deniz kalamarı
+  - Deniz mürekkep balığı
+  - Deniz ahtapotu
+  - Deniz ıstakozu
+  - Deniz yengeci
+  - Deniz karidesi
+  - Deniz kereviti
+  - Deniz pavuryası
+  - Deniz ıstakozu
+  - Deniz yengeci
+  - Deniz karidesi
+  - Deniz kereviti
+  - Deniz pavuryası
+  - Deniz ıstakozu
+  - Deniz yengeci
+  - Deniz karidesi
+  - Deniz kereviti
+  - Deniz pavuryası
+
+types:
+  - Memeli
+  - Kuş
+  - Sürüngen
+  - Balık
+  - Omurgasız
+  - Amfibi
+  - Böcek
+  - Eklembacaklı
+  - Yumuşakça
+  - Kabuklu
+  - Deniz memelisi
+  - Deniz kuşu
+  - Deniz sürüngeni
+  - Deniz balığı
+  - Deniz omurgasızı
+  - Deniz amfibisi
+  - Deniz böceği
+  - Deniz eklembacaklısı
+  - Deniz yumuşakçası
+  - Deniz kabuklusu
+  - Kara memelisi
+  - Kara kuşu
+  - Kara sürüngeni
+  - Kara balığı
+  - Kara omurgasızı
+  - Kara amfibisi
+  - Kara böceği
+  - Kara eklembacaklısı
+  - Kara yumuşakçası
+  - Kara kabuklusu
+  - Tatlı su memelisi
+  - Tatlı su kuşu
+  - Tatlı su sürüngeni
+  - Tatlı su balığı
+  - Tatlı su omurgasızı
+  - Tatlı su amfibisi
+  - Tatlı su böceği
+  - Tatlı su eklembacaklısı
+  - Tatlı su yumuşakçası
+  - Tatlı su kabuklusu
+  - Tuzlu su memelisi
+  - Tuzlu su kuşu
+  - Tuzlu su sürüngeni
+  - Tuzlu su balığı
+  - Tuzlu su omurgasızı
+  - Tuzlu su amfibisi
+  - Tuzlu su böceği
+  - Tuzlu su eklembacaklısı
+  - Tuzlu su yumuşakçası
+  - Tuzlu su kabuklusu

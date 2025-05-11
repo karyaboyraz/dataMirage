@@ -1,0 +1,32 @@
+artworks:
+  - Les Nymphéas
+  - Le Bal du moulin de la Galette
+  - La Classe de danse
+  - Les Joueurs de cartes
+  - La Danse
+  - La Joconde
+  - La Liberté guidant le peuple
+  - Le Déjeuner sur l'herbe
+  - Le Radeau de la Méduse
+  - L'Angélus
+
+nationalities:
+  - Français
+  - Italien
+  - Espagnol
+  - Allemand
+  - Anglais
+
+genres:
+  - Peinture
+  - Sculpture
+  - Céramique
+  - Photographie
+  - Design graphique
+
+names:
+  - Claude Monet
+  - Pierre-Auguste Renoir
+  - Edgar Degas
+  - Paul Cézanne
+  - Henri Matisse

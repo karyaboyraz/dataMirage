@@ -1,0 +1,76 @@
+vehicles:
+  - Coche
+  - Camión
+  - Motocicleta
+  - Bicicleta
+  - Scooter
+  - Autobús
+  - Minibús
+  - Todoterreno
+  - Tractor
+  - Remolque
+  - Furgoneta
+  - Furgón
+  - Pickup
+  - Vehículo comercial
+  - Tractocamión
+  - Semirremolque
+  - Ambulancia
+  - Camión de bomberos
+  - Coche de policía
+  - Camión de basura
+  - Hormigonera
+  - Grúa
+  - Carretilla elevadora
+  - Excavadora
+  - Bulldozer
+  - Motoniveladora
+  - Apisonadora
+  - Asfaltadora
+  - Volquete
+  - Camión cisterna
+  - Portacontenedores
+  - Transportador de coches
+  - Caravana
+  - Autocaravana
+  - Carrito de golf
+  - Quad
+  - Vehículo todoterreno
+  - Motonieve
+  - Embarcación
+  - Aeronave
+
+fuels:
+  - Gasolina
+  - Diésel
+  - Eléctrico
+  - Híbrido
+  - GLP
+  - Gas natural
+  - Hidrógeno
+  - Biodiésel
+  - E10
+  - SP95
+  - SP98
+
+license_plate_formats:
+  - "#### AAA"
+  - "#### BBB"
+  - "#### CCC"
+  - "#### DDD"
+  - "#### FFF"
+  - "#### GGG"
+  - "#### HHH"
+  - "#### JJJ"
+  - "#### KKK"
+  - "#### LLL"
+  - "#### MMM"
+  - "#### NNN"
+  - "#### PPP"
+  - "#### RRR"
+  - "#### SSS"
+  - "#### TTT"
+  - "#### VVV"
+  - "#### WXX"
+  - "#### YXX"
+  - "#### ZXX" 

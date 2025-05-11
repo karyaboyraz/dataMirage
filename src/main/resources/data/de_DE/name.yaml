@@ -1,0 +1,144 @@
+first_names:
+  - Hans
+  - Thomas
+  - Michael
+  - Andreas
+  - Wolfgang
+  - Peter
+  - Stefan
+  - Frank
+  - Christian
+  - Martin
+  - Jürgen
+  - Klaus
+  - Werner
+  - Dieter
+  - Bernd
+  - Manfred
+  - Helmut
+  - Rainer
+  - Uwe
+  - Horst
+  - Markus
+  - Jörg
+  - Heinz
+  - Ralf
+  - Walter
+  - Gerhard
+  - Karl
+  - Friedrich
+  - Günter
+  - Maria
+  - Anna
+  - Ursula
+  - Elisabeth
+  - Monika
+  - Helga
+  - Sabine
+  - Renate
+  - Karin
+  - Brigitte
+  - Erika
+  - Claudia
+  - Ingrid
+  - Andrea
+  - Petra
+  - Susanne
+  - Gisela
+  - Gabriele
+  - Heike
+  - Angelika
+  - Barbara
+  - Hildegard
+  - Nicole
+  - Birgit
+  - Gertrud
+  - Christine
+  - Christa
+  - Bettina
+  - Martina
+  - Stefanie
+
+last_names:
+  - Müller
+  - Schmidt
+  - Schneider
+  - Fischer
+  - Weber
+  - Meyer
+  - Wagner
+  - Becker
+  - Schulz
+  - Hoffmann
+  - Schäfer
+  - Koch
+  - Bauer
+  - Richter
+  - Klein
+  - Wolf
+  - Schröder
+  - Neumann
+  - Schwarz
+  - Zimmermann
+  - Braun
+  - Krüger
+  - Hofmann
+  - Hartmann
+  - Lange
+  - Schmitt
+  - Werner
+  - Schmitz
+  - Krause
+  - Meier
+  - Lehmann
+  - Schmid
+  - Schulze
+  - Maier
+  - Köhler
+  - Herrmann
+  - König
+  - Walter
+  - Mayer
+  - Huber
+
+prefixes:
+  - Herr
+  - Frau
+  - Dr.
+  - Prof.
+  - Dipl.-Ing.
+  - Mag.
+  - Ing.
+  - Univ.-Prof.
+  - Fräulein
+  - Meister
+  - Doktor
+
+suffixes:
+  - von
+  - zu
+  - von und zu
+  - van
+  - Graf
+  - Freiherr
+  - jun.
+  - sen.
+  - der Ältere
+  - der Jüngere
+
+gender:
+  - Männlich
+  - Weiblich
+
+titles:
+  - Dr.
+  - Prof. Dr.
+  - Dipl.-Ing.
+  - Ing.
+  - Mag.
+  - MBA
+  - LL.M.
+  - M.Sc.
+  - B.A.
+  - Oberst
+  - Hauptmann 

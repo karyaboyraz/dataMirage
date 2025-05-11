@@ -1,0 +1,96 @@
+vehicles:
+  - Voiture
+  - Camion
+  - Moto
+  - Vélo
+  - Scooter
+  - Bus
+  - Minibus
+  - SUV
+  - Tracteur
+  - Remorque
+  - Fourgonnette
+  - Fourgon
+  - Pick-up
+  - Utilitaire
+  - Tracteur routier
+  - Semi-remorque
+  - Ambulance
+  - Camion de pompiers
+  - Voiture de police
+  - Camion poubelle
+  - Bétonnière
+  - Grue
+  - Chariot élévateur
+  - Pelleteuse
+  - Bulldozer
+  - Niveleuse
+  - Rouleau compresseur
+  - Finisseur
+  - Camion-benne
+  - Camion-citerne
+  - Porte-conteneurs
+  - Transporteur de voitures
+  - Caravane
+  - Camping-car
+  - Voiturette de golf
+  - Quad
+  - Véhicule tout-terrain
+  - Motoneige
+  - Véhicule nautique
+  - Aéronef
+  - Tramway
+  - Métro
+  - Train
+  - Trolleybus
+  - Téléphérique
+  - Funiculaire
+  - Ferry
+  - Yacht
+  - Bateau
+  - Navire
+
+fuels:
+  - Essence
+  - Diesel
+  - Électrique
+  - Hybride
+  - GPL
+  - GNV
+  - Hydrogène
+  - Biocarburant
+  - E10
+  - SP95
+  - SP98
+
+license_plate_formats:
+  - "AA-123-AA"
+  - "AA-123-AB"
+  - "AA-123-AC"
+  - "AA-123-AD"
+  - "AA-123-AE"
+  - "AA-123-AF"
+  - "AA-123-AG"
+  - "AA-123-AH"
+  - "AA-123-AJ"
+  - "AA-123-AK"
+  - "AB-123-AA"
+  - "AB-123-AB"
+  - "AB-123-AC"
+  - "AB-123-AD"
+  - "AB-123-AE"
+  - "AC-123-AA"
+  - "AC-123-AB"
+  - "AC-123-AC"
+  - "AC-123-AD"
+  - "AC-123-AE"
+  - "AD-123-AA"
+  - "AD-123-AB"
+  - "AD-123-AC"
+  - "AD-123-AD"
+  - "AD-123-AE"
+  - "AE-123-AA"
+  - "AE-123-AB"
+  - "AE-123-AC"
+  - "AE-123-AD"
+  - "AE-123-AE" 

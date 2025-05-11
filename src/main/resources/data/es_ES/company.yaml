@@ -1,0 +1,112 @@
+names:
+  - Telefónica
+  - Banco Santander
+  - BBVA
+  - Repsol
+  - Iberdrola
+  - Inditex
+  - Mercadona
+  - CaixaBank
+  - Endesa
+  - ACS
+  - Ferrovial
+  - Naturgy
+  - Mapfre
+  - Acciona
+  - El Corte Inglés
+  - Abertis
+  - Grifols
+  - FCC
+  - Amadeus
+  - Cellnex
+  - Meliá Hotels
+  - DIA
+  - Colonial
+  - Banco Sabadell
+  - Bankinter
+  - Ebro Foods
+  - Red Eléctrica
+  - Indra
+  - Aena
+  - Grupo Planeta
+
+suffixes:
+  - S.A.
+  - S.L.
+  - S.A.U.
+  - S.L.U.
+  - S. Coop.
+  - S. Com.
+  - S.C.
+  - S.L.L.
+  - S.A.L.
+  - AIE
+  - AEIE
+  - S. Com. p. A.
+  - S.G.R.
+  - S.A.D.
+
+
+catch_phrases:
+  - Innovación
+  - Sostenibilidad
+  - Digitalización
+  - Transformación
+  - Excelencia
+  - Calidad
+  - Eficiencia
+  - Sinergias
+  - Disruptivo
+  - Estrategia
+  - Valor añadido
+  - Optimización
+  - Escalabilidad
+  - Integración
+  - Emprendimiento
+  - Proactividad
+  - Resiliencia
+  - Liderazgo
+  - Competitividad
+  - Visión global
+  - Compromiso
+  - Experiencia del cliente
+  - Big Data
+  - Blockchain
+  - Inteligencia Artificial
+  - Internet de las Cosas
+  - Economía circular
+  - Responsabilidad social
+  - Teletrabajo
+  - Agilidad
+
+industries:
+  - Alimentación
+  - Textil
+  - Tecnología
+  - Energía
+  - Telecomunicaciones
+  - Banca
+  - Seguros
+  - Construcción
+  - Turismo
+  - Sanidad
+  - Automoción
+  - Farmacéutica
+  - Aeronáutica
+  - Petroquímica
+  - Consultoría
+  - Logística
+  - Hostelería
+  - Agricultura
+  - Minería
+  - Inmobiliaria
+  - Transporte
+  - Comunicación
+  - Educación
+  - Arte y Cultura
+  - Comercio Minorista
+  - Comercio Mayorista
+  - Gestión de Residuos
+  - Industria del Ocio
+  - Deportes
+  - Moda

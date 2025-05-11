@@ -1,0 +1,145 @@
+first_names:
+  - Miguel
+  - Antonio
+  - José
+  - Manuel
+  - Francisco
+  - David
+  - Juan
+  - Carlos
+  - Jesús
+  - Alejandro
+  - Daniel
+  - Rafael
+  - Pedro
+  - Javier
+  - Fernando
+  - Ángel
+  - Pablo
+  - Luis
+  - Sergio
+  - Jorge
+  - Alberto
+  - Diego
+  - Álvaro
+  - Adrián
+  - Raúl
+  - Enrique
+  - Rubén
+  - Ramón
+  - Vicente
+  - Iván
+  - María
+  - Carmen
+  - Ana
+  - Isabel
+  - Dolores
+  - Pilar
+  - Teresa
+  - Rosa
+  - Josefa
+  - Laura
+  - Cristina
+  - Marta
+  - Lucía
+  - Mercedes
+  - Francisca
+  - Elena
+  - Concepción
+  - Sara
+  - Paula
+  - Raquel
+  - Manuela
+  - Silvia
+  - Antonia
+  - Patricia
+  - Sofía
+  - Julia
+  - Rosario
+  - Beatriz
+
+last_names:
+  - García
+  - Rodríguez
+  - González
+  - Fernández
+  - López
+  - Martínez
+  - Sánchez
+  - Pérez
+  - Gómez
+  - Martín
+  - Jiménez
+  - Ruiz
+  - Hernández
+  - Díaz
+  - Moreno
+  - Álvarez
+  - Muñoz
+  - Romero
+  - Alonso
+  - Gutiérrez
+  - Navarro
+  - Torres
+  - Domínguez
+  - Vázquez
+  - Ramos
+  - Gil
+  - Ramírez
+  - Serrano
+  - Blanco
+  - Suárez
+  - Molina
+  - Morales
+  - Ortega
+  - Delgado
+  - Castro
+  - Ortiz
+  - Rubio
+  - Marín
+  - Sanz
+  - Iglesias
+
+prefixes:
+  - Sr.
+  - Sra.
+  - Srta.
+  - Dr.
+  - Dra.
+  - D.
+  - Dña.
+  - Lic.
+  - Ing.
+  - Prof.
+  - Excmo.
+  - Ilmo.
+
+suffixes:
+  - hijo
+  - padre
+  - nieto
+  - y García
+  - y López
+  - y Rodríguez
+  - del Río
+  - de la Fuente
+  - de los Santos
+  - de la Cruz
+
+gender:
+  - Masculino
+  - Femenino
+
+titles:
+  - Dr.
+  - Dra.
+  - Prof.
+  - Ing.
+  - Lic.
+  - Don
+  - Doña
+  - Excelentísimo
+  - Ilustrísimo
+  - Capitán
+  - Coronel
+  - General 

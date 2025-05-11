@@ -1,0 +1,138 @@
+ingredients:
+  - harina
+  - azúcar
+  - sal
+  - leche
+  - huevos
+  - mantequilla
+  - agua
+  - levadura
+  - yogur
+  - queso
+  - aceite de oliva
+  - aceite vegetal
+  - cebolla
+  - ajo
+  - tomate
+  - pimiento
+  - patata
+  - zanahoria
+  - calabacín
+  - berenjena
+  - brócoli
+  - champiñón
+  - maíz
+  - guisantes
+  - judías
+  - arroz
+  - pasta
+  - pollo
+  - ternera
+  - cerdo
+  - bacon
+  - salmón
+  - atún
+  - gambas
+  - aguacate
+
+spices:
+  - pimienta negra
+  - pimentón
+  - comino
+  - orégano
+  - copos de chile
+  - pimienta de Jamaica
+  - nuez moscada
+  - cúrcuma
+  - cilantro
+  - romero
+  - canela
+  - hoja de laurel
+  - albahaca
+  - menta
+  - eneldo
+  - perejil
+  - semilla de mostaza
+  - semilla de hinojo
+  - cardamomo
+  - clavo
+  - jengibre
+  - ajo en polvo
+  - cebolla en polvo
+  - chile en polvo
+  - curry en polvo
+  - tomillo
+  - salvia
+  - estragón
+  - mejorana
+  - azafrán
+
+measurements:
+  - cucharadita
+  - cucharada
+  - taza
+  - mililitro
+  - centilitro
+  - litro
+  - gramo
+  - kilogramo
+  - pizca
+  - chorrito
+  - rodaja
+  - trozo
+  - diente
+  - manojo
+  - puñado
+  - paquete
+  - frasco
+  - lata
+  - botella
+  - gota
+  - barra
+  - cubo
+  - ración
+  - hoja
+  - vaso
+  - tazón
+  - sobre
+  - punta de cuchillo
+  - chorro
+  - ralladura
+
+dishes:
+  - paella
+  - tortilla española
+  - gazpacho
+  - cocido madrileño
+  - fabada asturiana
+  - pulpo a la gallega
+  - croquetas
+  - patatas bravas
+  - jamón ibérico
+  - churros con chocolate
+  - calamares a la romana
+  - pisto
+  - empanada
+  - migas
+  - callos a la madrileña
+  - pescaíto frito
+  - ensaladilla rusa
+  - gambas al ajillo
+  - marmitako
+  - arroz negro
+  - fideuà
+  - bacalao al pil pil
+  - percebes
+  - flan
+  - crema catalana
+  - turrón
+  - polvorones
+  - pan con tomate
+  - escalivada
+  - montaditos
+  - pimientos de padrón
+  - albóndigas
+  - salmorejo
+  - ajoblanco
+  - tarta de Santiago
+  - cachopo 

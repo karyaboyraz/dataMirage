@@ -1,0 +1,93 @@
+animal_names:
+  - Perro
+  - Gato
+  - Caballo
+  - Vaca
+  - Oveja
+  - Cabra
+  - Cerdo
+  - Gallina
+  - Pato
+  - Ganso
+  - Pavo
+  - Conejo
+  - Hámster
+  - Conejillo de Indias
+  - Ratón
+  - Rata
+  - Jerbo
+  - Hurón
+  - Chinchilla
+  - Erizo
+  - León
+  - Tigre
+  - Elefante
+  - Jirafa
+  - Cebra
+  - Rinoceronte
+  - Hipopótamo
+  - Guepardo
+  - Leopardo
+  - Puma
+  - Jaguar
+  - Lobo
+  - Oso
+  - Gorila
+  - Chimpancé
+  - Orangután
+  - Camello
+  - Llama
+  - Canguro
+  - Koala
+  - Panda
+  - Oso polar
+  - Pingüino
+  - Águila
+  - Halcón
+  - Búho
+  - Pelícano
+  - Flamenco
+  - Cocodrilo
+  - Serpiente
+
+types:
+  - Mamífero
+  - Ave
+  - Reptil
+  - Pez
+  - Invertebrado
+  - Anfibio
+  - Insecto
+  - Artrópodo
+  - Molusco
+  - Crustáceo
+  - Mamífero marino
+  - Ave marina
+  - Reptil marino
+  - Pez marino
+  - Invertebrado marino
+  - Anfibio marino
+  - Insecto marino
+  - Artrópodo marino
+  - Molusco marino
+  - Crustáceo marino
+  - Mamífero terrestre
+  - Ave terrestre
+  - Reptil terrestre
+  - Pez de agua dulce
+  - Invertebrado terrestre
+  - Anfibio terrestre
+  - Insecto terrestre
+  - Artrópodo terrestre
+  - Molusco terrestre
+  - Crustáceo terrestre
+  - Mamífero de agua dulce
+  - Ave de agua dulce
+  - Reptil de agua dulce
+  - Pez de agua dulce
+  - Invertebrado de agua dulce
+  - Anfibio de agua dulce
+  - Insecto de agua dulce
+  - Artrópodo de agua dulce
+  - Molusco de agua dulce
+  - Crustáceo de agua dulce 

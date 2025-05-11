@@ -1,0 +1,188 @@
+artists:
+  - Sezen Aksu
+  - Tarkan
+  - Barış Manço
+  - Müslüm Gürses
+  - Zeki Müren
+  - Ajda Pekkan
+  - İbrahim Tatlıses
+  - Orhan Gencebay
+  - Cem Karaca
+  - Bülent Ersoy
+  - Kenan Doğulu
+  - Sertab Erener
+  - MFÖ
+  - Yeni Türkü
+  - Mor ve Ötesi
+  - Duman
+  - Kargo
+  - Teoman
+  - Manga
+  - Athena
+  - Yüksek Sadakat
+  - Pentagram
+  - Şebnem Ferah
+  - Nilüfer
+  - Aşkın Nur Yengi
+  - Sıla
+  - Gülşen
+  - Hadise
+  - Demet Akalın
+  - Burak Kut
+  - Mustafa Ceceli
+  - Ozan Doğulu
+  - Simge
+  - Derya Uluğ
+  - Ebru Gündeş
+  - Sibel Can
+  - Gülben Ergen
+  - İrem Derici
+  - Bengü
+  - Hande Yener
+
+albums:
+  - Sonsuz Düş
+  - Rüya Bahçesi
+  - Güneşin Ardından
+  - Gece Yolcusu
+  - Dalgalarla Dans
+  - İçsel Yolculuk
+  - Renklerin Sesi
+  - Kalp Atışı
+  - Yolun Başlangıcı
+  - Sessiz Çığlık
+  - Hayalin Kanatları
+  - Umut Kervanı
+  - Deniz Yıldızı
+  - Ateşin İzleri
+  - Gölge Dansı
+  - Sonsuz Melodi
+  - Duygu Haritası
+  - Zaman Yolcusu
+  - Ruhun Sesi
+  - Melankoli Rüzgarı
+  - Gece Masalı
+  - Sabah Şarkısı
+  - Gül Bahçesi
+  - Karanlık Şiir
+  - Parıltı
+  - Sessizlik Kitabı
+  - Gözyaşı İzleri
+  - Kalp Güncesi
+  - Umut Penceresi
+  - Renkli Düşler
+  - Hayatın Renkleri
+  - Yıldız Haritası
+  - Gündoğumu Hikayesi
+  - Akşam Melodisi
+  - Düş Kütüphanesi
+  - Ruh Atlası
+  - Sevda Dansı
+  - Aşkın Rotası
+  - Melodi Köprüsü
+  - Zamanın Sığınağı
+  - Hayalin Yankısı
+  - Kalp Yolculuğu
+  - Sonsuzluk Defteri
+  - Umut Baharı
+  - Gece Yolculuğu
+
+songs:
+  - Umut Çiçeği
+  - Hayal Perdesi
+  - Kayıp Zaman
+  - Yıldız Tozu
+  - Ruhun Nefesi
+  - Sonsuzluk Türküsü
+  - Anı Defteri
+  - Düşler Ülkesi
+  - Yüreğimden Sesler
+  - Geceyi Dinle
+  - Gölge Oyunları
+  - Rüzgarın Sesi
+  - Deniz Fısıltısı
+  - Ateş Dansı
+  - Sessizlik Duası
+  - Gözyaşı Melodisi
+  - Kalp Haritası
+  - Umut Işığı
+  - Renkli Düşler
+  - Zamanın Ötesi
+  - Duygu Bulutu
+  - Sonsuz Yol
+  - Hayatın Ritmi
+  - Yalnızlık Şarkısı
+  - Gökyüzü Mavisi
+  - Aşkın Rüzgarı
+  - Hayalin Peşinde
+  - Gül Kokusu
+  - Sessiz Adımlar
+  - Karanlıkta Parlayan
+  - Gündoğumu Türküsü
+  - Akşam Yıldızı
+  - Umut Köprüsü
+  - Düş Bahçesi
+  - Kalp Kıyısı
+  - Ruh Yolculuğu
+  - Gecenin Rüyası
+  - Melankoli Sokağı
+  - Sevda Rüzgarı
+  - Aşk Yolu
+  - Gözlerinde Kaybolmak
+  - Hayat Defteri
+  - Gece Vardiyası
+  - Duygu Akışı
+  - Sonsuzluk Kapısı
+  - Umut Atlası
+
+instruments:
+  - Gitar
+  - Piyano
+  - Davul
+  - Bas
+  - Keman
+  - Trompet
+  - Saksafon
+  - Flüt
+  - Çello
+  - Klarnet
+  - Viyola
+  - Kontrbas
+  - Arp
+  - Org
+  - Akordeon
+  - Mandolin
+  - Banjo
+  - Ukulele
+  - Kanun
+  - Ud
+  - Ney
+  - Kaval
+  - Zurna
+  - Tulum
+  - Bağlama
+  - Tambur
+  - Kemençe
+  - Kabak Kemane
+  - Darbuka
+  - Bendir
+  - Def
+  - Marimba
+  - Ksilofon
+  - Vibrafon
+  - Glockenspiel
+  - Çelesta
+  - Timpani
+  - Gong
+  - Çan
+  - Ksilofon
+  - Marakas
+  - Kastanyet
+  - Triangel
+  - Çıngırak
+  - Bongo
+  - Konga
+  - Timbales
+  - Cajon
+  - Djembe
+  - Tabla

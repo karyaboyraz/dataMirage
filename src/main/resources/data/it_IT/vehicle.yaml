@@ -1,0 +1,86 @@
+vehicles:
+  - Automobile
+  - Camion
+  - Motocicletta
+  - Bicicletta
+  - Scooter
+  - Autobus
+  - Minibus
+  - SUV
+  - Trattore
+  - Rimorchio
+  - Furgone
+  - Furgoncino
+  - Pickup
+  - Veicolo commerciale
+  - Camion trattore
+  - Semirimorchio
+  - Ambulanza
+  - Camion dei pompieri
+  - Auto della polizia
+  - Camion della spazzatura
+  - Betoniera
+  - Gru
+  - Carrello elevatore
+  - Escavatore
+  - Bulldozer
+  - Livellatrice
+  - Rullo compressore
+  - Finitrice stradale
+  - Camion ribaltabile
+  - Autocisterna
+  - Portacontainer
+  - Bisarca
+  - Roulotte
+  - Camper
+  - Golf cart
+  - Quad
+  - Fuoristrada
+  - Motoslitta
+  - Imbarcazione
+  - Aeromobile
+
+fuels:
+  - Benzina
+  - Diesel
+  - Elettrico
+  - Ibrido
+  - GPL
+  - Metano
+  - Idrogeno
+  - Biodiesel
+  - E10
+  - Benzina Verde
+  - Benzina Super
+
+license_plate_formats:
+  - "AA000AA"
+  - "AB000AA"
+  - "AC000AA"
+  - "AD000AA"
+  - "AE000AA"
+  - "AF000AA"
+  - "AG000AA"
+  - "AH000AA"
+  - "AJ000AA"
+  - "AK000AA"
+  - "AL000AA"
+  - "AM000AA"
+  - "AN000AA"
+  - "AP000AA"
+  - "AR000AA"
+  - "AS000AA"
+  - "AT000AA"
+  - "AV000AA"
+  - "AW000AA"
+  - "AX000AA"
+  - "AY000AA"
+  - "AZ000AA"
+  - "BA000AA"
+  - "BB000AA"
+  - "BC000AA"
+  - "BD000AA"
+  - "BE000AA"
+  - "BF000AA"
+  - "BG000AA"
+  - "BH000AA" 

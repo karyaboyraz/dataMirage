@@ -1,0 +1,162 @@
+names:
+  - Google
+  - Apple
+  - Microsoft
+  - Amazon
+  - Facebook
+  - Twitter
+  - Netflix
+  - Tesla
+  - Walmart
+  - Target
+  - Costco
+  - JPMorgan Chase
+  - Bank of America
+  - Wells Fargo
+  - Citigroup
+  - Goldman Sachs
+  - Morgan Stanley
+  - American Express
+  - Visa
+  - Mastercard
+  - Coca-Cola
+  - Pepsi
+  - Disney
+  - Comcast
+  - AT&T
+  - Verizon
+  - T-Mobile
+  - Intel
+  - AMD
+  - Nvidia
+  - Salesforce
+  - Adobe
+  - Oracle
+  - IBM
+  - Dell
+  - HP
+  - Cisco
+  - General Electric
+  - Ford
+  - General Motors
+  - Boeing
+  - Lockheed Martin
+  - ExxonMobil
+  - Chevron
+  - Johnson & Johnson
+
+suffixes:
+  - Inc.
+  - Corp.
+  - LLC
+  - Ltd.
+  - Co.
+  - Corporation
+  - Group
+  - Enterprises
+  - Holdings
+  - Partners
+  - Associates
+  - Systems
+  - Solutions
+  - Technologies
+  - Industries
+  - International
+  - Worldwide
+  - Global
+  - America
+  - USA
+  - Interactive
+  - Networks
+  - Media
+  - Digital
+  - Software
+  - Hardware
+  - Electronics
+  - Communications
+  - Ventures
+  - Capital
+  - Financial
+  - Services
+  - Brands
+  - Products
+  - Manufacturing
+
+catch_phrases:
+  - "Innovation for Tomorrow"
+  - "Building a Better Future"
+  - "Beyond Expectations"
+  - "Quality You Can Trust"
+  - "Excellence in Everything"
+  - "Leading the Way"
+  - "Transforming Lives"
+  - "Your Success, Our Mission"
+  - "Imagine the Possibilities"
+  - "Solutions that Matter"
+  - "Driven by Innovation"
+  - "Creating Value Together"
+  - "Committed to Excellence"
+  - "Performance Matters"
+  - "Experience the Difference"
+  - "Pushing Boundaries"
+  - "Inspired by You"
+  - "Where Quality Meets Innovation"
+  - "Global Vision, Local Expertise"
+  - "Leadership Through Innovation"
+  - "Your Partner in Progress"
+  - "Building Connections"
+  - "Empowering Change"
+  - "Future-Ready Solutions"
+  - "Exceeding Standards"
+  - "Passion for Performance"
+  - "Integrity in Action"
+  - "Bridging Possibilities"
+  - "Together We Achieve More"
+  - "Redefining Standards"
+  - "Trusted Worldwide"
+  - "Unlocking Potential"
+  - "Excellence Delivered"
+  - "Creating Tomorrow Today"
+  - "Beyond Boundaries"
+
+industries:
+  - Banking
+  - Insurance
+  - Finance
+  - Technology
+  - Software
+  - Hardware
+  - E-commerce
+  - Retail
+  - Logistics
+  - Healthcare
+  - Education
+  - Tourism
+  - Construction
+  - Energy
+  - Telecommunications
+  - Automotive
+  - Food & Beverage
+  - Textiles
+  - Media
+  - Communications
+  - Consulting
+  - Real Estate
+  - Manufacturing
+  - Agriculture
+  - Mining
+  - Pharmaceuticals
+  - Chemicals
+  - Furniture
+  - Aerospace
+  - Defense
+  - Entertainment
+  - Sports
+  - Fashion
+  - Beauty
+  - Fitness
+  - Transportation
+  - Shipping
+  - Aviation
+  - Hospitality
+  - Legal Services 

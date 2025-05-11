@@ -1,0 +1,184 @@
+artworks:
+  - Kaplumbağa Terbiyecisi
+  - Silah Taciri
+  - Mihrap
+  - İstanbul Manzarası
+  - Balıkçı
+  - Köy Düğünü
+  - Göç
+  - Anadolu Kadını
+  - İstanbul Boğazı
+  - Güneşin Doğuşu
+  - Ay Işığı
+  - Deniz Manzarası
+  - Dağlar
+  - Orman
+  - Çiçekler
+  - Portre
+  - Sokak Sahnesi
+  - Kafe
+  - Meydan
+  - Gün Batımı
+  - İstanbul'un Fethi
+  - Mevlevi Sema Töreni
+  - Anadolu Hisarı
+  - Galata Kulesi
+  - Sultanahmet Camii
+  - Topkapı Sarayı
+  - Kapalıçarşı
+  - Boğaz Köprüsü
+  - Pamukkale
+  - Kapadokya
+  - Efes Antik Kenti
+  - Nemrut Dağı
+  - Aspendos
+  - Perge
+  - Side
+  - Alanya Kalesi
+  - Mardin Evleri
+  - Safranbolu Evleri
+  - Amasya Yalıboyu
+  - Trabzon Sümela Manastırı
+
+nationalities:
+  - Türk
+  - İtalyan
+  - Fransız
+  - İspanyol
+  - Alman
+  - İngiliz
+  - Rus
+  - Japon
+  - Çin
+  - Hollandalı
+  - Belçikalı
+  - İsveçli
+  - Norveçli
+  - Danimarkalı
+  - Fin
+  - Avusturyalı
+  - İsviçreli
+  - Yunan
+  - Mısırlı
+  - Hint
+  - İranlı
+  - Iraklı
+  - Suriyeli
+  - Lübnanlı
+  - Ürdünlü
+  - Filistinli
+  - İsrailli
+  - Azeri
+  - Gürcü
+  - Ermeni
+  - Bulgar
+  - Rumen
+  - Macar
+  - Çek
+  - Slovak
+  - Polonyalı
+  - Ukraynalı
+  - Beyaz Rus
+  - Moldovalı
+  - Arnavut
+  - Sırp
+  - Hırvat
+  - Sloven
+  - Karadağlı
+  - Makedon
+  - Bosnalı
+  - Kosovalı
+
+genres:
+  - Resim
+  - Heykel
+  - Seramik
+  - Fotoğraf
+  - Grafik Tasarım
+  - Mimari
+  - İllüstrasyon
+  - Karikatür
+  - Mozaik
+  - Vitray
+  - Hat Sanatı
+  - Ebru
+  - Minyatür
+  - Kaligrafi
+  - Dijital Sanat
+  - Performans Sanatı
+  - Video Sanatı
+  - Enstalasyon
+  - Kavramsal Sanat
+  - Soyut Sanat
+  - Figüratif Sanat
+  - Portre
+  - Manzara
+  - Natürmort
+  - Sürrealizm
+  - Kübizm
+  - Empresyonizm
+  - Ekspresyonizm
+  - Realizm
+  - Romantizm
+  - Barok
+  - Rokoko
+  - Gotik
+  - Rönesans
+  - Modern Sanat
+  - Çağdaş Sanat
+  - Postmodern Sanat
+  - Minimalizm
+  - Pop Art
+  - Op Art
+
+names:
+  - Osman Hamdi Bey
+  - İbrahim Çallı
+  - Bedri Rahmi Eyüboğlu
+  - Fikret Mualla
+  - Burhan Doğançay
+  - Erol Akyavaş
+  - Devrim Erbil
+  - Burhan Uygur
+  - Nuri İyem
+  - Bedri Baykam
+  - Fikret Otyam
+  - Nazmi Ziya Güran
+  - Avni Arbaş
+  - Neşet Günal
+  - Mehmet Güleryüz
+  - Selim Turan
+  - Şeker Ahmet Paşa
+  - Hale Asaf
+  - Fikret Mualla
+  - Burhan Doğançay
+  - Sabri Berkel
+  - Cihat Burak
+  - Eren Eyüboğlu
+  - Aliye Berger
+  - Neşe Erdok
+  - Taner Ceylan
+  - Haluk Akakçe
+  - Canan Tolon
+  - İnci Eviner
+  - Halil Altındere
+  - Ahmet Güneştekin
+  - Burhan Uygur
+  - Mehmet Güleryüz
+  - Devrim Erbil
+  - Erol Akyavaş
+  - Burhan Doğançay
+  - Fikret Mualla
+  - Bedri Rahmi Eyüboğlu
+  - İbrahim Çallı
+  - Osman Hamdi Bey
+  - Şeker Ahmet Paşa
+  - Hale Asaf
+  - Fikret Otyam
+  - Nazmi Ziya Güran
+  - Avni Arbaş
+  - Neşet Günal
+  - Mehmet Güleryüz
+  - Selim Turan
+  - Şeker Ahmet Paşa
+  - Hale Asaf

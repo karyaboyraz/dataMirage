@@ -1,0 +1,93 @@
+animal_names:
+  - Chien
+  - Chat
+  - Cheval
+  - Vache
+  - Mouton
+  - Chèvre
+  - Cochon
+  - Poule
+  - Canard
+  - Oie
+  - Dinde
+  - Lapin
+  - Hamster
+  - Cochon d'Inde
+  - Souris
+  - Rat
+  - Gerbille
+  - Furet
+  - Chinchilla
+  - Hérisson
+  - Lion
+  - Tigre
+  - Éléphant
+  - Girafe
+  - Zèbre
+  - Rhinocéros
+  - Hippopotame
+  - Guépard
+  - Léopard
+  - Puma
+  - Jaguar
+  - Loup
+  - Ours
+  - Gorille
+  - Chimpanzé
+  - Orang-outan
+  - Chameau
+  - Lama
+  - Kangourou
+  - Koala
+  - Panda
+  - Ours polaire
+  - Pingouin
+  - Aigle
+  - Faucon
+  - Hibou
+  - Pélican
+  - Flamant rose
+  - Crocodile
+  - Serpent
+
+types:
+  - Mammifère
+  - Oiseau
+  - Reptile
+  - Poisson
+  - Invertébré
+  - Amphibien
+  - Insecte
+  - Arthropode
+  - Mollusque
+  - Crustacé
+  - Mammifère marin
+  - Oiseau marin
+  - Reptile marin
+  - Poisson marin
+  - Invertébré marin
+  - Amphibien marin
+  - Insecte marin
+  - Arthropode marin
+  - Mollusque marin
+  - Crustacé marin
+  - Mammifère terrestre
+  - Oiseau terrestre
+  - Reptile terrestre
+  - Poisson d'eau douce
+  - Invertébré terrestre
+  - Amphibien terrestre
+  - Insecte terrestre
+  - Arthropode terrestre
+  - Mollusque terrestre
+  - Crustacé terrestre
+  - Mammifère d'eau douce
+  - Oiseau d'eau douce
+  - Reptile d'eau douce
+  - Poisson d'eau douce
+  - Invertébré d'eau douce
+  - Amphibien d'eau douce
+  - Insecte d'eau douce
+  - Arthropode d'eau douce
+  - Mollusque d'eau douce
+  - Crustacé d'eau douce 

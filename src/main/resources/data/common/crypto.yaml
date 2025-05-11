@@ -1,0 +1,95 @@
+coin_names:
+  - Bitcoin
+  - Ethereum
+  - Tether
+  - Binance Coin
+  - USD Coin
+  - XRP
+  - Cardano
+  - Dogecoin
+  - Polygon
+  - Solana
+  - Polkadot
+  - Litecoin
+  - Shiba Inu
+  - Avalanche
+  - TRON
+  - Dai
+  - Wrapped Bitcoin
+  - Uniswap
+  - Chainlink
+  - Stellar
+  - Cosmos
+  - Monero
+  - Algorand
+  - VeChain
+  - Filecoin
+  - Internet Computer
+  - Tezos
+  - Aave
+  - Axie Infinity
+  - SushiSwap
+
+coin_symbols:
+  - BTC
+  - ETH
+  - USDT
+  - BNB
+  - USDC
+  - XRP
+  - ADA
+  - DOGE
+  - MATIC
+  - SOL
+  - DOT
+  - LTC
+  - SHIB
+  - AVAX
+  - TRX
+  - DAI
+  - WBTC
+  - UNI
+  - LINK
+  - XLM
+  - ATOM
+  - XMR
+  - ALGO
+  - VET
+  - FIL
+  - ICP
+  - XTZ
+  - AAVE
+  - AXS
+  - SUSHI
+
+blockchains:
+  - Bitcoin
+  - Ethereum
+  - Binance Smart Chain
+  - Solana
+  - Cardano
+  - Polkadot
+  - Avalanche
+  - Polygon
+  - TRON
+  - Stellar
+  - Cosmos
+  - Tezos
+  - Algorand
+  - Fantom
+  - Near
+  - Hedera Hashgraph
+  - Flow
+  - Elrond
+  - Kusama
+  - Harmony
+  - Celo
+  - Zilliqa
+  - EOS
+  - Neo
+  - VeChain
+  - Theta
+  - Kusama
+  - ICON
+  - Klaytn
+  - Arbitrum

@@ -1,0 +1,278 @@
+streets:
+  - Roma
+  - Garibaldi
+  - Dante
+  - Italia
+  - Mazzini
+  - Verdi
+  - Duomo
+  - Cavour
+  - Vittorio Emanuele
+  - Marconi
+  - Veneto
+  - del Corso
+  - Nazionale
+  - San Marco
+  - Giuseppe Verdi
+  - XX Settembre
+  - Navona
+  - dei Fori Imperiali
+  - Mediceo
+  - Montesanto
+  - Posillipo
+  - Toledo
+  - della Repubblica
+  - dei Condotti
+  - della Conciliazione
+  - Umberto I
+  - Po
+  - Torino
+  - Milano
+  - Venezia
+  - Firenze
+  - Mazzini
+  - Cristoforo Colombo
+  - Leonardo da Vinci
+  - Galileo Galilei
+  - Michelangelo Buonarroti
+  - Giuseppe Mazzini
+  - Raffaello Sanzio
+  - Camillo Benso Conte di Cavour
+
+street_suffixes:
+  - Via
+  - Viale
+  - Corso
+  - Piazza
+  - Largo
+  - Vicolo
+  - Lungotevere
+  - Lungarno
+  - Salita
+  - Discesa
+  - Galleria
+  - Strada
+  - Borgo
+  - Piazzale
+  - Parco
+  - Arco
+  - Ponte
+  - Calata
+  - Traversa
+  - Contrada
+
+districts:
+  - Agrigento
+  - Alessandria
+  - Ancona
+  - Aosta
+  - Arezzo
+  - Ascoli Piceno
+  - Asti
+  - Avellino
+  - Bari
+  - Barletta-Andria-Trani
+  - Belluno
+  - Bergamo
+  - Biella
+  - Bologna
+  - Bolzano
+  - Brescia
+  - Brindisi
+  - Cagliari
+  - Caltanissetta
+  - Campobasso
+  - Carbonia-Iglesias
+  - Caserta
+  - Catania
+  - Catanzaro
+  - Chieti
+  - Como
+  - Cosenza
+  - Cremona
+  - Crotone
+  - Cuneo
+
+
+cities:
+  - Roma
+  - Milano
+  - Napoli
+  - Torino
+  - Palermo
+  - Genova
+  - Bologna
+  - Firenze
+  - Bari
+  - Catania
+  - Venezia
+  - Verona
+  - Messina
+  - Padova
+  - Trieste
+  - Taranto
+  - Brescia
+  - Parma
+  - Prato
+  - Modena
+  - Reggio Calabria
+  - Reggio Emilia
+  - Perugia
+  - Livorno
+  - Cagliari
+  - Foggia
+  - Rimini
+  - Salerno
+  - Ferrara
+  - Sassari
+  - Latina
+  - Giugliano in Campania
+  - Monza
+  - Siracusa
+  - Pescara
+  - Bergamo
+  - Forlì
+  - Vicenza
+  - Trento
+  - Terni
+
+
+countries:
+  - Italia
+  - Francia
+  - Germania
+  - Spagna
+  - Regno Unito
+  - Svizzera
+  - Austria
+  - Belgio
+  - Paesi Bassi
+  - Portogallo
+  - Grecia
+  - Polonia
+  - Repubblica Ceca
+  - Svezia
+  - Danimarca
+  - Finlandia
+  - Norvegia
+  - Russia
+  - Stati Uniti
+  - Canada
+  - Brasile
+  - Argentina
+  - Cina
+  - Giappone
+  - Australia
+  - Nuova Zelanda
+  - India
+  - Sudafrica
+  - Marocco
+  - Egitto
+  - Turchia
+  - Messico
+  - Croazia
+  - Slovenia
+  - San Marino
+  - Città del Vaticano
+  - Malta
+  - Principato di Monaco
+  - Lussemburgo
+  - Liechtenstein
+
+postal_codes:
+  - "#####"
+
+states:
+  - Lombardia
+  - Lazio
+  - Campania
+  - Sicilia
+  - Veneto
+  - Emilia-Romagna
+  - Piemonte
+  - Puglia
+  - Toscana
+  - Calabria
+  - Sardegna
+  - Liguria
+  - Marche
+  - Abruzzo
+  - Friuli-Venezia Giulia
+  - Trentino-Alto Adige
+  - Umbria
+  - Basilicata
+  - Molise
+  - Valle d'Aosta
+
+full_patterns:
+  - "{{street_patterns}}, {{cities}}, {{districts}}, {{postal_codes}}, {{countries}}"
+  - "{{street_patterns}}, {{postal_codes}} {{cities}} ({{districts}})"
+  - "{{street_patterns}}, {{postal_codes}} {{cities}}"
+  - "{{cities}}, {{postal_codes}}, {{street_patterns}}"
+  - "{{postal_codes}} {{cities}}, {{street_patterns}}"
+
+street_patterns:
+  - "{{streets}} {{street_suffixes}}, {{building_number}}"
+  - "{{streets}} {{building_number}}"
+  - "{{streets}} {{street_suffixes}} {{building_number}}"
+  - "{{streets}} {{building_number}}/{{apartment}}"
+  - "{{streets}} {{street_suffixes}}, {{building_number}}/{{apartment}}"
+  - "{{streets}} {{street_suffixes}} {{building_number}}, {{building}}"
+  - "{{streets}} {{building_number}}, {{building}}"
+  - "{{streets}} {{street_suffixes}} {{building_number}}, {{building}}, {{apartment}}"
+
+building_number:
+  - "1"
+  - "2"
+  - "3"
+  - "4"
+  - "5"
+  - "6"
+  - "7"
+  - "8"
+  - "9"
+  - "10"
+  - "11"
+  - "12"
+  - "13"
+  - "14"
+  - "15"
+  - "16"
+  - "17"
+  - "18"
+  - "19"
+  - "20"
+
+building:
+  - "Scala A"
+  - "Scala B"
+  - "Scala C"
+  - "Edificio 1"
+  - "Edificio 2"
+  - "Palazzina A"
+  - "Palazzina B"
+  - "Interno 1"
+  - "Interno 2"
+  - "Interno 3"
+
+apartment:
+  - "1"
+  - "2"
+  - "3"
+  - "4"
+  - "5"
+  - "int. 1"
+  - "int. 2"
+  - "int. 3"
+  - "int. 4"
+  - "int. 5"
+  - "Interno 1"
+  - "Interno 2"
+  - "Interno 3"
+  - "Interno 4"
+  - "Interno 5"
+  - "Piano 1"
+  - "Piano 2"
+  - "Piano 3"
+  - "Piano Terra"
+  - "Piano Rialzato"

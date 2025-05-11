@@ -1,0 +1,66 @@
+vehicles:
+  - Automobile
+  - Truck
+  - Motorcycle
+  - Bicycle
+  - Scooter
+  - Bus
+  - Minibus
+  - SUV
+  - Tractor
+  - Trailer
+  - Pickup Truck
+  - Panel Van
+  - Van
+  - Semi-Truck
+  - Ambulance
+  - Fire Truck
+  - Police Car
+  - Garbage Truck
+  - Cement Mixer
+  - Crane
+  - Forklift
+  - Excavator
+  - Bulldozer
+  - Grader
+  - Road Roller
+  - Asphalt Finisher
+  - Dump Truck
+  - Tanker
+  - Container Carrier
+  - Car Carrier
+  - Caravan
+  - Mobile Home
+  - Golf Cart
+  - ATV
+  - UTV
+  - Snow Vehicle
+  - Water Vehicle
+  - Aircraft
+  - Tram
+  - Subway
+  - Train
+  - Trolleybus
+  - Cable Car
+  - Funicular
+  - Ferry
+  - Yacht
+  - Boat
+  - Jet Ski
+  - Hovercraft
+  - Helicopter
+
+fuels:
+  - Gasoline
+  - Diesel
+  - Electric
+  - Hybrid
+  - LPG
+  - CNG
+  - Hydrogen
+
+license_plate_formats:
+  - "??? ####"
+  - "?? ##### "
+  - "??? ###"
+  - "??? ###?" 

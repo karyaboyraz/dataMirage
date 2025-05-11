@@ -1,0 +1,101 @@
+ingredients:
+  - un
+  - şeker
+  - tuz
+  - süt
+  - yumurta
+  - tereyağı
+  - su
+  - maya
+  - yoğurt
+  - peynir
+  - zeytinyağı
+  - sıvı yağ
+  - soğan
+  - sarımsak
+  - domates
+  - biber
+  - patates
+  - havuç
+  - kabak
+  - patlıcan
+  - brokoli
+  - mantar
+  - mısır
+  - bezelye
+  - fasulye
+  
+spices:
+  - karabiber
+  - kırmızı toz biber
+  - kimyon
+  - kekik
+  - pul biber
+  - yenibahar
+  - muskat
+  - zerdeçal
+  - kişniş
+  - sumak
+  - tarçın
+  - yenibahar
+  - safran
+  - defne yaprağı
+  - biberiye
+  - fesleğen
+  - nane
+  - dereotu
+  - maydanoz
+  - hardal tohumu
+  - rezene tohumu
+  - kakule
+  - karanfil
+  - kakao tozu
+
+measurements:
+  - tatlı kaşığı
+  - yemek kaşığı
+  - çay kaşığı
+  - su bardağı
+  - çay bardağı
+  - fincan
+  - mililitre
+  - litre
+  - gram
+  - kilogram
+  - paket
+  - çimdik
+  - tutam
+  - dilim
+  - adet
+  - sap
+  - kilo
+  - kutu
+  - kavanoz
+  - şişe
+
+dishes:
+  - menemen
+  - mercimek çorbası
+  - imam bayıldı
+  - lahmacun
+  - pilav
+  - mantı
+  - kuru fasulye
+  - köfte
+  - börek
+  - baklava
+  - dolma
+  - sarma
+  - çiğ köfte
+  - gözleme
+  - döner
+  - iskender
+  - kumpir
+  - çorba
+  - güveç
+  - pilaki
+  - mücver
+  - sucuklu yumurta
+  - tandır
+  - çoban salata
+  - şakşuka

@@ -1,0 +1,138 @@
+ingredients:
+  - farina
+  - zucchero
+  - sale
+  - latte
+  - uova
+  - burro
+  - acqua
+  - lievito
+  - yogurt
+  - formaggio
+  - olio d'oliva
+  - olio vegetale
+  - cipolla
+  - aglio
+  - pomodoro
+  - peperone
+  - patata
+  - carota
+  - zucchina
+  - melanzana
+  - broccoli
+  - fungo
+  - mais
+  - piselli
+  - fagioli
+  - riso
+  - pasta
+  - pollo
+  - manzo
+  - maiale
+  - pancetta
+  - salmone
+  - tonno
+  - gamberi
+  - avocado
+
+spices:
+  - pepe nero
+  - paprika
+  - cumino
+  - origano
+  - peperoncino
+  - pimento
+  - noce moscata
+  - curcuma
+  - coriandolo
+  - rosmarino
+  - cannella
+  - foglia di alloro
+  - basilico
+  - menta
+  - aneto
+  - prezzemolo
+  - semi di senape
+  - semi di finocchio
+  - cardamomo
+  - chiodi di garofano
+  - zenzero
+  - aglio in polvere
+  - cipolla in polvere
+  - peperoncino in polvere
+  - curry in polvere
+  - timo
+  - salvia
+  - dragoncello
+  - maggiorana
+  - zafferano
+
+measurements:
+  - cucchiaino
+  - cucchiaio
+  - tazza
+  - millilitro
+  - centilitro
+  - litro
+  - grammo
+  - chilogrammo
+  - pizzico
+  - goccio
+  - fetta
+  - pezzo
+  - spicchio
+  - mazzo
+  - manciata
+  - pacchetto
+  - vasetto
+  - lattina
+  - bottiglia
+  - goccia
+  - stecca
+  - cubetto
+  - porzione
+  - foglia
+  - bicchiere
+  - ciotola
+  - bustina
+  - punta di coltello
+  - spruzzata
+  - scorza
+
+dishes:
+  - pasta alla carbonara
+  - pizza margherita
+  - lasagne
+  - risotto ai funghi
+  - ossobuco
+  - saltimbocca
+  - tiramisù
+  - panna cotta
+  - gelato
+  - cannoli siciliani
+  - gnocchi
+  - parmigiana di melanzane
+  - carpaccio
+  - vitello tonnato
+  - minestrone
+  - pasta e fagioli
+  - tagliatelle al ragù
+  - pesto alla genovese
+  - bruschetta
+  - polenta
+  - arancini
+  - ravioli
+  - bistecca alla fiorentina
+  - fritto misto
+  - cacciucco
+  - panettone
+  - pandoro
+  - torrone
+  - biscotti
+  - caponata
+  - crostini
+  - spaghetti alle vongole
+  - caprese
+  - bresaola
+  - porchetta
+  - torta caprese 

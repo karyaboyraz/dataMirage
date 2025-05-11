@@ -1,0 +1,137 @@
+ingredients:
+  - flour
+  - sugar
+  - salt
+  - milk
+  - eggs
+  - butter
+  - water
+  - yeast
+  - yogurt
+  - cheese
+  - olive oil
+  - vegetable oil
+  - onion
+  - garlic
+  - tomato
+  - pepper
+  - potato
+  - carrot
+  - zucchini
+  - eggplant
+  - broccoli
+  - mushroom
+  - corn
+  - peas
+  - beans
+  - rice
+  - pasta
+  - chicken
+  - beef
+  - pork
+  - bacon
+  - salmon
+  - tuna
+  - shrimp
+  - avocado
+
+spices:
+  - black pepper
+  - paprika
+  - cumin
+  - oregano
+  - red pepper flakes
+  - allspice
+  - nutmeg
+  - turmeric
+  - coriander
+  - rosemary
+  - cinnamon
+  - bay leaf
+  - basil
+  - mint
+  - dill
+  - parsley
+  - mustard seed
+  - fennel seed
+  - cardamom
+  - cloves
+  - ginger
+  - garlic powder
+  - onion powder
+  - chili powder
+  - curry powder
+  - thyme
+  - sage
+  - tarragon
+  - marjoram
+  - saffron
+
+measurements:
+  - teaspoon
+  - tablespoon
+  - cup
+  - fluid ounce
+  - pint
+  - quart
+  - gallon
+  - milliliter
+  - liter
+  - gram
+  - kilogram
+  - ounce
+  - pound
+  - pinch
+  - dash
+  - slice
+  - piece
+  - stalk
+  - clove
+  - bunch
+  - handful
+  - packet
+  - jar
+  - can
+  - bottle
+  - drop
+  - stick
+  - cube
+  - scoop
+  - sheet
+
+dishes:
+  - hamburger
+  - pizza
+  - spaghetti
+  - Caesar salad
+  - chicken alfredo
+  - steak
+  - roast chicken
+  - mashed potatoes
+  - macaroni and cheese
+  - lasagna
+  - tacos
+  - enchiladas
+  - burrito
+  - quesadilla
+  - fried rice
+  - lo mein
+  - sushi
+  - curry
+  - pad thai
+  - beef stew
+  - pot roast
+  - meatloaf
+  - grilled cheese
+  - omelette
+  - pancakes
+  - waffles
+  - french toast
+  - chicken noodle soup
+  - chili
+  - clam chowder
+  - BBQ ribs
+  - fried chicken
+  - chicken pot pie
+  - shepherd's pie
+  - apple pie 

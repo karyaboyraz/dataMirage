@@ -1,0 +1,147 @@
+first_names:
+  - Giuseppe
+  - Francesco
+  - Antonio
+  - Giovanni
+  - Mario
+  - Luigi
+  - Roberto
+  - Salvatore
+  - Angelo
+  - Vincenzo
+  - Carlo
+  - Franco
+  - Domenico
+  - Paolo
+  - Michele
+  - Giorgio
+  - Bruno
+  - Marco
+  - Pietro
+  - Sergio
+  - Alessandro
+  - Leonardo
+  - Stefano
+  - Andrea
+  - Alberto
+  - Luciano
+  - Pasquale
+  - Massimo
+  - Claudio
+  - Renato
+  - Maria
+  - Anna
+  - Francesca
+  - Giovanna
+  - Rosa
+  - Giuseppina
+  - Angela
+  - Teresa
+  - Lucia
+  - Carmela
+  - Caterina
+  - Antonia
+  - Rita
+  - Elena
+  - Margherita
+  - Paola
+  - Concetta
+  - Laura
+  - Giulia
+  - Franca
+  - Patrizia
+  - Sandra
+  - Antonella
+  - Cristina
+  - Carla
+  - Chiara
+  - Silvia
+  - Valentina
+  - Sofia
+
+last_names:
+  - Rossi
+  - Russo
+  - Ferrari
+  - Esposito
+  - Bianchi
+  - Romano
+  - Colombo
+  - Ricci
+  - Marino
+  - Greco
+  - Bruno
+  - Gallo
+  - Conti
+  - De Luca
+  - Costa
+  - Giordano
+  - Mancini
+  - Rizzo
+  - Lombardi
+  - Moretti
+  - Barbieri
+  - Fontana
+  - Santoro
+  - Mariani
+  - Rinaldi
+  - Caruso
+  - Ferrara
+  - Galli
+  - Martini
+  - Leone
+  - Longo
+  - Gentile
+  - Martinelli
+  - Vitale
+  - Lombardo
+  - Serra
+  - Coppola
+  - De Santis
+  - D'Angelo
+  - Marchetti
+
+prefixes:
+  - Sig.
+  - Sig.ra
+  - Sig.na
+  - Dott.
+  - Dott.ssa
+  - Prof.
+  - Prof.ssa
+  - Avv.
+  - Ing.
+  - Arch.
+  - Don
+  - Mons.
+
+suffixes:
+  - figlio
+  - padre
+  - nipote
+  - Sr.
+  - Jr.
+  - di Roma
+  - di Milano
+  - di Napoli
+  - di Palermo
+  - di Torino
+
+gender:
+  - Maschile
+  - Femminile
+
+titles:
+  - Dott.
+  - Dott.ssa
+  - Prof.
+  - Prof.ssa
+  - Avv.
+  - Ing.
+  - Arch.
+  - Comm.
+  - Cav.
+  - Conte
+  - Contessa
+  - Marchese
+  - Marchesa 

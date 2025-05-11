@@ -1,0 +1,137 @@
+ingredients:
+  - Mehl
+  - Zucker
+  - Salz
+  - Milch
+  - Eier
+  - Butter
+  - Wasser
+  - Hefe
+  - Joghurt
+  - Käse
+  - Olivenöl
+  - Pflanzenöl
+  - Zwiebel
+  - Knoblauch
+  - Tomate
+  - Paprika
+  - Kartoffel
+  - Karotte
+  - Zucchini
+  - Aubergine
+  - Brokkoli
+  - Pilz
+  - Mais
+  - Erbsen
+  - Bohnen
+  - Reis
+  - Nudeln
+  - Huhn
+  - Rindfleisch
+  - Schweinefleisch
+  - Speck
+  - Lachs
+  - Thunfisch
+  - Garnelen
+  - Avocado
+
+spices:
+  - schwarzer Pfeffer
+  - Paprikapulver
+  - Kreuzkümmel
+  - Oregano
+  - Chilliflocken
+  - Piment
+  - Muskatnuss
+  - Kurkuma
+  - Koriander
+  - Rosmarin
+  - Zimt
+  - Lorbeerblatt
+  - Basilikum
+  - Minze
+  - Dill
+  - Petersilie
+  - Senfsamen
+  - Fenchelsamen
+  - Kardamom
+  - Nelken
+  - Ingwer
+  - Knoblauchpulver
+  - Zwiebelpulver
+  - Chilipulver
+  - Currypulver
+  - Thymian
+  - Salbei
+  - Estragon
+  - Majoran
+  - Safran
+
+measurements:
+  - Teelöffel
+  - Esslöffel
+  - Tasse
+  - Milliliter
+  - Zentiliter
+  - Liter
+  - Gramm
+  - Kilogramm
+  - Prise
+  - Spritzer
+  - Scheibe
+  - Stück
+  - Zehe
+  - Bund
+  - Handvoll
+  - Päckchen
+  - Glas
+  - Dose
+  - Flasche
+  - Tropfen
+  - Stange
+  - Würfel
+  - Portion
+  - Blatt
+  - Becher
+  - Schüssel
+  - Tütchen
+  - Messerspitze
+  - Schuss
+  - Abrieb
+
+dishes:
+  - Sauerbraten
+  - Schnitzel
+  - Bratwurst
+  - Sauerkraut
+  - Spätzle
+  - Kartoffelsalat
+  - Gulasch
+  - Rouladen
+  - Eisbein
+  - Knödel
+  - Schwarzwälder Kirschtorte
+  - Apfelstrudel
+  - Bretzel
+  - Currywurst
+  - Maultaschen
+  - Leberkäse
+  - Kassler
+  - Sülze
+  - Schweinebraten
+  - Rinderrouladen
+  - Lebkuchen
+  - Flammkuchen
+  - Königsberger Klopse
+  - Labskaus
+  - Reibekuchen
+  - Grünkohl mit Pinkel
+  - Linsen mit Spätzle
+  - Zwiebelkuchen
+  - Bienenstich
+  - Käsespätzle
+  - Berliner
+  - Pfannkuchen
+  - Kohlrouladen
+  - Falscher Hase
+  - Dampfnudeln 

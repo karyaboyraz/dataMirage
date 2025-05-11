@@ -1,0 +1,136 @@
+platforms:
+  - iOS
+  - Android
+  - Windows
+  - macOS
+  - Linux
+  - Web
+  - Cross-Platform
+  - Mobile
+  - Desktop
+  - Tablet
+  - Wear OS
+  - watchOS
+  - tvOS
+  - Android TV
+  - Fire TV
+  - Roku
+  - Smart TV
+  - Chrome OS
+  - Ubuntu
+  - Fedora
+
+app_names:
+  - WhatsApp
+  - Instagram
+  - Facebook
+  - Twitter
+  - TikTok
+  - YouTube
+  - Netflix
+  - Spotify
+  - Telegram
+  - Snapchat
+  - LinkedIn
+  - Pinterest
+  - Tinder
+  - Uber
+  - DoorDash
+  - Grubhub
+  - Amazon
+  - eBay
+  - Walmart
+  - Etsy
+  - Signal
+  - PayPal
+  - Venmo
+  - Cash App
+  - Chase
+  - Wells Fargo
+  - Citibank
+  - Capital One
+  - Apple Pay
+  - Google Pay
+  - Stripe
+  - Square
+  - QuickBooks
+  - Xero
+  - FreshBooks
+  - Wave
+  - Zoho
+  - Expedia
+  - Booking.com
+  - Airbnb
+  - TripAdvisor
+  - Ticketmaster
+  - Eventbrite
+  - StubHub
+  - Toast
+  - Square POS
+  - Clover
+  - Lightspeed
+  - Shopify
+  - WooCommerce
+  - Magento
+  - BigCommerce
+  - Wix
+  - Squarespace
+  - Weebly
+  - WordPress
+  - Medium
+  - Substack
+  - Patreon
+  - OnlyFans
+  - Twitch
+  - Discord
+  - Slack
+  - Microsoft Teams
+  - Zoom
+  - Google Meet
+  - Skype
+  - Duolingo
+  - Babbel
+  - Rosetta Stone
+  - Coursera
+  - Udemy
+  - Khan Academy
+  - MasterClass
+  - Skillshare
+  - Headspace
+  - Calm
+  - MyFitnessPal
+  - Strava
+  - Nike Training Club
+  - Fitbit
+  - Garmin Connect
+  - Apple Health
+  - Google Fit
+  - Waze
+  - Google Maps
+  - Apple Maps
+  - Uber Eats
+  - DoorDash
+  - Grubhub
+  - Postmates
+  - Instacart
+  - Shipt
+  - Amazon Fresh
+  - Walmart Grocery
+  - Target
+  - Best Buy
+  - Home Depot
+  - Lowe's
+  - IKEA
+  - Wayfair
+  - Zillow
+  - Redfin
+  - Trulia
+  - Realtor.com
+  - Indeed
+  - LinkedIn Jobs
+  - Glassdoor
+  - Monster
+  - CareerBuilder
+  - ZipRecruiter
+  - Upwork
+  - Fiverr

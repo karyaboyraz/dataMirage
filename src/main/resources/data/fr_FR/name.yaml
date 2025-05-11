@@ -1,0 +1,144 @@
+first_names:
+  - Jean
+  - Pierre
+  - Michel
+  - André
+  - Philippe
+  - Louis
+  - François
+  - Laurent
+  - Nicolas
+  - Alain
+  - Jacques
+  - Bernard
+  - Robert
+  - Daniel
+  - Paul
+  - Thomas
+  - Antoine
+  - Christian
+  - Joseph
+  - Julien
+  - Patrick
+  - Marcel
+  - Henri
+  - Gérard
+  - Emmanuel
+  - Claude
+  - René
+  - Roger
+  - Vincent
+  - Alexandre
+  - Marie
+  - Jeanne
+  - Catherine
+  - Françoise
+  - Anne
+  - Monique
+  - Isabelle
+  - Nicole
+  - Suzanne
+  - Marguerite
+  - Louise
+  - Jacqueline
+  - Sophie
+  - Nathalie
+  - Sylvie
+  - Camille
+  - Julie
+  - Céline
+  - Christine
+  - Valérie
+  - Chantal
+  - Caroline
+  - Madeleine
+  - Claire
+  - Yvonne
+  - Martine
+  - Patricia
+  - Hélène
+  - Émilie
+
+last_names:
+  - Martin
+  - Bernard
+  - Dubois
+  - Thomas
+  - Robert
+  - Richard
+  - Petit
+  - Durand
+  - Leroy
+  - Moreau
+  - Simon
+  - Laurent
+  - Lefebvre
+  - Michel
+  - Garcia
+  - David
+  - Bertrand
+  - Roux
+  - Vincent
+  - Fournier
+  - Morel
+  - Girard
+  - André
+  - Lefèvre
+  - Mercier
+  - Dupont
+  - Lambert
+  - Bonnet
+  - François
+  - Martinez
+  - Legrand
+  - Garnier
+  - Faure
+  - Rousseau
+  - Blanc
+  - Guérin
+  - Muller
+  - Henry
+  - Roussel
+  - Nicolas
+
+prefixes:
+  - M.
+  - Mme
+  - Mlle
+  - Dr
+  - Pr
+  - Me
+  - Mgr
+  - Abbé
+  - Père
+  - Sœur
+  - Maître
+
+suffixes:
+  - fils
+  - aîné
+  - cadet
+  - jeune
+  - père
+  - de la Tour
+  - du Lac
+  - de Montagne
+  - de Saint-Pierre
+  - de Beauvoir
+
+gender:
+  - Masculin
+  - Féminin
+
+titles:
+  - Dr
+  - Pr
+  - M.
+  - Mme
+  - Mlle
+  - Me
+  - Mgr
+  - Abbé
+  - Capitaine
+  - Commandant
+  - Colonel 

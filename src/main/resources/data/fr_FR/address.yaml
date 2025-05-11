@@ -1,0 +1,264 @@
+streets:
+  - "Rue de la Paix"
+  - "Avenue des Champs-Élysées"
+  - "Boulevard Saint-Michel"
+  - "Place de la Concorde"
+  - "Rue de Rivoli"
+  - "Boulevard Haussmann"
+  - "Rue du Faubourg Saint-Honoré"
+  - "Quai des Orfèvres"
+  - "Avenue Victor Hugo"
+  - "Rue Saint-Denis"
+  - "Boulevard Montmartre"
+  - "Rue Mouffetard"
+  - "Avenue Montaigne"
+  - "Rue des Rosiers"
+  - "Boulevard Raspail"
+  - "Rue Oberkampf"
+  - "Avenue de l'Opéra"
+  - "Rue Sainte-Anne"
+  - "Boulevard de Clichy"
+  - "Rue Vieille du Temple"
+  - "Avenue Foch"
+  - "Rue Montorgueil"
+  - "Boulevard Voltaire"
+  - "Rue du Bac"
+  - "Avenue de la République"
+  - "Rue du Cherche-Midi"
+  - "Boulevard Saint-Germain"
+  - "Rue de Sèvres"
+  - "Avenue Parmentier"
+  - "Rue du Temple"
+  - "Boulevard des Italiens"
+  - "Rue Saint-Honoré"
+  - "Avenue du Maine"
+  - "Rue de Buci"
+  - "Boulevard des Capucines"
+  - "Rue de Turbigo"
+  - "Avenue de Clichy"
+  - "Rue de la Roquette"
+  - "Boulevard Beaumarchais"
+  - "Rue de Bretagne"
+
+street_suffixes:
+  - Rue
+  - Avenue
+  - Boulevard
+  - Place
+  - Quai
+  - Impasse
+  - Passage
+  - Allée
+  - Cours
+  - Square
+  - Route
+  - Chemin
+  - Promenade
+  - Esplanade
+  - Rond-point
+  - Sentier
+  - Montée
+  - Traverse
+  - Chaussée
+  - Carrefour
+
+districts:
+  - 1er Arrondissement
+  - 2ème Arrondissement
+  - 3ème Arrondissement
+  - 4ème Arrondissement
+  - 5ème Arrondissement
+  - 6ème Arrondissement
+  - 7ème Arrondissement
+  - 8ème Arrondissement
+  - 9ème Arrondissement
+  - 10ème Arrondissement
+  - 11ème Arrondissement
+  - 12ème Arrondissement
+  - 13ème Arrondissement
+  - 14ème Arrondissement
+  - 15ème Arrondissement
+  - 16ème Arrondissement
+  - 17ème Arrondissement
+  - 18ème Arrondissement
+  - 19ème Arrondissement
+  - 20ème Arrondissement
+  - Quartier Latin
+  - Montmartre
+  - Le Marais
+  - Saint-Germain-des-Prés
+  - Belleville
+  - Ménilmontant
+  - Bastille
+  - Pigalle
+  - Montparnasse
+  - Quartier de Bercy
+  - La Défense
+  - Les Halles
+  - Opéra
+  - Champs-Élysées
+  - Trocadéro
+  - Île de la Cité
+  - Île Saint-Louis
+  - Faubourg Saint-Honoré
+  - Quartier Chinois
+  - Butte-aux-Cailles
+
+cities:
+  - Paris
+  - Marseille
+  - Lyon
+  - Toulouse
+  - Nice
+  - Nantes
+  - Strasbourg
+  - Montpellier
+  - Bordeaux
+  - Lille
+  - Rennes
+  - Reims
+  - Le Havre
+  - Saint-Étienne
+  - Toulon
+  - Grenoble
+  - Dijon
+  - Angers
+  - Nîmes
+  - Villeurbanne
+  - Le Mans
+  - Aix-en-Provence
+  - Brest
+  - Tours
+  - Amiens
+  - Limoges
+  - Clermont-Ferrand
+  - Besançon
+  - Metz
+  - Perpignan
+  - Orléans
+  - Mulhouse
+  - Rouen
+  - Caen
+  - Nancy
+  - Saint-Denis
+  - Argenteuil
+  - Roubaix
+  - Tourcoing
+  - Montreuil
+
+countries:
+  - "France"
+  - "Belgique"
+  - "Suisse"
+  - "Canada"
+  - "Luxembourg"
+  - "Monaco"
+  - "Allemagne"
+  - "Espagne"
+  - "Italie"
+  - "Royaume-Uni"
+  - "Pays-Bas"
+  - "Portugal"
+  - "Irlande"
+  - "Autriche"
+  - "Suède"
+  - "Finlande"
+  - "Danemark"
+  - "Norvège"
+  - "Grèce"
+  - "Hongrie"
+  - "Pologne"
+  - "République tchèque"
+  - "Slovaquie"
+  - "Slovénie"
+  - "Croatie"
+  - "Roumanie"
+  - "Bulgarie"
+  - "Maroc"
+  - "Algérie"
+  - "Tunisie"
+
+postal_codes:
+  - "#####"
+
+states:
+  - Île-de-France
+  - Nouvelle-Aquitaine
+  - Auvergne-Rhône-Alpes
+  - Bourgogne-Franche-Comté
+  - Bretagne
+  - Centre-Val de Loire
+  - Corse
+  - Grand Est
+  - Hauts-de-France
+  - Normandie
+  - Occitanie
+  - Pays de la Loire
+  - Provence-Alpes-Côte d'Azur
+
+full_patterns:
+  - "{{street_patterns}}, {{postal_codes}} {{cities}}, {{countries}}"
+  - "{{street_patterns}}, {{postal_codes}} {{cities}}"
+  - "{{street_patterns}}, {{cities}}, {{postal_codes}}"
+  - "{{cities}} Cedex {{postal_codes}}, {{street_patterns}}"
+  - "{{street_patterns}}, BP {{building_number}}, {{postal_codes}} {{cities}}"
+
+street_patterns:
+  - "{{building_number}}, {{streets}} {{street_suffixes}}"
+  - "{{building_number}} {{streets}} {{street_suffixes}}"
+  - "{{building_number}}, {{streets}}"
+  - "{{building_number}} {{streets}}"
+  - "{{building_number}} {{streets}} {{street_suffixes}}, {{building}}"
+  - "{{building_number}} {{streets}}, {{apartment}}"
+  - "{{building_number}} {{streets}} {{street_suffixes}}, {{apartment}}"
+
+building_number:
+  - "1"
+  - "2"
+  - "3"
+  - "4"
+  - "5"
+  - "6"
+  - "7"
+  - "8"
+  - "9"
+  - "10"
+  - "11"
+  - "12"
+  - "13"
+  - "14"
+  - "15"
+  - "16"
+  - "17"
+  - "18"
+  - "19"
+  - "20"
+
+building:
+  - "Bâtiment A"
+  - "Bâtiment B"
+  - "Bâtiment C"
+  - "Résidence Les Fleurs"
+  - "Résidence Le Parc"
+  - "Résidence Les Pins"
+  - "Immeuble Le Soleil"
+  - "Immeuble Les Étoiles"
+  - "Pavillon"
+  - "Villa"
+
+apartment:
+  - "Apt. 1"
+  - "Apt. 2"
+  - "Apt. 3"
+  - "Apt. 4"
+  - "Apt. 5"
+  - "1er étage"
+  - "2ème étage"
+  - "3ème étage"
+  - "Rez-de-chaussée"
+  - "Appartement 101"
+  - "Appartement 102"
+  - "Appartement 201"
+  - "Appartement 202"
+  - "Appartement 301"
+  - "Appartement 302" 

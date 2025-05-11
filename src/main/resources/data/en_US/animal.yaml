@@ -1,0 +1,93 @@
+animal_names:
+  - Dog
+  - Cat
+  - Horse
+  - Cow
+  - Sheep
+  - Goat
+  - Pig
+  - Chicken
+  - Duck
+  - Goose
+  - Turkey
+  - Rabbit
+  - Hamster
+  - Guinea Pig
+  - Mouse
+  - Rat
+  - Gerbil
+  - Ferret
+  - Chinchilla
+  - Hedgehog
+  - Lion
+  - Tiger
+  - Elephant
+  - Giraffe
+  - Zebra
+  - Rhinoceros
+  - Hippopotamus
+  - Cheetah
+  - Leopard
+  - Cougar
+  - Jaguar
+  - Wolf
+  - Bear
+  - Gorilla
+  - Chimpanzee
+  - Orangutan
+  - Camel
+  - Llama
+  - Kangaroo
+  - Koala
+  - Panda
+  - Polar Bear
+  - Penguin
+  - Eagle
+  - Hawk
+  - Owl
+  - Pelican
+  - Flamingo
+  - Crocodile
+  - Snake
+
+types:
+  - Mammal
+  - Bird
+  - Reptile
+  - Fish
+  - Invertebrate
+  - Amphibian
+  - Insect
+  - Arthropod
+  - Mollusk
+  - Crustacean
+  - Marine Mammal
+  - Sea Bird
+  - Sea Reptile
+  - Sea Fish
+  - Marine Invertebrate
+  - Sea Amphibian
+  - Sea Insect
+  - Marine Arthropod
+  - Marine Mollusk
+  - Marine Crustacean
+  - Land Mammal
+  - Land Bird
+  - Land Reptile
+  - Land Fish
+  - Land Invertebrate
+  - Land Amphibian
+  - Land Insect
+  - Land Arthropod
+  - Land Mollusk
+  - Land Crustacean
+  - Freshwater Mammal
+  - Freshwater Bird
+  - Freshwater Reptile
+  - Freshwater Fish
+  - Freshwater Invertebrate
+  - Freshwater Amphibian
+  - Freshwater Insect
+  - Freshwater Arthropod
+  - Freshwater Mollusk
+  - Freshwater Crustacean 

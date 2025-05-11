@@ -1,0 +1,306 @@
+streets:
+  - Atatürk
+  - Cumhuriyet
+  - İstiklal
+  - Kurtuluş
+  - Fatih
+  - Gazi
+  - İnönü
+  - Millet
+  - Zafer
+  - Barış
+  - Fevzi Çakmak
+  - Mevlana
+  - Yunus Emre
+  - Hacı Bektaş Veli
+  - Pir Sultan
+  - Şehitler
+  - Gaziler
+  - Şairler
+  - Yazarlar
+  - Bilim
+  - Sanat
+  - Kültür
+  - Eğitim
+  - Sağlık
+  - Çevre
+  - Doğa
+  - Turgut Özal
+  - Süleyman Demirel
+  - Bülent Ecevit
+  - Necmettin Erbakan
+  - Tansu Çiller
+  - Mesut Yılmaz
+  - Kenan Evren
+  - Fahrettin Altay
+  - Kazım Karabekir
+  - İsmet İnönü
+  - Celal Bayar
+  - Adnan Menderes
+  - Cemal Gürsel
+  - Cevdet Sunay
+  - Fahri Korutürk
+  - Kenan Evren
+  - Turgut Sunalp
+  - Necdet Üruğ
+  - Doğan Güreş
+
+street_suffixes:
+  - Caddesi
+  - Sokak
+  - Bulvarı
+  - Meydanı
+  - Mahallesi
+  - Köyü
+  - Sitesi
+
+districts:
+  - Kadıköy
+  - Üsküdar
+  - Beşiktaş
+  - Şişli
+  - Beyoğlu
+  - Fatih
+  - Bakırköy
+  - Maltepe
+  - Ataşehir
+  - Pendik
+  - Kartal
+  - Ümraniye
+  - Beykoz
+  - Sarıyer
+  - Eyüp
+  - Gaziosmanpaşa
+  - Zeytinburnu
+  - Bayrampaşa
+  - Kağıthane
+  - Güngören
+  - Bağcılar
+  - Esenler
+  - Bahçelievler
+  - Avcılar
+  - Küçükçekmece
+  - Büyükçekmece
+  - Silivri
+  - Çatalca
+  - Arnavutköy
+  - Sultangazi
+  - Başakşehir
+  - Beylikdüzü
+  - Esenyurt
+  - Sancaktepe
+  - Sultanbeyli
+  - Çekmeköy
+  - Tuzla
+  - Şile
+  - Adalar
+  - Merkez
+  - Yeni
+  - Eski
+  - Kuzey
+  - Güney
+  - Doğu
+  - Batı
+  - Çarşı
+  - Sanayi
+  - Organize
+
+cities:
+  - Adana
+  - Adıyaman
+  - Afyonkarahisar
+  - Ağrı
+  - Amasya
+  - Ankara
+  - Antalya
+  - Artvin
+  - Aydın
+  - Balıkesir
+  - Bilecik
+  - Bingöl
+  - Bitlis
+  - Bolu
+  - Burdur
+  - Bursa
+  - Çanakkale
+  - Çankırı
+  - Çorum
+  - Denizli
+  - Diyarbakır
+  - Edirne
+  - Elazığ
+  - Erzincan
+  - Erzurum
+  - Eskişehir
+  - Gaziantep
+  - Giresun
+  - Gümüşhane
+  - Hakkari
+  - Hatay
+  - Isparta
+  - Mersin
+  - İstanbul
+  - İzmir
+  - Kars
+  - Kastamonu
+  - Kayseri
+  - Kırklareli
+  - Kırşehir
+  - Kocaeli
+  - Konya
+  - Kütahya
+  - Malatya
+  - Manisa
+  - Kahramanmaraş
+  - Mardin
+  - Muğla
+  - Muş
+  - Nevşehir
+  - Niğde
+  - Ordu
+  - Rize
+  - Sakarya
+  - Samsun
+  - Siirt
+  - Sinop
+  - Sivas
+  - Tekirdağ
+  - Tokat
+  - Trabzon
+  - Tunceli
+  - Şanlıurfa
+  - Uşak
+  - Van
+  - Yozgat
+  - Zonguldak
+  - Aksaray
+  - Bayburt
+  - Karaman
+  - Kırıkkale
+  - Batman
+  - Şırnak
+  - Bartın
+  - Ardahan
+  - Iğdır
+  - Yalova
+  - Karabük
+  - Kilis
+  - Osmaniye
+  - Düzce
+
+countries:
+  - Türkiye
+  - KKTC
+  - Almanya
+  - Fransa
+  - İngiltere
+  - İtalya
+  - İspanya
+  - Hollanda
+  - Belçika
+  - İsviçre
+  - Avusturya
+  - Yunanistan
+  - Bulgaristan
+  - Romanya
+  - Rusya
+  - Ukrayna
+  - Polonya
+  - Çek Cumhuriyeti
+  - Macaristan
+  - Slovakya
+
+postal_codes:
+  - "#####"
+
+states:
+  - Marmara Bölgesi
+  - Ege Bölgesi
+  - Akdeniz Bölgesi
+  - İç Anadolu Bölgesi
+  - Karadeniz Bölgesi
+  - Doğu Anadolu Bölgesi
+  - Güneydoğu Anadolu Bölgesi
+
+street_patterns:
+  - "{{streets}} {{street_suffixes}}, No: {{building_number}}"
+  - "{{streets}} {{street_suffixes}}, {{building_number}}"
+  - "{{streets}} {{street_suffixes}} No: {{building_number}}, {{apartment}}"
+  - "{{streets}} {{street_suffixes}} {{building_number}}/{{apartment}}"
+  - "{{streets}} {{street_suffixes}} {{building}}, No: {{building_number}}"
+  - "{{streets}} {{street_suffixes}} {{building}}, {{building_number}}"
+  - "{{streets}} {{street_suffixes}} {{building}}, Daire: {{apartment}}"
+  - "{{streets}} {{street_suffixes}} {{building}}, No: {{building_number}}, Daire: {{apartment}}"
+
+building_number:
+  - "1"
+  - "2"
+  - "3"
+  - "4"
+  - "5"
+  - "6"
+  - "7"
+  - "8"
+  - "9"
+  - "10"
+  - "11"
+  - "12"
+  - "13"
+  - "14"
+  - "15"
+  - "16"
+  - "17"
+  - "18"
+  - "19"
+  - "20"
+  - "21"
+  - "22"
+  - "23"
+  - "24"
+  - "25"
+
+building:
+  - "A Blok"
+  - "B Blok"
+  - "C Blok"
+  - "D Blok"
+  - "E Blok"
+  - "F Blok"
+  - "Kat 1"
+  - "Kat 2"
+  - "Kat 3"
+  - "Giriş"
+  - "Zemin Kat"
+  - "Plaza"
+  - "İş Merkezi"
+  - "Apartmanı"
+  - "Sitesi"
+
+apartment:
+  - "1"
+  - "2"
+  - "3"
+  - "4"
+  - "5"
+  - "6"
+  - "7"
+  - "8"
+  - "9"
+  - "10"
+  - "11"
+  - "12"
+  - "13"
+  - "14"
+  - "15"
+  - "16"
+  - "17"
+  - "18"
+  - "19"
+  - "20"
+
+full_patterns:
+  - "{{street_patterns}}, {{districts}}, {{cities}}, {{postal_codes}}"
+  - "{{street_patterns}}, {{districts}}, {{cities}}, {{states}}, {{postal_codes}}"
+  - "{{street_patterns}}, {{cities}}/{{districts}}, {{postal_codes}}, {{countries}}"
+  - "{{cities}}, {{districts}}, {{street_patterns}}, {{postal_codes}}"
+  - "{{postal_codes}}, {{cities}}/{{districts}}, {{street_patterns}}"

@@ -1,0 +1,66 @@
+vehicles:
+  - Otomobil
+  - Kamyon
+  - Motosiklet
+  - Bisiklet
+  - Scooter
+  - Otobüs
+  - Minibüs
+  - SUV
+  - Traktör
+  - Römork
+  - Kamyonet
+  - Panelvan
+  - Pickup
+  - Van
+  - Çekici
+  - Tır
+  - Ambulans
+  - İtfaiye Aracı
+  - Polis Aracı
+  - Çöp Kamyonu
+  - Beton Mikseri
+  - Vinç
+  - Forklift
+  - Ekskavatör
+  - Bulldozer
+  - Greyder
+  - Yol Silindiri
+  - Asfalt Finisher
+  - Damperli Kamyon
+  - Tanker
+  - Konteyner Taşıyıcı
+  - Otomobil Taşıyıcı
+  - Karavan
+  - Mobil Ev
+  - Golf Arabası
+  - ATV
+  - UTV
+  - Kar Aracı
+  - Su Aracı
+  - Hava Aracı
+  - Tramvay
+  - Metro
+  - Tren
+  - Trambüs
+  - Teleferik
+  - Füniküler
+  - Deniz Otobüsü
+  - Feribot
+  - Yat
+  - Tekne
+
+fuels:
+  - Benzin
+  - Dizel
+  - Elektrik
+  - Hibrit
+  - LPG
+  - CNG
+  - Hidrojen
+
+license_plate_formats:
+  - "## ??? ###"
+  - "## ?? ###"
+  - "## ?? ##"
+  - "## ??? ##"

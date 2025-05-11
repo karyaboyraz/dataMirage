@@ -1,0 +1,95 @@
+product_names:
+  - Akıllı Telefon
+  - Dizüstü Bilgisayar
+  - Tablet
+  - Akıllı Saat
+  - Bluetooth Kulaklık
+  - Kablosuz Mouse
+  - Klavye
+  - Monitör
+  - Yazıcı
+  - Tarayıcı
+  - Projeksiyon Cihazı
+  - Hoparlör
+  - Mikrofon
+  - Web Kamerası
+  - Harici Disk
+  - USB Bellek
+  - Router
+  - Modem
+  - Powerbank
+  - Şarj Aleti
+  - Kablosuz Şarj Standı
+  - Telefon Kılıfı
+  - Ekran Koruyucu
+  - Laptop Çantası
+  - Mouse Pad
+  - USB Hub
+  - HDMI Kablosu
+  - USB Kablosu
+  - Kulaklık Standı
+  - Laptop Standı
+
+departments:
+  - Elektronik
+  - Bilgisayar
+  - Telefon
+  - Tablet
+  - Aksesuar
+  - Yazılım
+  - Oyun
+  - Ofis
+  - Ev
+  - Mutfak
+  - Bahçe
+  - Spor
+  - Giyim
+  - Ayakkabı
+  - Çanta
+  - Takı
+  - Saat
+  - Kozmetik
+  - Kişisel Bakım
+  - Bebek
+  - Oyuncak
+  - Kitap
+  - Müzik
+  - Film
+  - Hobi
+  - Otomotiv
+  - Yapı Market
+  - Pet Shop
+  - Süpermarket
+  - Kırtasiye
+
+materials:
+  - Plastik
+  - Metal
+  - Ahşap
+  - Cam
+  - Seramik
+  - Kumaş
+  - Deri
+  - Kauçuk
+  - Silikon
+  - Alüminyum
+  - Çelik
+  - Bakır
+  - Altın
+  - Gümüş
+  - Pirinç
+  - Nikel
+  - Titanyum
+  - Karbon
+  - Fiber
+  - Polikarbonat
+  - ABS
+  - PVC
+  - Polietilen
+  - Polipropilen
+  - Polistiren
+  - Akrilik
+  - Poliüretan
+  - Neopren
+  - Lateks
+  - Kevlar

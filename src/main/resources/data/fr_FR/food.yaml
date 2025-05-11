@@ -1,0 +1,137 @@
+ingredients:
+  - farine
+  - sucre
+  - sel
+  - lait
+  - œufs
+  - beurre
+  - eau
+  - levure
+  - yaourt
+  - fromage
+  - huile d'olive
+  - huile végétale
+  - oignon
+  - ail
+  - tomate
+  - poivron
+  - pomme de terre
+  - carotte
+  - courgette
+  - aubergine
+  - brocoli
+  - champignon
+  - maïs
+  - petits pois
+  - haricots
+  - riz
+  - pâtes
+  - poulet
+  - bœuf
+  - porc
+  - lardons
+  - saumon
+  - thon
+  - crevettes
+  - avocat
+
+spices:
+  - poivre noir
+  - paprika
+  - cumin
+  - origan
+  - flocons de piment
+  - quatre-épices
+  - muscade
+  - curcuma
+  - coriandre
+  - romarin
+  - cannelle
+  - feuille de laurier
+  - basilic
+  - menthe
+  - aneth
+  - persil
+  - graine de moutarde
+  - graine de fenouil
+  - cardamome
+  - clou de girofle
+  - gingembre
+  - ail en poudre
+  - oignon en poudre
+  - poudre de chili
+  - curry en poudre
+  - thym
+  - sauge
+  - estragon
+  - marjolaine
+  - safran
+
+measurements:
+  - cuillère à café
+  - cuillère à soupe
+  - tasse
+  - millilitre
+  - centilitre
+  - litre
+  - gramme
+  - kilogramme
+  - pincée
+  - trait
+  - tranche
+  - morceau
+  - gousse
+  - botte
+  - poignée
+  - paquet
+  - pot
+  - boîte
+  - bouteille
+  - goutte
+  - bâton
+  - cube
+  - portion
+  - feuille
+  - verre
+  - bol
+  - sachet
+  - dose
+  - filet
+  - zeste
+
+dishes:
+  - bœuf bourguignon
+  - coq au vin
+  - ratatouille
+  - quiche lorraine
+  - croque-monsieur
+  - bouillabaisse
+  - cassoulet
+  - blanquette de veau
+  - gratin dauphinois
+  - crêpes
+  - soupe à l'oignon
+  - tarte tatin
+  - soufflé au fromage
+  - pot-au-feu
+  - bœuf tartare
+  - confit de canard
+  - escargots de Bourgogne
+  - moules marinières
+  - salade niçoise
+  - choucroute
+  - raclette
+  - fondue savoyarde
+  - crème brûlée
+  - mousse au chocolat
+  - éclair
+  - mille-feuille
+  - macaron
+  - croissant
+  - baguette
+  - pain au chocolat
+  - tarte flambée
+  - tartiflette
+  - aligot
+  - pissaladière
+  - tapenade 

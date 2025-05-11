@@ -1,0 +1,93 @@
+animal_names:
+  - Cane
+  - Gatto
+  - Cavallo
+  - Mucca
+  - Pecora
+  - Capra
+  - Maiale
+  - Gallina
+  - Anatra
+  - Oca
+  - Tacchino
+  - Coniglio
+  - Criceto
+  - Porcellino d'India
+  - Topo
+  - Ratto
+  - Gerbillo
+  - Furetto
+  - Cincillà
+  - Riccio
+  - Leone
+  - Tigre
+  - Elefante
+  - Giraffa
+  - Zebra
+  - Rinoceronte
+  - Ippopotamo
+  - Ghepardo
+  - Leopardo
+  - Puma
+  - Giaguaro
+  - Lupo
+  - Orso
+  - Gorilla
+  - Scimpanzé
+  - Orango
+  - Cammello
+  - Lama
+  - Canguro
+  - Koala
+  - Panda
+  - Orso polare
+  - Pinguino
+  - Aquila
+  - Falco
+  - Gufo
+  - Pellicano
+  - Fenicottero
+  - Coccodrillo
+  - Serpente
+
+types:
+  - Mammifero
+  - Uccello
+  - Rettile
+  - Pesce
+  - Invertebrato
+  - Anfibio
+  - Insetto
+  - Artropode
+  - Mollusco
+  - Crostaceo
+  - Mammifero marino
+  - Uccello marino
+  - Rettile marino
+  - Pesce marino
+  - Invertebrato marino
+  - Anfibio marino
+  - Insetto marino
+  - Artropode marino
+  - Mollusco marino
+  - Crostaceo marino
+  - Mammifero terrestre
+  - Uccello terrestre
+  - Rettile terrestre
+  - Pesce d'acqua dolce
+  - Invertebrato terrestre
+  - Anfibio terrestre
+  - Insetto terrestre
+  - Artropode terrestre
+  - Mollusco terrestre
+  - Crostaceo terrestre
+  - Mammifero d'acqua dolce
+  - Uccello d'acqua dolce
+  - Rettile d'acqua dolce
+  - Pesce d'acqua dolce
+  - Invertebrato d'acqua dolce
+  - Anfibio d'acqua dolce
+  - Insetto d'acqua dolce
+  - Artropode d'acqua dolce
+  - Mollusco d'acqua dolce
+  - Crostaceo d'acqua dolce 

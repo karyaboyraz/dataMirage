@@ -1,0 +1,263 @@
+streets:
+  - "Hauptstraße"
+  - "Schulstraße"
+  - "Bahnhofstraße"
+  - "Gartenstraße"
+  - "Kirchstraße"
+  - "Bergstraße"
+  - "Waldstraße"
+  - "Dorfstraße"
+  - "Bachstraße"
+  - "Lindenstraße"
+  - "Birkenweg"
+  - "Eichenweg"
+  - "Tannenweg"
+  - "Rosenberg"
+  - "Mühlenweg"
+  - "Schillerstraße"
+  - "Goethestraße"
+  - "Mozartstraße"
+  - "Beethovenstraße"
+  - "Kantstraße"
+  - "Hegelstraße"
+  - "Bismarckstraße"
+  - "Friedrichstraße"
+  - "Wilhelmstraße"
+  - "Kaiserstraße"
+  - "Königstraße"
+  - "Poststraße"
+  - "Marktplatz"
+  - "Berliner Straße"
+  - "Münchener Straße"
+  - "Hamburger Straße"
+  - "Kölner Straße"
+  - "Frankfurter Straße"
+  - "Stuttgarter Straße"
+  - "Düsseldorfer Straße"
+  - "Hannoversche Straße"
+  - "Leipziger Straße"
+  - "Dresdner Straße"
+  - "Nürnberger Straße"
+  - "Bremer Straße"
+
+street_suffixes:
+  - Straße
+  - Allee
+  - Weg
+  - Platz
+  - Ring
+  - Gasse
+  - Damm
+  - Ufer
+  - Brücke
+  - Chaussee
+  - Promenade
+  - Boulevard
+  - Steg
+  - Pfad
+  - Zeile
+  - Wall
+
+districts:
+  - Mitte
+  - Kreuzberg
+  - Prenzlauer Berg
+  - Charlottenburg
+  - Wilmersdorf
+  - Schöneberg
+  - Neukölln
+  - Wedding
+  - Spandau
+  - Steglitz
+  - Zehlendorf
+  - Tempelhof
+  - Friedrichshain
+  - Lichtenberg
+  - Hohenschönhausen
+  - Marzahn
+  - Hellersdorf
+  - Reinickendorf
+  - Pankow
+  - Weißensee
+  - Altstadt
+  - Neustadt
+  - Südstadt
+  - Nordstadt
+  - Weststadt
+  - Oststadt
+  - Innenstadt
+  - Zentrum
+  - Vorstadt
+  - Oberstadt
+  - Unterstadt
+  - Industriegebiet
+  - Gewerbegebiet
+  - Hafenviertel
+  - Universitätsviertel
+  - Künstlerviertel
+  - Diplomatenviertel
+  - Regierungsviertel
+  - Botschaftsviertel
+  - Bankenviertel
+
+cities:
+  - Berlin
+  - Hamburg
+  - München
+  - Köln
+  - Frankfurt am Main
+  - Stuttgart
+  - Düsseldorf
+  - Leipzig
+  - Dortmund
+  - Essen
+  - Bremen
+  - Dresden
+  - Hannover
+  - Nürnberg
+  - Duisburg
+  - Bochum
+  - Wuppertal
+  - Bielefeld
+  - Bonn
+  - Münster
+  - Karlsruhe
+  - Mannheim
+  - Augsburg
+  - Wiesbaden
+  - Gelsenkirchen
+  - Mönchengladbach
+  - Braunschweig
+  - Kiel
+  - Chemnitz
+  - Aachen
+  - Halle
+  - Magdeburg
+  - Freiburg
+  - Krefeld
+  - Lübeck
+  - Oberhausen
+  - Erfurt
+  - Mainz
+  - Rostock
+  - Kassel
+
+countries:
+  - "Deutschland"
+  - "Österreich"
+  - "Schweiz"
+  - "Frankreich"
+  - "Italien"
+  - "Spanien"
+  - "Niederlande"
+  - "Belgien"
+  - "Luxemburg"
+  - "Dänemark"
+  - "Schweden"
+  - "Norwegen"
+  - "Finnland"
+  - "Polen"
+  - "Tschechien"
+  - "Slowakei"
+  - "Ungarn"
+  - "Slowenien"
+  - "Kroatien"
+  - "Vereinigtes Königreich"
+  - "Irland"
+  - "Portugal"
+  - "Griechenland"
+  - "Türkei"
+  - "Russland"
+  - "Ukraine"
+  - "Weißrussland"
+  - "USA"
+  - "Kanada"
+  - "Australien"
+
+postal_codes:
+  - "#####"
+
+states:
+  - Baden-Württemberg
+  - Bayern
+  - Berlin
+  - Brandenburg
+  - Bremen
+  - Hamburg
+  - Hessen
+  - Mecklenburg-Vorpommern
+  - Niedersachsen
+  - Nordrhein-Westfalen
+  - Rheinland-Pfalz
+  - Saarland
+  - Sachsen
+  - Sachsen-Anhalt
+  - Schleswig-Holstein
+  - Thüringen
+
+full_patterns:
+  - "{{street_patterns}}, {{cities}}, {{postal_codes}}"
+  - "{{street_patterns}}, {{postal_codes}} {{cities}}"
+  - "{{postal_codes}} {{cities}}, {{street_patterns}}"
+  - "{{cities}}, {{postal_codes}}, {{street_patterns}}"
+  - "{{street_patterns}}, {{cities}}, {{postal_codes}}, {{countries}}"
+
+street_patterns:
+  - "{{streets}} {{street_suffixes}} {{building_number}}"
+  - "{{streets}} {{street_suffixes}} {{building_number}}, {{apartment}}"
+  - "{{streets}} {{building_number}}"
+  - "{{streets}} {{building_number}}, {{apartment}}"
+  - "{{streets}} {{street_suffixes}} {{building_number}}{{building}}"
+  - "{{streets}} {{building_number}}{{building}}"
+
+building_number:
+  - "1"
+  - "2"
+  - "3"
+  - "4"
+  - "5"
+  - "6"
+  - "7"
+  - "8"
+  - "9"
+  - "10"
+  - "11"
+  - "12"
+  - "13"
+  - "14"
+  - "15"
+  - "16"
+  - "17"
+  - "18"
+  - "19"
+  - "20"
+
+building:
+  - "a"
+  - "b"
+  - "c"
+  - "d"
+  - "e"
+  - "f"
+  - ""
+  - " Haus A"
+  - " Haus B"
+  - " Eingang 1"
+  - " Eingang 2"
+
+apartment:
+  - "EG"
+  - "1. OG"
+  - "2. OG"
+  - "3. OG"
+  - "DG"
+  - "App. 1"
+  - "App. 2"
+  - "App. 3"
+  - "App. 4"
+  - "App. 5"
+  - "Whg. 1"
+  - "Whg. 2"
+  - "Whg. 3"
+  - "Whg. 4"
+  - "Whg. 5" 

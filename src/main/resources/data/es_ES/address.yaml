@@ -1,0 +1,297 @@
+streets:
+  - Calle Mayor
+  - Calle del Sol
+  - Calle Gran Vía
+  - Calle Alcalá
+  - Calle Serrano
+  - Avenida Diagonal
+  - Calle Princesa
+  - Paseo de la Castellana
+  - Calle Velázquez
+  - Calle Goya
+  - Calle Preciados
+  - Rambla de Catalunya
+  - Calle Sierpes
+  - Paseo del Prado
+  - Calle Arenal
+  - Paseo Maritimo
+  - Calle Ferraz
+  - Avenida de América
+  - Calle Rosselló
+  - Calle Provença
+  - Calle Bailén
+  - Calle Valencia
+  - Calle Mallorca
+  - Paseo de Gracia
+  - Calle Aragón
+  - Calle Atocha
+  - Calle Toledo
+  - Calle Almagro
+  - Avenida del Paralelo
+  - Calle Hortaleza
+  - Calle Fuencarral
+  - Calle Carretas
+  - Plaza Mayor
+  - Plaza de España
+  - Plaza Catalunya
+  - Plaza del Sol
+  - Plaza de Castilla
+  - Gran Vía
+  - Ronda Sant Pere
+  - Calle Balmes
+
+street_suffixes:
+  - Calle
+  - Avenida
+  - Plaza
+  - Paseo
+  - Rambla
+  - Travesía
+  - Ronda
+  - Callejón
+  - Bulevar
+  - Vía
+  - Camino
+  - Carretera
+  - Pasaje
+  - Glorieta
+  - Alameda
+  - Bajada
+  - Costanilla
+  - Gran Vía
+  - Muelle
+  - Parque
+
+districts:
+  - Álava
+  - Albacete
+  - Alicante
+  - Almería
+  - Asturias
+  - Ávila
+  - Badajoz
+  - Barcelona
+  - Burgos
+  - Cáceres
+  - Cádiz
+  - Cantabria
+  - Castellón
+  - Ciudad Real
+  - Córdoba
+  - Cuenca
+  - Girona
+  - Granada
+  - Guadalajara
+  - Gipuzkoa
+  - Huelva
+  - Huesca
+  - Jaén
+  - A Coruña
+  - La Rioja
+  - Las Palmas
+  - León
+  - Lleida
+  - Lugo
+  - Madrid
+  - Málaga
+  - Murcia
+  - Navarra
+  - Ourense
+  - Palencia
+  - Pontevedra
+  - Salamanca
+  - Santa Cruz de Tenerife
+  - Segovia
+  - Sevilla
+  - Soria
+  - Tarragona
+  - Teruel
+  - Toledo
+  - Valencia
+  - Valladolid
+  - Vizcaya
+  - Zamora
+  - Zaragoza
+
+cities:
+  - Madrid
+  - Barcelona
+  - Valencia
+  - Sevilla
+  - Zaragoza
+  - Málaga
+  - Murcia
+  - Palma de Mallorca
+  - Las Palmas de Gran Canaria
+  - Bilbao
+  - Alicante
+  - Córdoba
+  - Valladolid
+  - Vigo
+  - Gijón
+  - A Coruña
+  - Granada
+  - Vitoria-Gasteiz
+  - Elche
+  - Oviedo
+  - Santa Cruz de Tenerife
+  - Badalona
+  - Cartagena
+  - Jerez de la Frontera
+  - Sabadell
+  - Móstoles
+  - Alcalá de Henares
+  - Pamplona
+  - Fuenlabrada
+  - Almería
+  - San Sebastián
+  - Leganés
+  - Santander
+  - Albacete
+  - Castellón de la Plana
+  - Alcorcón
+  - Getafe
+  - Burgos
+  - Salamanca
+  - Logroño
+
+countries:
+  - España
+  - Portugal
+  - Francia
+  - Alemania
+  - Italia
+  - Reino Unido
+  - Irlanda
+  - Bélgica
+  - Países Bajos
+  - Luxemburgo
+  - Suiza
+  - Austria
+  - Grecia
+  - Polonia
+  - Suecia
+  - Dinamarca
+  - Finlandia
+  - Noruega
+  - Rusia
+  - Estados Unidos
+  - Canadá
+  - México
+  - Brasil
+  - Argentina
+  - Chile
+  - Colombia
+  - Perú
+  - Venezuela
+  - Uruguay
+  - Paraguay
+  - Ecuador
+  - Bolivia
+  - Marruecos
+  - Argelia
+  - Túnez
+  - China
+  - Japón
+  - Corea del Sur
+  - India
+  - Australia
+
+postal_codes:
+  - "#####"
+
+states:
+  - Andalucía
+  - Cataluña
+  - Madrid
+  - Comunidad Valenciana
+  - Galicia
+  - Castilla y León
+  - País Vasco
+  - Castilla-La Mancha
+  - Canarias
+  - Región de Murcia
+  - Aragón
+  - Islas Baleares
+  - Extremadura
+  - Principado de Asturias
+  - Navarra
+  - Cantabria
+  - La Rioja
+  - Ceuta
+  - Melilla
+
+full_patterns:
+  - "{{street_patterns}}, {{cities}}, {{postal_codes}}, {{countries}}"
+  - "{{street_patterns}}, {{postal_codes}} {{cities}}"
+  - "{{street_patterns}}, {{cities}} ({{districts}}), {{postal_codes}}"
+  - "{{cities}}, {{postal_codes}}, {{street_patterns}}"
+  - "{{postal_codes}} {{cities}}, {{street_patterns}}"
+
+street_patterns:
+  - "{{streets}} {{building_number}}"
+  - "{{streets}}, {{building_number}}"
+  - "{{streets}} nº {{building_number}}"
+  - "{{streets}} num. {{building_number}}"
+  - "{{streets}} {{building_number}}, {{apartment}}"
+  - "{{streets}} {{building_number}}, {{building}}"
+  - "{{streets}} {{building_number}}, {{building}}, {{apartment}}"
+  - "{{streets}} {{building_number}} {{building}}"
+
+building_number:
+  - "1"
+  - "2"
+  - "3"
+  - "4"
+  - "5"
+  - "6"
+  - "7"
+  - "8"
+  - "9"
+  - "10"
+  - "11"
+  - "12"
+  - "13"
+  - "14"
+  - "15"
+  - "16"
+  - "17"
+  - "18"
+  - "19"
+  - "20"
+
+building:
+  - "Edificio A"
+  - "Edificio B"
+  - "Edificio C"
+  - "Bloque 1"
+  - "Bloque 2"
+  - "Bloque 3"
+  - "Escalera A"
+  - "Escalera B"
+  - "Escalera C"
+  - "Portal 1"
+  - "Portal 2"
+  - "Portal 3"
+
+apartment:
+  - "Piso 1"
+  - "Piso 2"
+  - "Piso 3"
+  - "Piso 4"
+  - "Piso 5"
+  - "1º"
+  - "2º"
+  - "3º"
+  - "4º"
+  - "5º"
+  - "Bajo"
+  - "Ático"
+  - "1º A"
+  - "1º B"
+  - "2º A"
+  - "2º B"
+  - "3º A"
+  - "3º B"
+  - "4º A"
+  - "4º B"

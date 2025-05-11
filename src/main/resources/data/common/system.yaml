@@ -1,0 +1,364 @@
+file_names:
+  - document
+  - report
+  - presentation
+  - spreadsheet
+  - image
+  - video
+  - audio
+  - archive
+  - backup
+  - log
+  - database
+  - script
+  - configuration
+  - template
+  - source
+  - binary
+  - library
+  - module
+  - package
+  - resource
+  - asset
+  - media
+  - content
+  - data
+  - metadata
+  - schema
+  - model
+  - view
+  - controller
+  - service
+  - repository
+  - interface
+  - implementation
+  - test
+  - benchmark
+  - profile
+  - cache
+  - session
+  - transaction
+  - queue
+  - message
+  - event
+  - notification
+  - security
+  - authentication
+  - authorization
+  - encryption
+  - certificate
+  - key
+  - token
+
+file_extensions:
+  - txt
+  - pdf
+  - docx
+  - xlsx
+  - pptx
+  - jpg
+  - png
+  - mp4
+  - mp3
+  - zip
+  - rar
+  - 7z
+  - tar
+  - gz
+  - bz2
+  - xz
+  - iso
+  - dmg
+  - exe
+  - msi
+  - deb
+  - rpm
+  - apk
+  - ipa
+  - jar
+  - war
+  - ear
+  - class
+  - java
+  - py
+  - js
+  - ts
+  - html
+  - css
+  - scss
+  - less
+  - json
+  - xml
+  - yaml
+  - yml
+  - ini
+  - conf
+  - cfg
+  - log
+  - csv
+  - tsv
+  - sql
+  - db
+  - dat
+  - bin
+
+directory_paths:
+  - /home/user/documents
+  - /var/log
+  - /tmp
+  - /usr/local/bin
+  - /etc
+  - /opt
+  - /mnt/data
+  - /backup
+  - /downloads
+  - /projects
+  - /home/user/pictures
+  - /home/user/music
+  - /home/user/videos
+  - /home/user/downloads
+  - /home/user/desktop
+  - /home/user/documents/work
+  - /home/user/documents/personal
+  - /var/www/html
+  - /var/lib/mysql
+  - /var/cache
+  - /usr/share
+  - /usr/local/share
+  - /usr/local/lib
+  - /usr/local/include
+  - /usr/local/etc
+  - /usr/local/var
+  - /usr/local/sbin
+  - /usr/local/games
+  - /usr/local/src
+  - /usr/local/man
+  - /usr/local/info
+  - /usr/local/doc
+  - /usr/local/examples
+  - /usr/local/tests
+  - /usr/local/benchmarks
+  - /usr/local/scripts
+  - /usr/local/tools
+  - /usr/local/plugins
+  - /usr/local/themes
+  - /usr/local/locale
+  - /usr/local/share/doc
+  - /usr/local/share/man
+  - /usr/local/share/info
+  - /usr/local/share/locale
+  - /usr/local/share/examples
+  - /usr/local/share/tests
+  - /usr/local/share/benchmarks
+  - /usr/local/share/scripts
+  - /usr/local/share/tools
+  - /usr/local/share/plugins
+
+mime_types:
+  - text/plain
+  - application/pdf
+  - application/msword
+  - application/vnd.ms-excel
+  - application/vnd.ms-powerpoint
+  - image/jpeg
+  - image/png
+  - video/mp4
+  - audio/mpeg
+  - application/zip
+  - application/x-rar-compressed
+  - application/x-7z-compressed
+  - application/x-tar
+  - application/gzip
+  - application/x-bzip2
+  - application/x-xz
+  - application/x-iso9660-image
+  - application/x-apple-diskimage
+  - application/x-msdownload
+  - application/x-msi
+  - application/vnd.debian.binary-package
+  - application/x-rpm
+  - application/vnd.android.package-archive
+  - application/x-ios-app
+  - application/java-archive
+  - application/x-webarchive
+  - application/x-ear
+  - application/java-vm
+  - text/x-java-source
+  - text/x-python
+  - application/javascript
+  - application/typescript
+  - text/html
+  - text/css
+  - text/x-scss
+  - text/x-less
+  - application/json
+  - application/xml
+  - application/x-yaml
+  - application/x-yaml
+  - text/plain
+  - text/plain
+  - text/plain
+  - text/plain
+  - text/plain
+  - text/csv
+  - text/tab-separated-values
+  - application/sql
+  - application/x-sqlite3
+  - application/octet-stream
+  - application/octet-stream
+
+common_file_types:
+  - Text Document
+  - PDF Document
+  - Word Document
+  - Excel Spreadsheet
+  - PowerPoint Presentation
+  - JPEG Image
+  - PNG Image
+  - MP4 Video
+  - MP3 Audio
+  - ZIP Archive
+  - RAR Archive
+  - 7-Zip Archive
+  - TAR Archive
+  - GZIP Archive
+  - BZIP2 Archive
+  - XZ Archive
+  - ISO Image
+  - DMG Image
+  - Executable
+  - Windows Installer
+  - Debian Package
+  - RPM Package
+  - Android Package
+  - iOS App
+  - Java Archive
+  - Web Archive
+  - Enterprise Archive
+  - Java Class
+  - Java Source
+  - Python Script
+  - JavaScript File
+  - TypeScript File
+  - HTML Document
+  - CSS Stylesheet
+  - SCSS Stylesheet
+  - LESS Stylesheet
+  - JSON Data
+  - XML Document
+  - YAML Document
+  - YAML Document
+  - Configuration File
+  - Configuration File
+  - Configuration File
+  - Log File
+  - CSV Data
+  - TSV Data
+  - SQL Script
+  - Database File
+  - Binary Data
+  - Binary Data
+
+common_file_extensions:
+  - .txt
+  - .pdf
+  - .docx
+  - .xlsx
+  - .pptx
+  - .jpg
+  - .png
+  - .mp4
+  - .mp3
+  - .zip
+  - .rar
+  - .7z
+  - .tar
+  - .gz
+  - .bz2
+  - .xz
+  - .iso
+  - .dmg
+  - .exe
+  - .msi
+  - .deb
+  - .rpm
+  - .apk
+  - .ipa
+  - .jar
+  - .war
+  - .ear
+  - .class
+  - .java
+  - .py
+  - .js
+  - .ts
+  - .html
+  - .css
+  - .scss
+  - .less
+  - .json
+  - .xml
+  - .yaml
+  - .yml
+  - .ini
+  - .conf
+  - .cfg
+  - .log
+  - .csv
+  - .tsv
+  - .sql
+  - .db
+  - .dat
+  - .bin
+
+common_file_names:
+  - README
+  - LICENSE
+  - CHANGELOG
+  - config
+  - settings
+  - backup
+  - log
+  - data
+  - index
+  - main
+  - application
+  - server
+  - client
+  - database
+  - schema
+  - model
+  - view
+  - controller
+  - service
+  - repository
+  - interface
+  - implementation
+  - test
+  - benchmark
+  - profile
+  - cache
+  - session
+  - transaction
+  - queue
+  - message
+  - event
+  - notification
+  - security
+  - authentication
+  - authorization
+  - encryption
+  - certificate
+  - key
+  - token
+  - user
+  - admin
+  - system
+  - network
+  - protocol
+  - api
+  - sdk
+  - library
+  - framework
+  - plugin
+  - theme 
