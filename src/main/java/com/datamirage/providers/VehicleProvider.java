@@ -176,5 +176,14 @@ public class VehicleProvider {
         System.out.println("Year: " + vehicleProvider.year());
         System.out.println("License Plate: " + vehicleProvider.licensePlate());
         System.out.println("VIN: " + vehicleProvider.vin());
+        System.out.println("Fuel: " + vehicleProvider.fuel());
+        System.out.println("Vehicle: " + vehicleProvider.vehicle());
+        System.out.println("Manufacturer: " + vehicleProvider.manufacturer());
+        System.out.println("Vehicle Name: " + vehicleProvider.vehicle());
+        System.out.println("Vehicle Model: " + vehicleProvider.model());
+        System.out.println("Vehicle Type: " + vehicleProvider.type());
+        System.out.println("Vehicle Fuel: " + vehicleProvider.fuel());
+        System.out.println("Vehicle VIN: " + vehicleProvider.licensePlate());
+
     }
 } 

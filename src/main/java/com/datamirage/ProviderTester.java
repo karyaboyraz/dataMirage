@@ -257,8 +257,8 @@ public class ProviderTester {
         System.out.println("--- AnimalProvider ---");
         AnimalProvider provider = dataMirage.animal();
         
-        logMethodResult(provider, "type");
-        logMethodResult(provider, "name");
+        logMethodResult(provider, "animal");
+        logMethodResult(provider, "animalType");
         
         System.out.println();
     }
@@ -267,8 +267,8 @@ public class ProviderTester {
         System.out.println("--- ScienceProvider ---");
         ScienceProvider provider = dataMirage.science();
         
-        logMethodResult(provider, "element");
-        logMethodResult(provider, "planet");
+        logMethodResult(provider, "chemicalElement");
+        logMethodResult(provider, "chemicalSymbol");
         
         System.out.println();
     }
@@ -280,7 +280,7 @@ public class ProviderTester {
         logMethodResult(provider, "branch");
         logMethodResult(provider, "commitSha");
         logMethodResult(provider, "commitMessage");
-        logMethodResult(provider, "repositoryName");
+        logMethodResult(provider, "commitEntry");
         
         System.out.println();
     }

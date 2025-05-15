@@ -13,7 +13,7 @@ public class DataMirageExample {
         DataMirage dataMirageTR = new DataMirage();
         
         // Create a DataMirage instance with English locale
-        DataMirage dataMirageEN = new DataMirage(DataMirageLocale.EN_US);
+        DataMirage dataMirageEN = new DataMirage(DataMirageLocale.TR_TR);
         
         // Generate and print person data in Turkish
         System.out.println("Turkish Person Example:");
