@@ -1,9 +1,10 @@
 # DataMirage
 
 [![Java Version](https://img.shields.io/badge/java-17+-blue.svg)](https://www.oracle.com/java/technologies/downloads/)
-[![Maven Central](https://img.shields.io/maven-central/v/com.datamirage/datamirage.svg)](https://search.maven.org/artifact/com.datamirage/datamirage)
 [![JitPack](https://jitpack.io/v/karyaboyraz/datamirage.svg)](https://jitpack.io/#karyaboyraz/datamirage)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+
+**[📚 Detailed Explanation of All Providers](DataMirage-Providers-Guide.md)**
 
 DataMirage is a comprehensive Java library for generating realistic fake data. It provides a wide range of data providers to generate various types of fake data for testing, development, and demonstration purposes.
 
@@ -16,6 +17,7 @@ DataMirage is a comprehensive Java library for generating realistic fake data. I
 - [Import](#import)
 - [Usage](#usage)
 - [Available Providers](#available-providers)
+- [📚 DataMirage Providers Guide](DataMirage-Providers-Guide.md)
 - [Troubleshooting](#troubleshooting)
 - [Contributing](#contributing)
 - [License](#license)
@@ -284,7 +286,7 @@ This is particularly useful for:
 
 ## Available Providers
 
-For a detailed explanation of all available providers and their methods, please see [DataMirage Providers Guide](DataMirage-Providers-Guide.md).
+**[📚 Complete Guide to All Data Providers and Their Methods](DataMirage-Providers-Guide.md)**
 
 ### Address Provider
 ```java
