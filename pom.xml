@@ -6,7 +6,7 @@
 
     <groupId>com.datamirage</groupId>
     <artifactId>datamirage</artifactId>
-    <version>1.4.2</version>
+    <version>1.0.0</version>
     <name>DataMirage</name>
     <description>A simple and efficient fake data generator for Java applications with multi-language support</description>
 
@@ -143,4 +143,4 @@
             </plugin>
         </plugins>
     </build>
-</project>
+</project> 

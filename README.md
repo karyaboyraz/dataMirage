@@ -84,7 +84,7 @@ Add the following dependency to your `pom.xml`:
 <dependency>
     <groupId>com.datamirage</groupId>
     <artifactId>datamirage</artifactId>
-    <version>1.4.2</version>
+    <version>1.0.0</version>
 </dependency>
 ```
 
@@ -107,7 +107,7 @@ Then add the dependency:
 <dependency>
     <groupId>com.datamirage</groupId>
     <artifactId>datamirage</artifactId>
-    <version>1.4.2</version>
+    <version>1.0.0</version>
 </dependency>
 ```
 
@@ -129,7 +129,7 @@ Then add the dependency:
 <dependency>
     <groupId>com.github.karyaboyraz</groupId>
     <artifactId>datamirage</artifactId>
-    <version>v1.4.2</version>
+    <version>v1.0.0</version>
 </dependency>
 ```
 
@@ -139,7 +139,7 @@ Then add the dependency:
 Add the following dependency to your `build.gradle`:
 
 ```gradle
-implementation 'com.datamirage:datamirage:1.4.2'
+implementation 'com.datamirage:datamirage:1.0.0'
 ```
 
 #### Option 2: From GitHub Packages
@@ -162,7 +162,7 @@ repositories {
 Then add the dependency:
 
 ```gradle
-implementation 'com.datamirage:datamirage:1.4.2'
+implementation 'com.datamirage:datamirage:1.0.0'
 ```
 
 #### Option 3: From JitPack
@@ -178,7 +178,7 @@ repositories {
 Then add the dependency:
 
 ```gradle
-implementation 'com.github.karyaboyraz:datamirage:v1.4.2'
+implementation 'com.github.karyaboyraz:datamirage:v1.0.0'
 ```
 
 ## Import
