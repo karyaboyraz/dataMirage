@@ -6,7 +6,7 @@
 
     <groupId>io.github.karyaboyraz</groupId>
     <artifactId>datamirage</artifactId>
-    <version>1.0.8</version>
+    <version>1.0.9</version>
     <packaging>jar</packaging>
     <name>DataMirage</name>
     <description>A simple and efficient fake data generator for Java applications with multi-language support</description>
