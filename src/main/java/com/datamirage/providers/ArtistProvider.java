@@ -1,30 +1,34 @@
 package com.datamirage.providers;
 
-import com.datamirage.util.DataLoader;
-import com.datamirage.util.LazyLoader;
+import com.datamirage.util.DataContext;
 import com.datamirage.util.RandomService;
-
-import java.util.List;
 
 /**
  * A provider class for generating artist-related data.
  * This class provides methods to generate various artist information such as
  * names, genres, nationalities, and artworks.
  */
-public class ArtistProvider {
-    private final RandomService random;
-    private List<String> artistName;
-    private List<String> artistGenre;
-    private List<String> artistNationality;
-    private List<String> artistArtwork;
+public class ArtistProvider extends AbstractProvider {
+
+    /**
+     * Constructs a new ArtistProvider with the specified RandomService and DataContext.
+     *
+     * @param random The RandomService instance to use for generating random values
+     * @param context The DataContext instance for locale-specific data loading
+     */
+    public ArtistProvider(RandomService random, DataContext context) {
+        super(random, context);
+    }
 
     /**
      * Constructs a new ArtistProvider with the specified RandomService.
      *
      * @param random The RandomService instance to use for generating random values
+     * @deprecated Use {@link #ArtistProvider(RandomService, DataContext)} instead
      */
+    @Deprecated
     public ArtistProvider(RandomService random) {
-        this.random = random;
+        super(random);
     }
 
     /**
@@ -33,8 +37,7 @@ public class ArtistProvider {
      * @return A randomly selected artist name
      */
     public String name() {
-        artistName = LazyLoader.load("artistName", () -> DataLoader.getListData("artist", "names"));
-        return random.randomElement(artistName);
+        return randomFromLocaleList("artistName", "artist", "names");
     }
 
     /**
@@ -43,8 +46,7 @@ public class ArtistProvider {
      * @return A randomly selected artist genre
      */
     public String genre() {
-        artistGenre = LazyLoader.load("artistGenre", () -> DataLoader.getListData("artist", "genres"));
-        return random.randomElement(artistGenre);
+        return randomFromLocaleList("artistGenre", "artist", "genres");
     }
 
     /**
@@ -53,8 +55,7 @@ public class ArtistProvider {
      * @return A randomly selected artist nationality
      */
     public String nationality() {
-        artistNationality = LazyLoader.load("artistNationality", () -> DataLoader.getListData("artist", "nationalities"));
-        return random.randomElement(artistNationality);
+        return randomFromLocaleList("artistNationality", "artist", "nationalities");
     }
 
     /**
@@ -63,8 +64,7 @@ public class ArtistProvider {
      * @return A randomly selected artwork name
      */
     public String artwork() {
-        artistArtwork = LazyLoader.load("artistArtwork", () -> DataLoader.getListData("artist", "artworks"));
-        return random.randomElement(artistArtwork);
+        return randomFromLocaleList("artistArtwork", "artist", "artworks");
     }
 
     /**
@@ -73,6 +73,7 @@ public class ArtistProvider {
      *
      * @param args Command line arguments (not used)
      */
+    @SuppressWarnings("deprecation")
     public static void main(String[] args) {
         ArtistProvider artistProvider = new ArtistProvider(new RandomService());
         System.out.println("Random Artist Name: " + artistProvider.name());

@@ -2,16 +2,24 @@ package com.datamirage;
 
 import com.datamirage.locale.DataMirageLocale;
 import com.datamirage.providers.*;
+import com.datamirage.util.BatchGenerator;
+import com.datamirage.util.DataContext;
+import com.datamirage.util.DataExporter;
 import com.datamirage.util.DataLoader;
 import com.datamirage.util.RandomService;
+
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * DataMirage is a comprehensive fake data generation library that provides various providers
  * for generating realistic fake data in different categories.
- * 
+ *
  * <p>This class serves as the main entry point for accessing all fake data providers.
  * Each provider is responsible for generating specific types of fake data.</p>
- * 
+ *
+ * <p>Providers are lazily initialized on first access for better startup performance.</p>
+ *
  * <p>Example usage:
  * <pre>
  * {@code
@@ -23,36 +31,12 @@ import com.datamirage.util.RandomService;
  * </p>
  */
 public class DataMirage {
+    private final DataMirageLocale locale;
+    private final DataContext context;
     private final RandomService random;
-    private final AddressProvider addressProvider;
-    private final NameProvider nameProvider;
-    private final CompanyProvider companyProvider;
-    private final InternetProvider internetProvider;
-    private final BookProvider bookProvider;
-    private final ColorProvider colorProvider;
-    private final FoodProvider foodProvider;
-    private final MusicProvider musicProvider;
-    private final PhoneNumberProvider phoneNumberProvider;
-    private final WeatherProvider weatherProvider;
-    private final FilmProvider filmProvider;
-    private final AnimalProvider animalProvider;
-    private final VehicleProvider vehicleProvider;
-    private final ScienceProvider scienceProvider;
-    private final SystemProvider systemProvider;
-    private final GitProvider gitProvider;
-    private final CryptoProvider cryptoProvider;
-    private final CommerceProvider commerceProvider;
-    private final CodeProvider codeProvider;
-    private final DateProvider dateProvider;
-    private final FinanceProvider financeProvider;
-    private final ArtistProvider artistProvider;
-    private final AppProvider appProvider;
-    private final HelpersProvider helpersProvider;
-    private final BoolProvider boolProvider;
-    private final ImageProvider imageProvider;
-    private final NumberProvider numberProvider;
-    private final StringProvider stringProvider;
-    private final WordProvider wordProvider;
+
+    // Lazy-loaded provider cache
+    private final Map<Class<?>, Object> providers = new ConcurrentHashMap<>();
 
     /**
      * Constructs a new DataMirage instance with the default locale (Turkish).
@@ -67,38 +51,46 @@ public class DataMirage {
      * @param locale The locale to use for generating localized fake data
      */
     public DataMirage(DataMirageLocale locale) {
-        this.random = new RandomService();
-        this.addressProvider = new AddressProvider(random);
-        this.nameProvider = new NameProvider(random);
-        this.companyProvider = new CompanyProvider(random);
-        this.internetProvider = new InternetProvider(random);
-        this.bookProvider = new BookProvider(random);
-        this.colorProvider = new ColorProvider(random);
-        this.foodProvider = new FoodProvider(random);
-        this.musicProvider = new MusicProvider(random);
-        this.phoneNumberProvider = new PhoneNumberProvider(random);
-        this.weatherProvider = new WeatherProvider(random);
-        this.filmProvider = new FilmProvider(random);
-        this.animalProvider = new AnimalProvider(random);
-        this.vehicleProvider = new VehicleProvider(random);
-        this.scienceProvider = new ScienceProvider(random);
-        this.systemProvider = new SystemProvider(random);
-        this.gitProvider = new GitProvider(random);
-        this.cryptoProvider = new CryptoProvider(random);
-        this.commerceProvider = new CommerceProvider(random);
-        this.codeProvider = new CodeProvider(random);
-        this.dateProvider = new DateProvider(random);
-        this.financeProvider = new FinanceProvider(random);
-        this.artistProvider = new ArtistProvider(random);
-        this.appProvider = new AppProvider(random);
-        this.helpersProvider = new HelpersProvider(random);
-        this.boolProvider = new BoolProvider(random);
-        this.imageProvider = new ImageProvider();
-        this.numberProvider = new NumberProvider(random);
-        this.stringProvider = new StringProvider(random);
-        this.wordProvider = new WordProvider(random);
+        this(locale, null);
+    }
 
+    /**
+     * Constructs a new DataMirage instance with the specified locale and seed.
+     * When a seed is provided, the random number generator will produce reproducible results.
+     *
+     * @param locale The locale to use for generating localized fake data
+     * @param seed The seed for the random number generator (null for non-deterministic)
+     */
+    @SuppressWarnings("deprecation")
+    public DataMirage(DataMirageLocale locale, Long seed) {
+        this.locale = locale;
+        this.context = new DataContext(locale);
+        this.random = seed != null ? new RandomService(seed) : new RandomService();
+
+        // Maintain backward compatibility for code using DataLoader directly
         DataLoader.setLocale(locale);
+    }
+
+    /**
+     * Gets or creates a provider instance lazily.
+     *
+     * @param <T> The provider type
+     * @param providerClass The class of the provider
+     * @param factory A factory function to create the provider
+     * @return The provider instance
+     */
+    @SuppressWarnings("unchecked")
+    private <T> T getOrCreateProvider(Class<T> providerClass, java.util.function.Supplier<T> factory) {
+        return (T) providers.computeIfAbsent(providerClass, k -> factory.get());
+    }
+
+    /**
+     * Returns the locale associated with this DataMirage instance.
+     *
+     * @return The locale
+     */
+    public DataMirageLocale getLocale() {
+        return locale;
     }
 
     /**
@@ -107,7 +99,7 @@ public class DataMirage {
      * @return The address provider instance
      */
     public AddressProvider address() {
-        return addressProvider;
+        return getOrCreateProvider(AddressProvider.class, () -> new AddressProvider(random, context));
     }
 
     /**
@@ -116,7 +108,7 @@ public class DataMirage {
      * @return The name provider instance
      */
     public NameProvider name() {
-        return nameProvider;
+        return getOrCreateProvider(NameProvider.class, () -> new NameProvider(random, context));
     }
 
     /**
@@ -125,7 +117,7 @@ public class DataMirage {
      * @return The company provider instance
      */
     public CompanyProvider company() {
-        return companyProvider;
+        return getOrCreateProvider(CompanyProvider.class, () -> new CompanyProvider(random, context));
     }
 
     /**
@@ -134,7 +126,7 @@ public class DataMirage {
      * @return The internet provider instance
      */
     public InternetProvider internet() {
-        return internetProvider;
+        return getOrCreateProvider(InternetProvider.class, () -> new InternetProvider(random, context));
     }
 
     /**
@@ -143,7 +135,7 @@ public class DataMirage {
      * @return The book provider instance
      */
     public BookProvider book() {
-        return bookProvider;
+        return getOrCreateProvider(BookProvider.class, () -> new BookProvider(random, context));
     }
 
     /**
@@ -152,7 +144,7 @@ public class DataMirage {
      * @return The color provider instance
      */
     public ColorProvider color() {
-        return colorProvider;
+        return getOrCreateProvider(ColorProvider.class, () -> new ColorProvider(random, context));
     }
 
     /**
@@ -161,7 +153,7 @@ public class DataMirage {
      * @return The food provider instance
      */
     public FoodProvider food() {
-        return foodProvider;
+        return getOrCreateProvider(FoodProvider.class, () -> new FoodProvider(random, context));
     }
 
     /**
@@ -170,7 +162,7 @@ public class DataMirage {
      * @return The music provider instance
      */
     public MusicProvider music() {
-        return musicProvider;
+        return getOrCreateProvider(MusicProvider.class, () -> new MusicProvider(random, context));
     }
 
     /**
@@ -179,7 +171,7 @@ public class DataMirage {
      * @return The phone number provider instance
      */
     public PhoneNumberProvider phoneNumber() {
-        return phoneNumberProvider;
+        return getOrCreateProvider(PhoneNumberProvider.class, () -> new PhoneNumberProvider(random, context));
     }
 
     /**
@@ -188,7 +180,7 @@ public class DataMirage {
      * @return The weather provider instance
      */
     public WeatherProvider weather() {
-        return weatherProvider;
+        return getOrCreateProvider(WeatherProvider.class, () -> new WeatherProvider(random, context));
     }
 
     /**
@@ -197,7 +189,7 @@ public class DataMirage {
      * @return The film provider instance
      */
     public FilmProvider film() {
-        return filmProvider;
+        return getOrCreateProvider(FilmProvider.class, () -> new FilmProvider(random, context));
     }
 
     /**
@@ -206,7 +198,7 @@ public class DataMirage {
      * @return The animal provider instance
      */
     public AnimalProvider animal() {
-        return animalProvider;
+        return getOrCreateProvider(AnimalProvider.class, () -> new AnimalProvider(random, context));
     }
 
     /**
@@ -215,7 +207,7 @@ public class DataMirage {
      * @return The vehicle provider instance
      */
     public VehicleProvider vehicle() {
-        return vehicleProvider;
+        return getOrCreateProvider(VehicleProvider.class, () -> new VehicleProvider(random, context));
     }
 
     /**
@@ -224,7 +216,7 @@ public class DataMirage {
      * @return The science provider instance
      */
     public ScienceProvider science() {
-        return scienceProvider;
+        return getOrCreateProvider(ScienceProvider.class, () -> new ScienceProvider(random, context));
     }
 
     /**
@@ -233,7 +225,7 @@ public class DataMirage {
      * @return The system provider instance
      */
     public SystemProvider system() {
-        return systemProvider;
+        return getOrCreateProvider(SystemProvider.class, () -> new SystemProvider(random, context));
     }
 
     /**
@@ -242,7 +234,7 @@ public class DataMirage {
      * @return The git provider instance
      */
     public GitProvider git() {
-        return gitProvider;
+        return getOrCreateProvider(GitProvider.class, () -> new GitProvider(random, context));
     }
 
     /**
@@ -251,7 +243,7 @@ public class DataMirage {
      * @return The crypto provider instance
      */
     public CryptoProvider crypto() {
-        return cryptoProvider;
+        return getOrCreateProvider(CryptoProvider.class, () -> new CryptoProvider(random, context));
     }
 
     /**
@@ -260,7 +252,7 @@ public class DataMirage {
      * @return The commerce provider instance
      */
     public CommerceProvider commerce() {
-        return commerceProvider;
+        return getOrCreateProvider(CommerceProvider.class, () -> new CommerceProvider(random, context));
     }
 
     /**
@@ -269,7 +261,7 @@ public class DataMirage {
      * @return The code provider instance
      */
     public CodeProvider code() {
-        return codeProvider;
+        return getOrCreateProvider(CodeProvider.class, () -> new CodeProvider(random, context));
     }
 
     /**
@@ -278,7 +270,7 @@ public class DataMirage {
      * @return The date provider instance
      */
     public DateProvider date() {
-        return dateProvider;
+        return getOrCreateProvider(DateProvider.class, () -> new DateProvider(random));
     }
 
     /**
@@ -287,7 +279,7 @@ public class DataMirage {
      * @return The finance provider instance
      */
     public FinanceProvider finance() {
-        return financeProvider;
+        return getOrCreateProvider(FinanceProvider.class, () -> new FinanceProvider(random, context));
     }
 
     /**
@@ -296,7 +288,7 @@ public class DataMirage {
      * @return The artist provider instance
      */
     public ArtistProvider artist() {
-        return artistProvider;
+        return getOrCreateProvider(ArtistProvider.class, () -> new ArtistProvider(random, context));
     }
 
     /**
@@ -305,7 +297,7 @@ public class DataMirage {
      * @return The app provider instance
      */
     public AppProvider app() {
-        return appProvider;
+        return getOrCreateProvider(AppProvider.class, () -> new AppProvider(random, context));
     }
 
     /**
@@ -314,7 +306,7 @@ public class DataMirage {
      * @return The helpers provider instance
      */
     public HelpersProvider helpers() {
-        return helpersProvider;
+        return getOrCreateProvider(HelpersProvider.class, () -> new HelpersProvider(random));
     }
 
     /**
@@ -323,7 +315,7 @@ public class DataMirage {
      * @return The bool provider instance
      */
     public BoolProvider bool() {
-        return boolProvider;
+        return getOrCreateProvider(BoolProvider.class, () -> new BoolProvider(random));
     }
 
     /**
@@ -332,7 +324,7 @@ public class DataMirage {
      * @return The image provider instance
      */
     public ImageProvider image() {
-        return imageProvider;
+        return getOrCreateProvider(ImageProvider.class, ImageProvider::new);
     }
 
     /**
@@ -341,7 +333,7 @@ public class DataMirage {
      * @return The number provider instance
      */
     public NumberProvider number() {
-        return numberProvider;
+        return getOrCreateProvider(NumberProvider.class, () -> new NumberProvider(random));
     }
 
     /**
@@ -350,7 +342,7 @@ public class DataMirage {
      * @return The string provider instance
      */
     public StringProvider string() {
-        return stringProvider;
+        return getOrCreateProvider(StringProvider.class, () -> new StringProvider(random));
     }
 
     /**
@@ -359,6 +351,33 @@ public class DataMirage {
      * @return The word provider instance
      */
     public WordProvider word() {
-        return wordProvider;
+        return getOrCreateProvider(WordProvider.class, () -> new WordProvider(random, context));
+    }
+
+    /**
+     * Creates a new DataMirageBuilder for fluent configuration.
+     *
+     * @return A new DataMirageBuilder instance
+     */
+    public static DataMirageBuilder builder() {
+        return new DataMirageBuilder();
+    }
+
+    /**
+     * Returns a new DataExporter for exporting generated data to JSON format.
+     *
+     * @return A new DataExporter instance
+     */
+    public DataExporter exporter() {
+        return new DataExporter();
+    }
+
+    /**
+     * Returns a new BatchGenerator for generating batches of fake data.
+     *
+     * @return A new BatchGenerator instance
+     */
+    public BatchGenerator batch() {
+        return new BatchGenerator();
     }
 } 

@@ -1,16 +1,14 @@
 package com.datamirage.providers;
 
-import com.datamirage.util.DataLoader;
+import com.datamirage.util.DataContext;
 import com.datamirage.util.RandomService;
-import com.datamirage.util.LazyLoader;
-import java.util.List;
 
 /**
  * A provider class for generating weather-related data.
  * This class provides methods to generate various weather information such as
  * temperature, wind speed, wind direction, humidity, and weather descriptions.
  */
-public class WeatherProvider {
+public class WeatherProvider extends AbstractProvider {
     private static final int DEFAULT_MIN_TEMP_C = -30;
     private static final int DEFAULT_MAX_TEMP_C = 60;
     private static final int DEFAULT_MIN_TEMP_F = -22;
@@ -25,17 +23,25 @@ public class WeatherProvider {
     private static final String KM_PARAM = " km/h";
     private static final String MPH_PARAM = " mph";
 
-    private final RandomService random;
-    private List<String> descriptions;
-    private List<String> windDirections;
+    /**
+     * Constructs a new WeatherProvider with the specified RandomService and DataContext.
+     *
+     * @param random The RandomService instance to use for generating random values
+     * @param context The DataContext instance for locale-specific data loading
+     */
+    public WeatherProvider(RandomService random, DataContext context) {
+        super(random, context);
+    }
 
     /**
      * Constructs a new WeatherProvider with the specified RandomService.
      *
      * @param random The RandomService instance to use for generating random values
+     * @deprecated Use {@link #WeatherProvider(RandomService, DataContext)} instead
      */
+    @Deprecated
     public WeatherProvider(RandomService random) {
-        this.random = random;
+        super(random);
     }
 
     /**
@@ -44,8 +50,7 @@ public class WeatherProvider {
      * @return A random weather description as a string
      */
     public String getDescription() {
-        descriptions = LazyLoader.load("weatherDescriptions", () -> DataLoader.getListData("weather", "descriptions"));
-        return random.randomElement(descriptions);
+        return randomFromLocaleList("weatherDescriptions", "weather", "descriptions");
     }
 
     /**
@@ -106,8 +111,7 @@ public class WeatherProvider {
      * @return A random wind direction as a string
      */
     public String getWindDirection() {
-        windDirections = LazyLoader.load("weatherWindDirections", () -> DataLoader.getListData("weather", "wind_directions"));
-        return random.randomElement(windDirections);
+        return randomFromLocaleList("weatherWindDirections", "weather", "wind_directions");
     }
 
     /**
@@ -211,6 +215,7 @@ public class WeatherProvider {
      *
      * @param args Command line arguments (not used)
      */
+    @SuppressWarnings("deprecation")
     public static void main(String[] args) {
         WeatherProvider weatherProvider = new WeatherProvider(new RandomService());
         System.out.println("Temperature (C): " + weatherProvider.temperatureCelsius());

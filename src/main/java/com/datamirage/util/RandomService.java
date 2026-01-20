@@ -2,38 +2,49 @@ package com.datamirage.util;
 
 import java.util.List;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * A utility class that provides various random data generation methods.
  * This class serves as a wrapper around Java's Random class with additional functionality
  * for generating random numbers, strings, and selecting random elements from collections.
+ *
+ * <p>Thread-safety: When constructed without a seed, this class uses ThreadLocalRandom
+ * for better performance in concurrent scenarios. When constructed with a seed (for
+ * reproducibility), it falls back to a synchronized Random instance.</p>
  */
 public class RandomService {
     private final Random random;
+    private final boolean useThreadLocal;
 
     /**
      * Constructs a new RandomService with a random seed.
+     * This constructor uses ThreadLocalRandom for better concurrent performance.
      */
     public RandomService() {
-        this.random = new Random();
+        this.random = null;
+        this.useThreadLocal = true;
     }
 
     /**
      * Constructs a new RandomService with the specified seed.
+     * This constructor uses a synchronized Random for reproducibility.
      *
      * @param seed The seed value for the random number generator
      */
     public RandomService(long seed) {
         this.random = new Random(seed);
+        this.useThreadLocal = false;
     }
 
     /**
      * Returns the underlying Random instance.
+     * Note: When using ThreadLocalRandom, this returns the current thread's instance.
      *
      * @return The Random instance used by this service
      */
     public Random getRandom() {
-        return random;
+        return useThreadLocal ? ThreadLocalRandom.current() : random;
     }
 
     /**
@@ -44,6 +55,9 @@ public class RandomService {
      * @return A random integer between min and max
      */
     public int nextInt(int min, int max) {
+        if (useThreadLocal) {
+            return ThreadLocalRandom.current().nextInt(min, max + 1);
+        }
         return random.nextInt(max - min + 1) + min;
     }
 
@@ -55,6 +69,9 @@ public class RandomService {
      * @return A random double between min and max
      */
     public double nextDouble(double min, double max) {
+        if (useThreadLocal) {
+            return ThreadLocalRandom.current().nextDouble(min, max);
+        }
         return min + (max - min) * random.nextDouble();
     }
 
@@ -64,6 +81,9 @@ public class RandomService {
      * @return A random boolean value
      */
     public boolean nextBoolean() {
+        if (useThreadLocal) {
+            return ThreadLocalRandom.current().nextBoolean();
+        }
         return random.nextBoolean();
     }
 
@@ -79,6 +99,9 @@ public class RandomService {
         if (list == null || list.isEmpty()) {
             throw new IllegalArgumentException("List cannot be null or empty");
         }
+        if (useThreadLocal) {
+            return list.get(ThreadLocalRandom.current().nextInt(list.size()));
+        }
         return list.get(random.nextInt(list.size()));
     }
 
@@ -93,6 +116,9 @@ public class RandomService {
         if (array == null || array.length == 0) {
             return null;
         }
+        if (useThreadLocal) {
+            return array[ThreadLocalRandom.current().nextInt(array.length)];
+        }
         return array[random.nextInt(array.length)];
     }
 
@@ -106,13 +132,14 @@ public class RandomService {
         if (pattern == null) {
             return null;
         }
+        Random rnd = getRandom();
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < pattern.length(); i++) {
             char c = pattern.charAt(i);
             if (c == '?') {
-                result.append((char) (random.nextInt(26) + 'A'));
+                result.append((char) (rnd.nextInt(26) + 'A'));
             } else if (c == '#') {
-                result.append(random.nextInt(10));
+                result.append(rnd.nextInt(10));
             } else {
                 result.append(c);
             }
@@ -131,11 +158,11 @@ public class RandomService {
         if (text == null) {
             throw new IllegalArgumentException("Text cannot be null");
         }
-
+        Random rnd = getRandom();
         StringBuilder result = new StringBuilder();
         for (char c : text.toCharArray()) {
             if (c == '#') {
-                result.append(random.nextInt(10));
+                result.append(rnd.nextInt(10));
             } else {
                 result.append(c);
             }
@@ -153,11 +180,12 @@ public class RandomService {
         if (pattern == null) {
             return null;
         }
+        Random rnd = getRandom();
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < pattern.length(); i++) {
             char c = pattern.charAt(i);
             if (c == '?') {
-                result.append((char) (random.nextInt(26) + 'A'));
+                result.append((char) (rnd.nextInt(26) + 'A'));
             } else {
                 result.append(c);
             }
@@ -175,13 +203,14 @@ public class RandomService {
         if (pattern == null) {
             return null;
         }
+        Random rnd = getRandom();
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < pattern.length(); i++) {
             char c = pattern.charAt(i);
             if (c == '?') {
-                result.append((char) (random.nextInt(26) + 'A'));
+                result.append((char) (rnd.nextInt(26) + 'A'));
             } else if (c == '#') {
-                result.append(random.nextInt(10));
+                result.append(rnd.nextInt(10));
             } else {
                 result.append(c);
             }
@@ -205,6 +234,7 @@ public class RandomService {
             throw new IllegalArgumentException("Length must be greater than 0");
         }
 
+        Random rnd = getRandom();
         StringBuilder result = new StringBuilder();
         String numbers = "0123456789";
         String uppercaseLetters = "ABCDEFGHJKLMNPRSTUVWXYZ";
@@ -230,7 +260,7 @@ public class RandomService {
         }
 
         for (int i = 0; i < length; i++) {
-            result.append(validChars.charAt(random.nextInt(validChars.length())));
+            result.append(validChars.charAt(rnd.nextInt(validChars.length())));
         }
 
         return result.toString();

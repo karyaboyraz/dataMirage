@@ -4,6 +4,9 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import com.datamirage.locale.DataMirageLocale;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Collections;
@@ -16,8 +19,14 @@ import java.util.LinkedHashMap;
  * A utility class for loading and caching YAML data files.
  * This class provides functionality to load data from YAML files based on the current locale
  * and cache the loaded data for better performance.
+ *
+ * @deprecated Use {@link DataContext} instead for instance-based locale management.
+ *             This class uses global state which causes locale mixing when multiple
+ *             DataMirage instances with different locales are used.
  */
+@Deprecated
 public final class DataLoader {
+    private static final Logger logger = LoggerFactory.getLogger(DataLoader.class);
     private static final ObjectMapper objectMapper = new ObjectMapper(new YAMLFactory());
     private static final Map<String, Map<String, Object>> dataCache = new ConcurrentHashMap<>();
     private static final Map<String, Map<String, Object>> localeSpecificCache = new ConcurrentHashMap<>();
@@ -39,11 +48,18 @@ public final class DataLoader {
      * This method also clears the data cache to ensure fresh data is loaded for the new locale.
      *
      * @param locale The new locale to set
+     * @deprecated Use {@link DataContext} instead. This method modifies global state
+     *             which affects all DataMirage instances.
      */
+    @Deprecated
+    @SuppressWarnings("deprecation")
     public static void setLocale(DataMirageLocale locale) {
+        logger.debug("Setting locale from {} to {}", currentLocale, locale);
         currentLocale = locale;
         dataCache.clear();
         localeSpecificCache.clear();
+        LazyLoader.clearCache();
+        logger.debug("Cache cleared for locale change");
     }
 
     /**
@@ -130,6 +146,7 @@ public final class DataLoader {
     private static Map<String, Object> loadYamlData(String category) {
         String cacheKey = currentLocale.getCode() + "/" + category;
         return dataCache.computeIfAbsent(cacheKey, key -> {
+            logger.debug("Loading data for category '{}' with locale '{}'", category, currentLocale);
             Map<String, Object> mergedData = new LinkedHashMap<>();
 
             // Load common data first
@@ -139,8 +156,9 @@ public final class DataLoader {
                 try {
                     Map<String, Object> commonData = objectMapper.readValue(commonIs, new TypeReference<>() {});
                     deepMerge(mergedData, commonData);
+                    logger.trace("Loaded common data from {}", commonPath);
                 } catch (IOException e) {
-                    System.out.println("Error loading common data from " + commonPath + ": " + e.getMessage());
+                    logger.warn("Error loading common data from {}: {}", commonPath, e.getMessage());
                 }
             }
 
@@ -151,15 +169,17 @@ public final class DataLoader {
                 try {
                     Map<String, Object> localeData = objectMapper.readValue(localeIs, new TypeReference<>() {});
                     deepMerge(mergedData, localeData);
+                    logger.trace("Loaded locale data from {}", localePath);
                 } catch (IOException e) {
-                    System.out.println("Error loading locale data from " + localePath + ": " + e.getMessage());
+                    logger.warn("Error loading locale data from {}: {}", localePath, e.getMessage());
                 }
             }
 
             if (mergedData.isEmpty()) {
-                System.out.println("Resource not found in both: " + localePath + " and " + commonPath);
+                logger.error("Resource not found in both: {} and {}", localePath, commonPath);
                 throw new RuntimeException("Data file not found: " + category);
             }
+            logger.debug("Successfully loaded {} keys for category '{}'", mergedData.size(), category);
             return mergedData;
         });
     }
@@ -180,7 +200,7 @@ public final class DataLoader {
                 try {
                     return objectMapper.readValue(localeIs, new TypeReference<>() {});
                 } catch (IOException e) {
-                    System.out.println("Error loading locale data from " + localePath + ": " + e.getMessage());
+                    logger.warn("Error loading locale data from {}: {}", localePath, e.getMessage());
                 }
             }
             return null;

@@ -1,32 +1,34 @@
 package com.datamirage.providers;
 
+import com.datamirage.util.DataContext;
 import com.datamirage.util.RandomService;
-import com.datamirage.util.DataLoader;
-import com.datamirage.util.LazyLoader;
-import java.util.List;
 
 /**
  * A provider class for generating system-related data.
  * This class provides methods to generate various system-related information such as
  * file names, extensions, paths, MIME types, and common file information.
  */
-public class SystemProvider {
-    private final RandomService random;
-    private List<String> fileNames;
-    private List<String> fileExtensions;
-    private List<String> directoryPaths;
-    private List<String> mimeTypes;
-    private List<String> commonFileTypes;
-    private List<String> commonFileExtensions;
-    private List<String> commonFileNames;
+public class SystemProvider extends AbstractProvider {
+
+    /**
+     * Constructs a new SystemProvider with the specified RandomService and DataContext.
+     *
+     * @param random The RandomService instance to use for generating random values
+     * @param context The DataContext instance for locale-specific data loading
+     */
+    public SystemProvider(RandomService random, DataContext context) {
+        super(random, context);
+    }
 
     /**
      * Constructs a new SystemProvider with the specified RandomService.
      *
      * @param random The RandomService instance to use for generating random values
+     * @deprecated Use {@link #SystemProvider(RandomService, DataContext)} instead
      */
+    @Deprecated
     public SystemProvider(RandomService random) {
-        this.random = random;
+        super(random);
     }
 
     /**
@@ -35,8 +37,7 @@ public class SystemProvider {
      * @return A random file name as a string
      */
     public String fileName() {
-        fileNames = LazyLoader.load("systemFileNames", () -> DataLoader.getListData("system", "file_names"));
-        return random.randomElement(fileNames);
+        return randomFromLocaleList("systemFileNames", "system", "file_names");
     }
 
     /**
@@ -45,8 +46,7 @@ public class SystemProvider {
      * @return A random file extension as a string
      */
     public String fileExtension() {
-        fileExtensions = LazyLoader.load("systemFileExtensions", () -> DataLoader.getListData("system", "file_extensions"));
-        return random.randomElement(fileExtensions);
+        return randomFromLocaleList("systemFileExtensions", "system", "file_extensions");
     }
 
     /**
@@ -67,8 +67,7 @@ public class SystemProvider {
      * @return A random directory path as a string
      */
     public String directoryPath() {
-        directoryPaths = LazyLoader.load("systemDirectoryPaths", () -> DataLoader.getListData("system", "directory_paths"));
-        return random.randomElement(directoryPaths);
+        return randomFromLocaleList("systemDirectoryPaths", "system", "directory_paths");
     }
 
     /**
@@ -89,8 +88,7 @@ public class SystemProvider {
      * @return A random MIME type as a string
      */
     public String mimeType() {
-        mimeTypes = LazyLoader.load("systemMimeTypes", () -> DataLoader.getListData("system", "mime_types"));
-        return random.randomElement(mimeTypes);
+        return randomFromLocaleList("systemMimeTypes", "system", "mime_types");
     }
 
     /**
@@ -99,8 +97,7 @@ public class SystemProvider {
      * @return A random common file type as a string
      */
     public String commonFileType() {
-        commonFileTypes = LazyLoader.load("systemCommonFileTypes", () -> DataLoader.getListData("system", "common_file_types"));
-        return random.randomElement(commonFileTypes);
+        return randomFromLocaleList("systemCommonFileTypes", "system", "common_file_types");
     }
 
     /**
@@ -109,8 +106,7 @@ public class SystemProvider {
      * @return A random common file extension as a string
      */
     public String commonFileExtension() {
-        commonFileExtensions = LazyLoader.load("systemCommonFileExtensions", () -> DataLoader.getListData("system", "common_file_extensions"));
-        return random.randomElement(commonFileExtensions);
+        return randomFromLocaleList("systemCommonFileExtensions", "system", "common_file_extensions");
     }
 
     /**
@@ -119,8 +115,7 @@ public class SystemProvider {
      * @return A random common file name as a string
      */
     public String commonFileName() {
-        commonFileNames = LazyLoader.load("systemCommonFileNames", () -> DataLoader.getListData("system", "common_file_names"));
-        return random.randomElement(commonFileNames);
+        return randomFromLocaleList("systemCommonFileNames", "system", "common_file_names");
     }
 
     /**
@@ -140,6 +135,7 @@ public class SystemProvider {
      *
      * @param args Command line arguments (not used)
      */
+    @SuppressWarnings("deprecation")
     public static void main(String[] args) {
         SystemProvider systemProvider = new SystemProvider(new RandomService());
         System.out.println("File Name: " + systemProvider.fileName());
@@ -153,4 +149,4 @@ public class SystemProvider {
         System.out.println("Common File Name: " + systemProvider.commonFileName());
         System.out.println("Common File Name with Extension: " + systemProvider.commonFileNameWithExtension());
     }
-} 
+}

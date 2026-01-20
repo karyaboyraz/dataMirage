@@ -13,9 +13,54 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class DataMirageTest {
+
+    @Test
+    void builder_ShouldCreateDataMirageWithDefaultLocale() {
+        DataMirage dm = DataMirage.builder().build();
+        assertNotNull(dm);
+        assertEquals(DataMirageLocale.TR_TR, dm.getLocale());
+    }
+
+    @Test
+    void builder_ShouldCreateDataMirageWithSpecifiedLocale() {
+        DataMirage dm = DataMirage.builder()
+                .locale(DataMirageLocale.EN_US)
+                .build();
+        assertNotNull(dm);
+        assertEquals(DataMirageLocale.EN_US, dm.getLocale());
+    }
+
+    @Test
+    void builder_ShouldCreateDataMirageWithSeed() {
+        DataMirage dm1 = DataMirage.builder()
+                .locale(DataMirageLocale.EN_US)
+                .seed(12345L)
+                .build();
+        DataMirage dm2 = DataMirage.builder()
+                .locale(DataMirageLocale.EN_US)
+                .seed(12345L)
+                .build();
+
+        // Same seed should produce same results
+        String name1 = dm1.name().firstName();
+        String name2 = dm2.name().firstName();
+        assertEquals(name1, name2);
+    }
+
+    @Test
+    void constructorWithSeed_ShouldProduceReproducibleResults() {
+        DataMirage dm1 = new DataMirage(DataMirageLocale.EN_US, 12345L);
+        DataMirage dm2 = new DataMirage(DataMirageLocale.EN_US, 12345L);
+
+        // Same seed should produce same results
+        assertEquals(dm1.name().firstName(), dm2.name().firstName());
+        assertEquals(dm1.name().lastName(), dm2.name().lastName());
+    }
     private DataMirage datamirage;
     
     // Define required data files for each locale

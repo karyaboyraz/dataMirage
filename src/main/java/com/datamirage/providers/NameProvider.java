@@ -1,10 +1,8 @@
 package com.datamirage.providers;
 
+import com.datamirage.util.DataContext;
 import com.datamirage.util.RandomService;
-import com.datamirage.util.DataLoader;
-import com.datamirage.util.LazyLoader;
 import java.util.Arrays;
-import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -13,22 +11,27 @@ import java.util.stream.IntStream;
  * This class provides methods to generate various components of names,
  * including first names, last names, prefixes, suffixes, and more.
  */
-public class NameProvider {
-    private final RandomService random;
-    private List<String> firstNames;
-    private List<String> lastNames;
-    private List<String> prefixes;
-    private List<String> suffixes;
-    private List<String> titles;
-    private List<String> genders;
+public class NameProvider extends AbstractProvider {
+
+    /**
+     * Constructs a new NameProvider with the specified RandomService and DataContext.
+     *
+     * @param random The RandomService instance to use for generating random values
+     * @param context The DataContext instance for locale-specific data loading
+     */
+    public NameProvider(RandomService random, DataContext context) {
+        super(random, context);
+    }
 
     /**
      * Constructs a new NameProvider with the specified RandomService.
      *
      * @param random The RandomService instance to use for generating random values
+     * @deprecated Use {@link #NameProvider(RandomService, DataContext)} instead
      */
+    @Deprecated
     public NameProvider(RandomService random) {
-        this.random = random;
+        super(random);
     }
 
     /**
@@ -37,8 +40,7 @@ public class NameProvider {
      * @return A randomly selected first name
      */
     public String firstName() {
-        firstNames = LazyLoader.load("nameFirstNames", () -> DataLoader.getListData("name", "first_names"));
-        return random.randomElement(firstNames);
+        return randomFromLocaleList("nameFirstNames", "name", "first_names");
     }
 
     /**
@@ -47,8 +49,7 @@ public class NameProvider {
      * @return A randomly selected last name
      */
     public String lastName() {
-        lastNames = LazyLoader.load("nameLastNames", () -> DataLoader.getListData("name", "last_names"));
-        return random.randomElement(lastNames);
+        return randomFromLocaleList("nameLastNames", "name", "last_names");
     }
 
     /**
@@ -66,8 +67,7 @@ public class NameProvider {
      * @return A randomly selected name prefix
      */
     public String prefix() {
-        prefixes = LazyLoader.load("namePrefixes", () -> DataLoader.getListData("name", "prefixes"));
-        return random.randomElement(prefixes);
+        return randomFromLocaleList("namePrefixes", "name", "prefixes");
     }
 
     /**
@@ -76,8 +76,7 @@ public class NameProvider {
      * @return A randomly selected name suffix
      */
     public String suffix() {
-        suffixes = LazyLoader.load("nameSuffixes", () -> DataLoader.getListData("name", "suffixes"));
-        return random.randomElement(suffixes);
+        return randomFromLocaleList("nameSuffixes", "name", "suffixes");
     }
 
     /**
@@ -86,8 +85,7 @@ public class NameProvider {
      * @return A randomly selected title
      */
     public String title() {
-        titles = LazyLoader.load("nameTitles", () -> DataLoader.getListData("name", "titles"));
-        return random.randomElement(titles);
+        return randomFromLocaleList("nameTitles", "name", "titles");
     }
 
     /**
@@ -96,8 +94,7 @@ public class NameProvider {
      * @return A randomly selected gender
      */
     public String gender() {
-        genders = LazyLoader.load("nameGenders", () -> DataLoader.getListData("name", "gender"));
-        return random.randomElement(genders);
+        return randomFromLocaleList("nameGenders", "name", "gender");
     }
 
     /**
@@ -124,9 +121,9 @@ public class NameProvider {
     public String username() {
         String firstName = firstName().toLowerCase().replaceAll("[^a-z0-9]", "");
         String lastName = lastName().toLowerCase().replaceAll("[^a-z0-9]", "");
-        
+
         StringBuilder result = new StringBuilder();
-        
+
         if (random.nextBoolean()) {
             result.append(firstName);
             if (random.nextBoolean()) {
@@ -140,11 +137,11 @@ public class NameProvider {
                 result.append(firstName);
             }
         }
-        
+
         if (random.nextBoolean()) {
             result.append(random.nextInt(0, 999));
         }
-        
+
         return result.toString();
     }
 
@@ -180,6 +177,7 @@ public class NameProvider {
      *
      * @param args Command line arguments (not used)
      */
+    @SuppressWarnings("deprecation")
     public static void main(String[] args) {
         NameProvider nameProvider = new NameProvider(new RandomService());
         System.out.println("First Name: " + nameProvider.firstName());

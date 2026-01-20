@@ -1,5 +1,6 @@
 package com.datamirage.providers;
 
+import com.datamirage.util.DataContext;
 import com.datamirage.util.RandomService;
 
 /**
@@ -7,16 +8,27 @@ import com.datamirage.util.RandomService;
  * This class provides methods to generate various text components such as
  * words, sentences, paragraphs, and full text content.
  */
-public class WordProvider {
-    private final RandomService random;
+public class WordProvider extends AbstractProvider {
+
+    /**
+     * Constructs a new WordProvider with the specified RandomService and DataContext.
+     *
+     * @param random The RandomService instance to use for generating random values
+     * @param context The DataContext instance for locale-specific data loading
+     */
+    public WordProvider(RandomService random, DataContext context) {
+        super(random, context);
+    }
 
     /**
      * Constructs a new WordProvider with the specified RandomService.
      *
      * @param random The RandomService instance to use for generating random values
+     * @deprecated Use {@link #WordProvider(RandomService, DataContext)} instead
      */
+    @Deprecated
     public WordProvider(RandomService random) {
-        this.random = random;
+        super(random);
     }
 
     /**
@@ -208,6 +220,7 @@ public class WordProvider {
      *
      * @param args Command line arguments (not used)
      */
+    @SuppressWarnings("deprecation")
     public static void main(String[] args) {
         WordProvider wordProvider = new WordProvider(new RandomService());
         System.out.println("Random Word: " + wordProvider.word());
@@ -217,4 +230,4 @@ public class WordProvider {
         System.out.println("Word Starting with 'A': " + wordProvider.wordStartingWith('A'));
         System.out.println("Word Ending with 'E': " + wordProvider.wordEndingWith('E'));
     }
-} 
+}

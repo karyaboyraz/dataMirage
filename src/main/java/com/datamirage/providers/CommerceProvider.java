@@ -1,9 +1,7 @@
 package com.datamirage.providers;
 
-import com.datamirage.util.DataLoader;
+import com.datamirage.util.DataContext;
 import com.datamirage.util.RandomService;
-import com.datamirage.util.LazyLoader;
-import java.util.List;
 
 /**
  * A provider class for generating e-commerce related data.
@@ -11,19 +9,27 @@ import java.util.List;
  * product names, departments, materials, and promotion codes.
  */
 @SuppressWarnings("ALL")
-public class CommerceProvider {
-    private final RandomService random;
-    private List<String> productNames;
-    private List<String> departments;
-    private List<String> materials;
+public class CommerceProvider extends AbstractProvider {
+
+    /**
+     * Constructs a new CommerceProvider with the specified RandomService and DataContext.
+     *
+     * @param random The RandomService instance to use for generating random values
+     * @param context The DataContext instance for locale-specific data loading
+     */
+    public CommerceProvider(RandomService random, DataContext context) {
+        super(random, context);
+    }
 
     /**
      * Constructs a new CommerceProvider with the specified RandomService.
      *
      * @param random The RandomService instance to use for generating random values
+     * @deprecated Use {@link #CommerceProvider(RandomService, DataContext)} instead
      */
+    @Deprecated
     public CommerceProvider(RandomService random) {
-        this.random = random;
+        super(random);
     }
 
     /**
@@ -32,8 +38,7 @@ public class CommerceProvider {
      * @return A random product name as a string
      */
     public String productName() {
-        productNames = LazyLoader.load("commerceProductNames", () -> DataLoader.getListData("commerce", "product_names"));
-        return random.randomElement(productNames);
+        return randomFromLocaleList("commerceProductNames", "commerce", "product_names");
     }
 
     /**
@@ -42,8 +47,7 @@ public class CommerceProvider {
      * @return A random department name as a string
      */
     public String department() {
-        departments = LazyLoader.load("commerceDepartments", () -> DataLoader.getListData("commerce", "departments"));
-        return random.randomElement(departments);
+        return randomFromLocaleList("commerceDepartments", "commerce", "departments");
     }
 
     /**
@@ -52,8 +56,7 @@ public class CommerceProvider {
      * @return A random material name as a string
      */
     public String material() {
-        materials = LazyLoader.load("commerceMaterials", () -> DataLoader.getListData("commerce", "materials"));
-        return random.randomElement(materials);
+        return randomFromLocaleList("commerceMaterials", "commerce", "materials");
     }
 
     /**
@@ -72,6 +75,7 @@ public class CommerceProvider {
      *
      * @param args Command line arguments (not used)
      */
+    @Deprecated
     public static void main(String[] args) {
         CommerceProvider commerceProvider = new CommerceProvider(new RandomService());
         System.out.println("Product Name: " + commerceProvider.productName());
@@ -79,4 +83,4 @@ public class CommerceProvider {
         System.out.println("Material: " + commerceProvider.material());
         System.out.println("Promotion Code: " + commerceProvider.promotionCode());
     }
-} 
+}

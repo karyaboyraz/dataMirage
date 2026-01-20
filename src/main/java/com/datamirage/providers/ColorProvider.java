@@ -1,26 +1,34 @@
 package com.datamirage.providers;
 
-import com.datamirage.util.DataLoader;
+import com.datamirage.util.DataContext;
 import com.datamirage.util.RandomService;
-import com.datamirage.util.LazyLoader;
-import java.util.List;
 
 /**
  * A provider class for generating fake color-related data.
  * This class provides methods to generate various color representations,
  * including color names, hex codes, RGB values, RGBA values, and HSL values.
  */
-public class ColorProvider {
-    private final RandomService random;
-    private List<String> colorNames;
+public class ColorProvider extends AbstractProvider {
+
+    /**
+     * Constructs a new ColorProvider with the specified RandomService and DataContext.
+     *
+     * @param random The RandomService instance to use for generating random values
+     * @param context The DataContext instance for locale-specific data loading
+     */
+    public ColorProvider(RandomService random, DataContext context) {
+        super(random, context);
+    }
 
     /**
      * Constructs a new ColorProvider with the specified RandomService.
      *
      * @param random The RandomService instance to use for generating random values
+     * @deprecated Use {@link #ColorProvider(RandomService, DataContext)} instead
      */
+    @Deprecated
     public ColorProvider(RandomService random) {
-        this.random = random;
+        super(random);
     }
 
     /**
@@ -29,8 +37,7 @@ public class ColorProvider {
      * @return A randomly selected color name
      */
     public String name() {
-        colorNames = LazyLoader.load("colorNames", () -> DataLoader.getListData("color", "color_names"));
-        return random.randomElement(colorNames);
+        return randomFromLocaleList("colorNames", "color", "color_names");
     }
 
     /**
@@ -94,6 +101,7 @@ public class ColorProvider {
      *
      * @param args Command line arguments (not used)
      */
+    @SuppressWarnings("deprecation")
     public static void main(String[] args) {
         ColorProvider colorProvider = new ColorProvider(new RandomService());
         System.out.println("Color Name: " + colorProvider.name());
@@ -102,4 +110,4 @@ public class ColorProvider {
         System.out.println("RGBA: " + colorProvider.rgba());
         System.out.println("HSL: " + colorProvider.hsl());
     }
-} 
+}

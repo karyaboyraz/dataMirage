@@ -1,29 +1,34 @@
 package com.datamirage.providers;
 
-import com.datamirage.util.DataLoader;
+import com.datamirage.util.DataContext;
 import com.datamirage.util.RandomService;
-import com.datamirage.util.LazyLoader;
-import java.util.List;
 
 /**
  * A provider class for generating fake company-related data.
  * This class provides methods to generate various components of company information,
  * including company names, suffixes, industries, and catchphrases.
  */
-public class CompanyProvider {
-    private final RandomService random;
-    private List<String> companyNames;
-    private List<String> companySuffixes;
-    private List<String> companyIndustries;
-    private List<String> companyCatchPhrases;
+public class CompanyProvider extends AbstractProvider {
+
+    /**
+     * Constructs a new CompanyProvider with the specified RandomService and DataContext.
+     *
+     * @param random The RandomService instance to use for generating random values
+     * @param context The DataContext instance for locale-specific data loading
+     */
+    public CompanyProvider(RandomService random, DataContext context) {
+        super(random, context);
+    }
 
     /**
      * Constructs a new CompanyProvider with the specified RandomService.
      *
      * @param random The RandomService instance to use for generating random values
+     * @deprecated Use {@link #CompanyProvider(RandomService, DataContext)} instead
      */
+    @Deprecated
     public CompanyProvider(RandomService random) {
-        this.random = random;
+        super(random);
     }
 
     /**
@@ -32,8 +37,7 @@ public class CompanyProvider {
      * @return A randomly selected company name
      */
     public String name() {
-        companyNames = LazyLoader.load("companyNames", () -> DataLoader.getListData("company", "names"));
-        return random.randomElement(companyNames);
+        return randomFromLocaleList("companyNames", "company", "names");
     }
 
     /**
@@ -42,8 +46,7 @@ public class CompanyProvider {
      * @return A randomly selected company suffix
      */
     public String suffix() {
-        companySuffixes = LazyLoader.load("companySuffixes", () -> DataLoader.getListData("company", "suffixes"));
-        return random.randomElement(companySuffixes);
+        return randomFromLocaleList("companySuffixes", "company", "suffixes");
     }
 
     /**
@@ -52,8 +55,7 @@ public class CompanyProvider {
      * @return A randomly selected company industry
      */
     public String industry() {
-        companyIndustries = LazyLoader.load("companyIndustries", () -> DataLoader.getListData("company", "industries"));
-        return random.randomElement(companyIndustries);
+        return randomFromLocaleList("companyIndustries", "company", "industries");
     }
 
     /**
@@ -62,8 +64,7 @@ public class CompanyProvider {
      * @return A randomly selected company catchphrase
      */
     public String catchPhrase() {
-        companyCatchPhrases = LazyLoader.load("companyCatchPhrases", () -> DataLoader.getListData("company", "catch_phrases"));
-        return random.randomElement(companyCatchPhrases);
+        return randomFromLocaleList("companyCatchPhrases", "company", "catch_phrases");
     }
 
     /**
@@ -81,6 +82,7 @@ public class CompanyProvider {
      *
      * @param args Command line arguments (not used)
      */
+    @SuppressWarnings("deprecation")
     public static void main(String[] args) {
         CompanyProvider companyProvider = new CompanyProvider(new RandomService());
         System.out.println("Company Name: " + companyProvider.name());

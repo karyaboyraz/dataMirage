@@ -1,36 +1,34 @@
 package com.datamirage.providers;
 
-import com.datamirage.util.DataLoader;
-import com.datamirage.util.LazyLoader;
+import com.datamirage.util.DataContext;
 import com.datamirage.util.RandomService;
-
-import java.util.List;
 
 /**
  * A provider class for generating fake animal-related data.
  * This class provides methods to generate various animal-related information,
  * including animal names, types, scientific names, and taxonomic classifications.
  */
-public class AnimalProvider {
-    private final RandomService random;
-    private List<String> animals;
-    private List<String> animalTypes;
-    private List<String> animalScientificName;
-    private List<String> animalFamilies;
-    private List<String> animalKingdoms;
-    private List<String> animalPhyla;
-    private List<String> animalClasses;
-    private List<String> animalOrders;
-    private List<String> animalGenera;
-    private List<String> animalSpecies;
+public class AnimalProvider extends AbstractProvider {
+
+    /**
+     * Constructs a new AnimalProvider with the specified RandomService and DataContext.
+     *
+     * @param random The RandomService instance to use for generating random values
+     * @param context The DataContext instance for locale-specific data loading
+     */
+    public AnimalProvider(RandomService random, DataContext context) {
+        super(random, context);
+    }
 
     /**
      * Constructs a new AnimalProvider with the specified RandomService.
      *
      * @param random The RandomService instance to use for generating random values
+     * @deprecated Use {@link #AnimalProvider(RandomService, DataContext)} instead
      */
+    @Deprecated
     public AnimalProvider(RandomService random) {
-        this.random = random;
+        super(random);
     }
 
     /**
@@ -39,8 +37,7 @@ public class AnimalProvider {
      * @return A randomly selected animal name
      */
     public String animal() {
-        animals = LazyLoader.load("animalNames", () -> DataLoader.getListData("animal", "animal_names"));
-        return random.randomElement(animals);
+        return randomFromLocaleList("animalNames", "animal", "animal_names");
     }
 
     /**
@@ -49,8 +46,7 @@ public class AnimalProvider {
      * @return A randomly selected animal type
      */
     public String animalType() {
-        animalTypes = LazyLoader.load("animalTypes", () -> DataLoader.getListData("animal", "types"));
-        return random.randomElement(animalTypes);
+        return randomFromLocaleList("animalTypes", "animal", "types");
     }
 
     /**
@@ -60,8 +56,7 @@ public class AnimalProvider {
      * @return A randomly selected scientific name
      */
     public String animalScientificName() {
-        animalScientificName = LazyLoader.load("animalScienceName", () -> DataLoader.getListData("animal", "scientific_names"));
-        return random.randomElement(animalScientificName);
+        return randomFromLocaleList("animalScienceName", "animal", "scientific_names");
     }
 
     /**
@@ -70,8 +65,7 @@ public class AnimalProvider {
      * @return A randomly selected animal family name
      */
     public String animalFamily() {
-        animalFamilies = LazyLoader.load("animalFamilies", () -> DataLoader.getListData("animal", "families"));
-        return random.randomElement(animalFamilies);
+        return randomFromLocaleList("animalFamilies", "animal", "families");
     }
 
     /**
@@ -80,8 +74,7 @@ public class AnimalProvider {
      * @return A randomly selected animal kingdom name
      */
     public String animalKingdom() {
-        animalKingdoms = LazyLoader.load("animalKingdoms", () -> DataLoader.getListData("animal", "kingdoms"));
-        return random.randomElement(animalKingdoms);
+        return randomFromLocaleList("animalKingdoms", "animal", "kingdoms");
     }
 
     /**
@@ -90,8 +83,7 @@ public class AnimalProvider {
      * @return A randomly selected animal phylum name
      */
     public String animalPhylum() {
-        animalPhyla = LazyLoader.load("animalPhyla", () -> DataLoader.getListData("animal", "phyla"));
-        return random.randomElement(animalPhyla);
+        return randomFromLocaleList("animalPhyla", "animal", "phyla");
     }
 
     /**
@@ -100,8 +92,7 @@ public class AnimalProvider {
      * @return A randomly selected animal class name
      */
     public String animalClass() {
-        animalClasses = LazyLoader.load("animalClasses", () -> DataLoader.getListData("animal", "classes"));
-        return random.randomElement(animalClasses);
+        return randomFromLocaleList("animalClasses", "animal", "classes");
     }
 
     /**
@@ -110,8 +101,7 @@ public class AnimalProvider {
      * @return A randomly selected animal order name
      */
     public String animalOrder() {
-        animalOrders = LazyLoader.load("animalOrders", () -> DataLoader.getListData("animal", "orders"));
-        return random.randomElement(animalOrders);
+        return randomFromLocaleList("animalOrders", "animal", "orders");
     }
 
     /**
@@ -120,8 +110,7 @@ public class AnimalProvider {
      * @return A randomly selected animal genus name
      */
     public String animalGenus() {
-        animalGenera = LazyLoader.load("animalGenera", () -> DataLoader.getListData("animal", "genera"));
-        return random.randomElement(animalGenera);
+        return randomFromLocaleList("animalGenera", "animal", "genera");
     }
 
     /**
@@ -130,8 +119,7 @@ public class AnimalProvider {
      * @return A randomly selected animal species name
      */
     public String animalSpecies() {
-        animalSpecies = LazyLoader.load("animalSpecies", () -> DataLoader.getListData("animal", "species"));
-        return random.randomElement(animalSpecies);
+        return randomFromLocaleList("animalSpecies", "animal", "species");
     }
 
     /**
@@ -140,6 +128,7 @@ public class AnimalProvider {
      *
      * @param args Command line arguments (not used)
      */
+    @SuppressWarnings("deprecation")
     public static void main(String[] args) {
         AnimalProvider animalProvider = new AnimalProvider(new RandomService());
         System.out.println(animalProvider.animal());

@@ -1,28 +1,34 @@
 package com.datamirage.providers;
 
-import com.datamirage.util.DataLoader;
+import com.datamirage.util.DataContext;
 import com.datamirage.util.RandomService;
-import com.datamirage.util.LazyLoader;
-import java.util.List;
 
 /**
  * A provider class for generating cryptocurrency-related data.
  * This class provides methods to generate various crypto-related information such as
  * coin names, symbols, blockchain names, wallet addresses, and transaction hashes.
  */
-public class CryptoProvider {
-    private final RandomService random;
-    private List<String> coinNames;
-    private List<String> coinSymbols;
-    private List<String> blockchains;
+public class CryptoProvider extends AbstractProvider {
+
+    /**
+     * Constructs a new CryptoProvider with the specified RandomService and DataContext.
+     *
+     * @param random The RandomService instance to use for generating random values
+     * @param context The DataContext instance for locale-specific data loading
+     */
+    public CryptoProvider(RandomService random, DataContext context) {
+        super(random, context);
+    }
 
     /**
      * Constructs a new CryptoProvider with the specified RandomService.
      *
      * @param random The RandomService instance to use for generating random values
+     * @deprecated Use {@link #CryptoProvider(RandomService, DataContext)} instead
      */
+    @Deprecated
     public CryptoProvider(RandomService random) {
-        this.random = random;
+        super(random);
     }
 
     /**
@@ -31,8 +37,7 @@ public class CryptoProvider {
      * @return A random cryptocurrency coin name as a string
      */
     public String coinName() {
-        coinNames = LazyLoader.load("cryptoCoinNames", () -> DataLoader.getListData("crypto", "coin_names"));
-        return random.randomElement(coinNames);
+        return randomFromLocaleList("cryptoCoinNames", "crypto", "coin_names");
     }
 
     /**
@@ -41,8 +46,7 @@ public class CryptoProvider {
      * @return A random cryptocurrency coin symbol as a string
      */
     public String coinSymbol() {
-        coinSymbols = LazyLoader.load("cryptoCoinSymbols", () -> DataLoader.getListData("crypto", "coin_symbols"));
-        return random.randomElement(coinSymbols);
+        return randomFromLocaleList("cryptoCoinSymbols", "crypto", "coin_symbols");
     }
 
     /**
@@ -51,8 +55,7 @@ public class CryptoProvider {
      * @return A random blockchain name as a string
      */
     public String blockchain() {
-        blockchains = LazyLoader.load("cryptoBlockchains", () -> DataLoader.getListData("crypto", "blockchains"));
-        return random.randomElement(blockchains);
+        return randomFromLocaleList("cryptoBlockchains", "crypto", "blockchains");
     }
 
     /**
@@ -64,15 +67,15 @@ public class CryptoProvider {
     public String walletAddress() {
         String chars = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
         StringBuilder sb = new StringBuilder();
-        
+
         // Cüzdan adresi her zaman '1' veya '3' ile başlar
         sb.append(random.nextBoolean() ? '1' : '3');
-        
+
         // Kalan 33 karakter
         for (int i = 0; i < 33; i++) {
             sb.append(chars.charAt(random.nextInt(0, chars.length() - 1)));
         }
-        
+
         return sb.toString();
     }
 
@@ -96,6 +99,7 @@ public class CryptoProvider {
      *
      * @param args Command line arguments (not used)
      */
+    @SuppressWarnings("deprecation")
     public static void main(String[] args) {
         CryptoProvider cryptoProvider = new CryptoProvider(new RandomService());
         System.out.println("Coin Name: " + cryptoProvider.coinName());

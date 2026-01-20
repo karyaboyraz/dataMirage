@@ -1,29 +1,34 @@
 package com.datamirage.providers;
 
-import com.datamirage.util.DataLoader;
-import com.datamirage.util.LazyLoader;
+import com.datamirage.util.DataContext;
 import com.datamirage.util.RandomService;
-
-import java.util.List;
 
 /**
  * A provider class for generating application-related data.
  * This class provides methods to generate various application information such as
  * app names, platforms, categories, and version numbers.
  */
-public class AppProvider {
-    private final RandomService random;
-    private List<String> appName;
-    private List<String> appPlatform;
-    private List<String> appCategory;
+public class AppProvider extends AbstractProvider {
+
+    /**
+     * Constructs a new AppProvider with the specified RandomService and DataContext.
+     *
+     * @param random The RandomService instance to use for generating random values
+     * @param context The DataContext instance for locale-specific data loading
+     */
+    public AppProvider(RandomService random, DataContext context) {
+        super(random, context);
+    }
 
     /**
      * Constructs a new AppProvider with the specified RandomService.
      *
      * @param random The RandomService instance to use for generating random values
+     * @deprecated Use {@link #AppProvider(RandomService, DataContext)} instead
      */
+    @Deprecated
     public AppProvider(RandomService random) {
-        this.random = random;
+        super(random);
     }
 
     /**
@@ -32,8 +37,7 @@ public class AppProvider {
      * @return A random application name as a string
      */
     public String name() {
-        appName = LazyLoader.load("appNames", () -> DataLoader.getListData("app", "app_names"));
-        return random.randomElement(appName);
+        return randomFromLocaleList("appNames", "app", "app_names");
     }
 
     /**
@@ -42,8 +46,7 @@ public class AppProvider {
      * @return A random application platform as a string
      */
     public String platform() {
-        appPlatform = LazyLoader.load("appPlatform", () -> DataLoader.getListData("app", "platforms"));
-        return random.randomElement(appPlatform);
+        return randomFromLocaleList("appPlatform", "app", "platforms");
     }
 
     /**
@@ -52,8 +55,7 @@ public class AppProvider {
      * @return A random application category as a string
      */
     public String category() {
-        appCategory = LazyLoader.load("appCategory", () -> DataLoader.getListData("app", "categories"));
-        return random.randomElement(appCategory);
+        return randomFromLocaleList("appCategory", "app", "categories");
     }
 
     /**
@@ -74,6 +76,7 @@ public class AppProvider {
      *
      * @param args Command line arguments (not used)
      */
+    @SuppressWarnings("deprecation")
     public static void main(String[] args) {
         AppProvider appProvider = new AppProvider(new RandomService());
         System.out.println("Random App Name: " + appProvider.name());

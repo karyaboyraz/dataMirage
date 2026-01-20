@@ -1,28 +1,34 @@
 package com.datamirage.providers;
 
-import com.datamirage.util.DataLoader;
+import com.datamirage.util.DataContext;
 import com.datamirage.util.RandomService;
-import com.datamirage.util.LazyLoader;
-import java.util.List;
 
 /**
  * A provider class for generating fake phone number-related data.
  * This class provides methods to generate various phone number formats,
  * including landline numbers, cell phone numbers, and international phone numbers.
  */
-public class PhoneNumberProvider {
-    private final RandomService random;
-    private List<String> landlineFormats;
-    private List<String> cellPhoneFormats;
-    private List<String> internationalFormats;
+public class PhoneNumberProvider extends AbstractProvider {
+
+    /**
+     * Constructs a new PhoneNumberProvider with the specified RandomService and DataContext.
+     *
+     * @param random The RandomService instance to use for generating random values
+     * @param context The DataContext instance for locale-specific data loading
+     */
+    public PhoneNumberProvider(RandomService random, DataContext context) {
+        super(random, context);
+    }
 
     /**
      * Constructs a new PhoneNumberProvider with the specified RandomService.
      *
      * @param random The RandomService instance to use for generating random values
+     * @deprecated Use {@link #PhoneNumberProvider(RandomService, DataContext)} instead
      */
+    @Deprecated
     public PhoneNumberProvider(RandomService random) {
-        this.random = random;
+        super(random);
     }
 
     /**
@@ -40,8 +46,7 @@ public class PhoneNumberProvider {
      * @return A randomly generated landline phone number
      */
     public String landline() {
-        landlineFormats = LazyLoader.load("phoneLandlineFormats", () -> DataLoader.getListData("phone", "landlineFormats"));
-        String format = random.randomElement(landlineFormats);
+        String format = randomFromLocaleList("phoneLandlineFormats", "phone", "landlineFormats");
         return random.randomize(format);
     }
 
@@ -51,8 +56,7 @@ public class PhoneNumberProvider {
      * @return A randomly generated cell phone number
      */
     public String cellPhone() {
-        cellPhoneFormats = LazyLoader.load("phoneCellPhoneFormats", () -> DataLoader.getListData("phone", "cellPhoneFormats"));
-        String format = random.randomElement(cellPhoneFormats);
+        String format = randomFromLocaleList("phoneCellPhoneFormats", "phone", "cellPhoneFormats");
         return random.randomize(format);
     }
 
@@ -62,8 +66,7 @@ public class PhoneNumberProvider {
      * @return A randomly generated international phone number
      */
     public String internationalPhoneFormat() {
-        internationalFormats = LazyLoader.load("phoneInternationalFormats", () -> DataLoader.getListData("phone", "internationalFormats"));
-        String format = random.randomElement(internationalFormats);
+        String format = randomFromLocaleList("phoneInternationalFormats", "phone", "internationalFormats");
         return random.randomize(format);
     }
 
@@ -73,6 +76,7 @@ public class PhoneNumberProvider {
      *
      * @param args Command line arguments (not used)
      */
+    @SuppressWarnings("deprecation")
     public static void main(String[] args) {
         PhoneNumberProvider phoneNumberProvider = new PhoneNumberProvider(new RandomService());
         System.out.println("Phone Number: " + phoneNumberProvider.cellPhone());

@@ -1,35 +1,34 @@
 package com.datamirage.providers;
 
-import com.datamirage.util.DataLoader;
+import com.datamirage.util.DataContext;
 import com.datamirage.util.RandomService;
-import com.datamirage.util.LazyLoader;
-import java.util.List;
 
 /**
  * A provider class for generating music-related data.
  * This class provides methods to generate various music-related information such as
  * genres, artists, albums, songs, instruments, musical notes, scales, chords, and more.
  */
-public class MusicProvider {
-    private final RandomService random;
-    private List<String> genres;
-    private List<String> artists;
-    private List<String> albums;
-    private List<String> songs;
-    private List<String> instruments;
-    private List<String> notes;
-    private List<String> scales;
-    private List<String> chordTypes;
-    private List<String> tempos;
-    private List<String> dynamics;
+public class MusicProvider extends AbstractProvider {
+
+    /**
+     * Constructs a new MusicProvider with the specified RandomService and DataContext.
+     *
+     * @param random The RandomService instance to use for generating random values
+     * @param context The DataContext instance for locale-specific data loading
+     */
+    public MusicProvider(RandomService random, DataContext context) {
+        super(random, context);
+    }
 
     /**
      * Constructs a new MusicProvider with the specified RandomService.
      *
      * @param random The RandomService instance to use for generating random values
+     * @deprecated Use {@link #MusicProvider(RandomService, DataContext)} instead
      */
+    @Deprecated
     public MusicProvider(RandomService random) {
-        this.random = random;
+        super(random);
     }
 
     /**
@@ -38,8 +37,7 @@ public class MusicProvider {
      * @return A random music genre as a string
      */
     public String genre() {
-        genres = LazyLoader.load("musicGenres", () -> DataLoader.getListData("music", "genres"));
-        return random.randomElement(genres);
+        return randomFromLocaleList("musicGenres", "music", "genres");
     }
 
     /**
@@ -48,8 +46,7 @@ public class MusicProvider {
      * @return A random artist name as a string
      */
     public String artist() {
-        artists = LazyLoader.load("musicArtists", () -> DataLoader.getListData("music", "artists"));
-        return random.randomElement(artists);
+        return randomFromLocaleList("musicArtists", "music", "artists");
     }
 
     /**
@@ -58,8 +55,7 @@ public class MusicProvider {
      * @return A random album name as a string
      */
     public String album() {
-        albums = LazyLoader.load("musicAlbums", () -> DataLoader.getListData("music", "albums"));
-        return random.randomElement(albums);
+        return randomFromLocaleList("musicAlbums", "music", "albums");
     }
 
     /**
@@ -68,8 +64,7 @@ public class MusicProvider {
      * @return A random song title as a string
      */
     public String song() {
-        songs = LazyLoader.load("musicSongs", () -> DataLoader.getListData("music", "songs"));
-        return random.randomElement(songs);
+        return randomFromLocaleList("musicSongs", "music", "songs");
     }
 
     /**
@@ -78,8 +73,7 @@ public class MusicProvider {
      * @return A random musical instrument name as a string
      */
     public String instrument() {
-        instruments = LazyLoader.load("musicInstruments", () -> DataLoader.getListData("music", "instruments"));
-        return random.randomElement(instruments);
+        return randomFromLocaleList("musicInstruments", "music", "instruments");
     }
 
     /**
@@ -88,8 +82,7 @@ public class MusicProvider {
      * @return A random musical key as a string
      */
     public String key() {
-        notes = LazyLoader.load("musicNotes", () -> DataLoader.getListData("music", "notes"));
-        return random.randomElement(notes) + " " + scale();
+        return note() + " " + scale();
     }
 
     /**
@@ -98,9 +91,7 @@ public class MusicProvider {
      * @return A random chord as a string
      */
     public String chord() {
-        notes = LazyLoader.load("musicNotes", () -> DataLoader.getListData("music", "notes"));
-        chordTypes = LazyLoader.load("musicChordTypes", () -> DataLoader.getListData("music", "chordTypes"));
-        return random.randomElement(notes) + " " + random.randomElement(chordTypes);
+        return note() + " " + random.randomElement(getLocaleList("musicChordTypes", "music", "chordTypes"));
     }
 
     /**
@@ -109,8 +100,7 @@ public class MusicProvider {
      * @return A randomly selected musical note
      */
     public String note() {
-        notes = LazyLoader.load("musicNotes", () -> DataLoader.getListData("music", "notes"));
-        return random.randomElement(notes);
+        return randomFromLocaleList("musicNotes", "music", "notes");
     }
 
     /**
@@ -119,8 +109,7 @@ public class MusicProvider {
      * @return A randomly selected musical scale
      */
     public String scale() {
-        scales = LazyLoader.load("musicScales", () -> DataLoader.getListData("music", "scales"));
-        return random.randomElement(scales);
+        return randomFromLocaleList("musicScales", "music", "scales");
     }
 
     /**
@@ -129,8 +118,7 @@ public class MusicProvider {
      * @return A randomly selected tempo marking
      */
     public String tempo() {
-        tempos = LazyLoader.load("musicTempos", () -> DataLoader.getListData("music", "tempos"));
-        return random.randomElement(tempos);
+        return randomFromLocaleList("musicTempos", "music", "tempos");
     }
 
     /**
@@ -139,8 +127,7 @@ public class MusicProvider {
      * @return A randomly selected dynamic marking
      */
     public String dynamic() {
-        dynamics = LazyLoader.load("musicDynamics", () -> DataLoader.getListData("music", "dynamics"));
-        return random.randomElement(dynamics);
+        return randomFromLocaleList("musicDynamics", "music", "dynamics");
     }
 
     /**
@@ -160,8 +147,7 @@ public class MusicProvider {
      * @return A randomly selected chord type
      */
     public String chordType() {
-        chordTypes = LazyLoader.load("musicChordTypes", () -> DataLoader.getListData("music", "chord_types"));
-        return random.randomElement(chordTypes);
+        return randomFromLocaleList("musicChordTypes", "music", "chord_types");
     }
 
     /**
@@ -206,6 +192,7 @@ public class MusicProvider {
      *
      * @param args Command line arguments (not used)
      */
+    @SuppressWarnings("deprecation")
     public static void main(String[] args) {
         MusicProvider musicProvider = new MusicProvider(new RandomService());
         System.out.println("Genre: " + musicProvider.genre());

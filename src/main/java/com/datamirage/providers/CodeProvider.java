@@ -1,22 +1,34 @@
 package com.datamirage.providers;
 
+import com.datamirage.util.DataContext;
 import com.datamirage.util.RandomService;
 
 /**
  * A provider class for generating various types of codes such as ISBN, EAN, ASIN, and ISSN.
  * This class handles the generation of standardized codes with proper check digits.
  */
-public class CodeProvider {
-    private final RandomService random;
+public class CodeProvider extends AbstractProvider {
     private static final int[] ISBN_EAN_WEIGHTS = {1,3,1,3,1,3,1,3,1,3,1,3,0};
+
+    /**
+     * Constructs a new CodeProvider with the specified RandomService and DataContext.
+     *
+     * @param random The RandomService instance to use for generating random values
+     * @param context The DataContext instance for locale-specific data loading
+     */
+    public CodeProvider(RandomService random, DataContext context) {
+        super(random, context);
+    }
 
     /**
      * Constructs a new CodeProvider with the specified RandomService.
      *
      * @param random The RandomService instance to use for generating random values
+     * @deprecated Use {@link #CodeProvider(RandomService, DataContext)} instead
      */
+    @Deprecated
     public CodeProvider(RandomService random) {
-        this.random = random;
+        super(random);
     }
 
     /**
@@ -29,16 +41,16 @@ public class CodeProvider {
     private String generateWithCheckDigit(int length, int[] weights) {
         StringBuilder result = new StringBuilder();
         int sum = 0;
-        
+
         for (int i = 0; i < length - 1; i++) {
             int digit = random.nextInt(0, 9);
             result.append(digit);
             sum += digit * weights[i];
         }
-        
+
         int checkDigit = (10 - (sum % 10)) % 10;
         result.append(checkDigit);
-        
+
         return result.toString();
     }
 
@@ -77,16 +89,16 @@ public class CodeProvider {
     public String issn() {
         StringBuilder result = new StringBuilder();
         int sum = 0;
-        
+
         for (int i = 0; i < 7; i++) {
             int digit = random.nextInt(0, 9);
             result.append(digit);
             sum += digit * (8 - i);
         }
-        
+
         int rem = sum % 11;
         char checkDigit = rem == 0 ? '0' : rem == 1 ? 'X' : (char) ('0' + (11 - rem));
-        
+
         return result.substring(0, 4) + "-" + result.substring(4) + checkDigit;
     }
 
@@ -95,6 +107,7 @@ public class CodeProvider {
      *
      * @param args Command line arguments (not used)
      */
+    @SuppressWarnings("deprecation")
     public static void main(String[] args) {
         CodeProvider codeProvider = new CodeProvider(new RandomService());
         System.out.println("ISBN: " + codeProvider.isbn());

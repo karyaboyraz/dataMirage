@@ -1,31 +1,34 @@
 package com.datamirage.providers;
 
-import com.datamirage.util.DataLoader;
+import com.datamirage.util.DataContext;
 import com.datamirage.util.RandomService;
-import com.datamirage.util.LazyLoader;
-import java.util.List;
 
 /**
  * A provider class for generating film-related data.
  * This class provides methods to generate various film information such as
  * titles, directors, actors, genres, and character names.
  */
-public class FilmProvider {
-    private final RandomService random;
-    private List<String> filmTitles;
-    private List<String> filmDirectors;
-    private List<String> filmActors;
-    private List<String> filmGenres;
-    private List<String> firstNames;
-    private List<String> quotes;
+public class FilmProvider extends AbstractProvider {
+
+    /**
+     * Constructs a new FilmProvider with the specified RandomService and DataContext.
+     *
+     * @param random The RandomService instance to use for generating random values
+     * @param context The DataContext instance for locale-specific data loading
+     */
+    public FilmProvider(RandomService random, DataContext context) {
+        super(random, context);
+    }
 
     /**
      * Constructs a new FilmProvider with the specified RandomService.
      *
      * @param random The RandomService instance to use for generating random values
+     * @deprecated Use {@link #FilmProvider(RandomService, DataContext)} instead
      */
+    @Deprecated
     public FilmProvider(RandomService random) {
-        this.random = random;
+        super(random);
     }
 
     /**
@@ -34,8 +37,7 @@ public class FilmProvider {
      * @return A randomly selected film title
      */
     public String title() {
-        filmTitles = LazyLoader.load("filmTitles", () -> DataLoader.getListData("film", "titles"));
-        return random.randomElement(filmTitles);
+        return randomFromLocaleList("filmTitles", "film", "titles");
     }
 
     /**
@@ -44,8 +46,7 @@ public class FilmProvider {
      * @return A randomly selected film director name
      */
     public String director() {
-        filmDirectors = LazyLoader.load("filmDirectors", () -> DataLoader.getListData("film", "directors"));
-        return random.randomElement(filmDirectors);
+        return randomFromLocaleList("filmDirectors", "film", "directors");
     }
 
     /**
@@ -54,8 +55,7 @@ public class FilmProvider {
      * @return A randomly selected film actor name
      */
     public String actor() {
-        filmActors = LazyLoader.load("filmActors", () -> DataLoader.getListData("film", "actors"));
-        return random.randomElement(filmActors);
+        return randomFromLocaleList("filmActors", "film", "actors");
     }
 
     /**
@@ -64,8 +64,7 @@ public class FilmProvider {
      * @return A randomly selected film genre
      */
     public String genre() {
-        filmGenres = LazyLoader.load("filmGenres", () -> DataLoader.getListData("film", "genres"));
-        return random.randomElement(filmGenres);
+        return randomFromLocaleList("filmGenres", "film", "genres");
     }
 
     /**
@@ -74,8 +73,7 @@ public class FilmProvider {
      * @return A random character name as a string
      */
     public String character() {
-        firstNames = LazyLoader.load("nameFirstNames", () -> DataLoader.getListData("name", "first_names"));
-        return random.randomElement(firstNames);
+        return randomFromLocaleList("nameFirstNames", "name", "first_names");
     }
 
     /**
@@ -84,8 +82,7 @@ public class FilmProvider {
      * @return A randomly selected film quote
      */
     public String quote() {
-        quotes = LazyLoader.load("filmQuotes", () -> DataLoader.getListData("film", "quotes"));
-        return random.randomElement(quotes);
+        return randomFromLocaleList("filmQuotes", "film", "quotes");
     }
 
     /**
@@ -113,6 +110,7 @@ public class FilmProvider {
      *
      * @param args Command line arguments (not used)
      */
+    @SuppressWarnings("deprecation")
     public static void main(String[] args) {
         FilmProvider filmProvider = new FilmProvider(new RandomService());
         System.out.println("Title: " + filmProvider.title());
@@ -123,4 +121,4 @@ public class FilmProvider {
         System.out.println("Year: " + filmProvider.year());
         System.out.println("Rating: " + filmProvider.rating());
     }
-} 
+}

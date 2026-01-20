@@ -1,5 +1,6 @@
 package com.datamirage.providers;
 
+import com.datamirage.util.DataContext;
 import com.datamirage.util.DataLoader;
 import com.datamirage.util.LazyLoader;
 import com.datamirage.util.RandomService;
@@ -12,20 +13,27 @@ import java.util.List;
  * including titles, authors, publishers, genres, and ISBN numbers.
  */
 @SuppressWarnings("ALL")
-public class BookProvider {
-    private final RandomService random;
-    private List<String> titles;
-    private List<String> authors;
-    private List<String> publishers;
-    private List<String> genres;
+public class BookProvider extends AbstractProvider {
+
+    /**
+     * Constructs a new BookProvider with the specified RandomService and DataContext.
+     *
+     * @param random The RandomService instance to use for generating random values
+     * @param context The DataContext instance for locale-specific data loading
+     */
+    public BookProvider(RandomService random, DataContext context) {
+        super(random, context);
+    }
 
     /**
      * Constructs a new BookProvider with the specified RandomService.
      *
      * @param random The RandomService instance to use for generating random values
+     * @deprecated Use {@link #BookProvider(RandomService, DataContext)} instead
      */
+    @Deprecated
     public BookProvider(RandomService random) {
-        this.random = random;
+        super(random);
     }
 
     /**
@@ -35,12 +43,22 @@ public class BookProvider {
      * @return A randomly selected book title
      */
     public String title() {
-        titles = LazyLoader.load("bookTitles", () -> {
-            List<?> rawTitles = DataLoader.getListData("book", "titles");
-            return rawTitles.stream()
-                    .map(Object::toString)
-                    .toList();
-        });
+        List<String> titles;
+        if (context != null) {
+            titles = context.load("bookTitles", () -> {
+                List<?> rawTitles = context.getListData("book", "titles");
+                return rawTitles.stream()
+                        .map(Object::toString)
+                        .toList();
+            });
+        } else {
+            titles = LazyLoader.load("bookTitles", () -> {
+                List<?> rawTitles = DataLoader.getListData("book", "titles");
+                return rawTitles.stream()
+                        .map(Object::toString)
+                        .toList();
+            });
+        }
         return random.randomElement(titles);
     }
 
@@ -50,8 +68,7 @@ public class BookProvider {
      * @return A randomly selected book author name
      */
     public String author() {
-        authors = LazyLoader.load("bookAuthors", () -> DataLoader.getListData("book", "authors"));
-        return random.randomElement(authors);
+        return randomFromLocaleList("bookAuthors", "book", "authors");
     }
 
     /**
@@ -60,8 +77,7 @@ public class BookProvider {
      * @return A randomly selected book publisher name
      */
     public String publisher() {
-        publishers = LazyLoader.load("bookPublishers", () -> DataLoader.getListData("book", "publishers"));
-        return random.randomElement(publishers);
+        return randomFromLocaleList("bookPublishers", "book", "publishers");
     }
 
     /**
@@ -70,8 +86,7 @@ public class BookProvider {
      * @return A randomly selected book genre
      */
     public String genre() {
-        genres = LazyLoader.load("bookGenre", () -> DataLoader.getListData("book", "genres"));
-        return random.randomElement(genres);
+        return randomFromLocaleList("bookGenre", "book", "genres");
     }
 
     /**
@@ -90,6 +105,7 @@ public class BookProvider {
      *
      * @param args Command line arguments (not used)
      */
+    @Deprecated
     public static void main(String[] args) {
         BookProvider bookProvider = new BookProvider(new RandomService());
         System.out.println("Random Book Title: " + bookProvider.title());

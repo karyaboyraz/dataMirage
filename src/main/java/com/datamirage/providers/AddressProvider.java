@@ -1,5 +1,6 @@
 package com.datamirage.providers;
 
+import com.datamirage.util.DataContext;
 import com.datamirage.util.DataLoader;
 import com.datamirage.util.LazyLoader;
 import com.datamirage.util.RandomService;
@@ -30,10 +31,22 @@ public class AddressProvider extends AbstractProvider {
     private final DecimalFormat coordinateFormat = new DecimalFormat("###.######");
 
     /**
+     * Constructs a new AddressProvider with the specified RandomService and DataContext.
+     *
+     * @param random The RandomService instance to use for generating random values
+     * @param context The DataContext instance for locale-specific data loading
+     */
+    public AddressProvider(RandomService random, DataContext context) {
+        super(random, context);
+    }
+
+    /**
      * Constructs a new AddressProvider with the specified RandomService.
      *
      * @param random The RandomService instance to use for generating random values
+     * @deprecated Use {@link #AddressProvider(RandomService, DataContext)} instead
      */
+    @Deprecated
     public AddressProvider(RandomService random) {
         super(random);
     }
@@ -44,9 +57,14 @@ public class AddressProvider extends AbstractProvider {
      * @return A randomly selected city name
      * @throws IllegalStateException if the locale-specific data is missing
      */
+    @SuppressWarnings("deprecation")
     public String city() {
         requireLocaleSpecificData("address", "cities");
-        cities = LazyLoader.load("addressCities", () -> DataLoader.getListData("address", "cities"));
+        if (context != null) {
+            cities = context.load("addressCities", () -> context.getListData("address", "cities"));
+        } else {
+            cities = LazyLoader.load("addressCities", () -> DataLoader.getListData("address", "cities"));
+        }
         return random.randomElement(cities);
     }
 
@@ -56,9 +74,14 @@ public class AddressProvider extends AbstractProvider {
      * @return A randomly selected street name
      * @throws IllegalStateException if the locale-specific data is missing
      */
+    @SuppressWarnings("deprecation")
     public String streetName() {
         requireLocaleSpecificData("address", "streets");
-        streets = LazyLoader.load("addressStreets", () -> DataLoader.getListData("address", "streets"));
+        if (context != null) {
+            streets = context.load("addressStreets", () -> context.getListData("address", "streets"));
+        } else {
+            streets = LazyLoader.load("addressStreets", () -> DataLoader.getListData("address", "streets"));
+        }
         return random.randomElement(streets);
     }
 
@@ -68,9 +91,14 @@ public class AddressProvider extends AbstractProvider {
      * @return A randomly selected street suffix
      * @throws IllegalStateException if the locale-specific data is missing
      */
+    @SuppressWarnings("deprecation")
     public String streetSuffix() {
         requireLocaleSpecificData("address", "street_suffixes");
-        streetSuffixes = LazyLoader.load("addressStreetSuffixes", () -> DataLoader.getListData("address", "street_suffixes"));
+        if (context != null) {
+            streetSuffixes = context.load("addressStreetSuffixes", () -> context.getListData("address", "street_suffixes"));
+        } else {
+            streetSuffixes = LazyLoader.load("addressStreetSuffixes", () -> DataLoader.getListData("address", "street_suffixes"));
+        }
         return random.randomElement(streetSuffixes);
     }
 
@@ -80,9 +108,14 @@ public class AddressProvider extends AbstractProvider {
      * @return A randomly selected state name
      * @throws IllegalStateException if the locale-specific data is missing
      */
+    @SuppressWarnings("deprecation")
     public String state() {
         requireLocaleSpecificData("address", "states");
-        states = LazyLoader.load("addressStates", () -> DataLoader.getListData("address", "states"));
+        if (context != null) {
+            states = context.load("addressStates", () -> context.getListData("address", "states"));
+        } else {
+            states = LazyLoader.load("addressStates", () -> DataLoader.getListData("address", "states"));
+        }
         return random.randomElement(states);
     }
 
@@ -92,11 +125,17 @@ public class AddressProvider extends AbstractProvider {
      * @return A randomly selected state abbreviation
      * @throws IllegalStateException if the locale-specific data is missing
      */
+    @SuppressWarnings("deprecation")
     public String stateAbbr() {
         if (!hasLocaleSpecificData("address", "state_abbrs")) {
-            throw new IllegalStateException("State abbreviations not available for locale: " + DataLoader.getCurrentLocale());
+            throw new IllegalStateException("State abbreviations not available for locale: " +
+                (context != null ? context.getLocale() : DataLoader.getCurrentLocale()));
         }
-        stateAbbrs = LazyLoader.load("addressStateAbbrs", () -> DataLoader.getListData("address", "state_abbrs"));
+        if (context != null) {
+            stateAbbrs = context.load("addressStateAbbrs", () -> context.getListData("address", "state_abbrs"));
+        } else {
+            stateAbbrs = LazyLoader.load("addressStateAbbrs", () -> DataLoader.getListData("address", "state_abbrs"));
+        }
         return random.randomElement(stateAbbrs);
     }
 
@@ -106,9 +145,14 @@ public class AddressProvider extends AbstractProvider {
      * @return A randomly selected country name
      * @throws IllegalStateException if the locale-specific data is missing
      */
+    @SuppressWarnings("deprecation")
     public String country() {
         requireLocaleSpecificData("address", "countries");
-        countries = LazyLoader.load("addressCountries", () -> DataLoader.getListData("address", "countries"));
+        if (context != null) {
+            countries = context.load("addressCountries", () -> context.getListData("address", "countries"));
+        } else {
+            countries = LazyLoader.load("addressCountries", () -> DataLoader.getListData("address", "countries"));
+        }
         return random.randomElement(countries);
     }
 
@@ -118,11 +162,17 @@ public class AddressProvider extends AbstractProvider {
      * @return A randomly selected country code
      * @throws IllegalStateException if the locale-specific data is missing
      */
+    @SuppressWarnings("deprecation")
     public String countryCode() {
         if (!hasLocaleSpecificData("address", "country_codes")) {
-            throw new IllegalStateException("Country codes not available for locale: " + DataLoader.getCurrentLocale());
+            throw new IllegalStateException("Country codes not available for locale: " +
+                (context != null ? context.getLocale() : DataLoader.getCurrentLocale()));
         }
-        countryCodes = LazyLoader.load("addressCountryCodes", () -> DataLoader.getListData("address", "country_codes"));
+        if (context != null) {
+            countryCodes = context.load("addressCountryCodes", () -> context.getListData("address", "country_codes"));
+        } else {
+            countryCodes = LazyLoader.load("addressCountryCodes", () -> DataLoader.getListData("address", "country_codes"));
+        }
         return random.randomElement(countryCodes);
     }
 
@@ -132,9 +182,14 @@ public class AddressProvider extends AbstractProvider {
      * @return A randomly selected district name
      * @throws IllegalStateException if the locale-specific data is missing
      */
+    @SuppressWarnings("deprecation")
     public String district() {
         requireLocaleSpecificData("address", "districts");
-        districts = LazyLoader.load("addressDistricts", () -> DataLoader.getListData("address", "districts"));
+        if (context != null) {
+            districts = context.load("addressDistricts", () -> context.getListData("address", "districts"));
+        } else {
+            districts = LazyLoader.load("addressDistricts", () -> DataLoader.getListData("address", "districts"));
+        }
         return random.randomElement(districts);
     }
 
@@ -154,8 +209,13 @@ public class AddressProvider extends AbstractProvider {
      * @return A randomly generated zip code
      * @throws IllegalStateException if the locale-specific data is missing
      */
+    @SuppressWarnings("deprecation")
     public String zipCode() {
-        zipFormats = LazyLoader.load("addressZipFormats", () -> DataLoader.getListData("address", "postal_codes"));
+        if (context != null) {
+            zipFormats = context.load("addressZipFormats", () -> context.getListData("address", "postal_codes"));
+        } else {
+            zipFormats = LazyLoader.load("addressZipFormats", () -> DataLoader.getListData("address", "postal_codes"));
+        }
         String format = random.randomElement(zipFormats);
         return random.randomize(format);
     }
@@ -166,20 +226,28 @@ public class AddressProvider extends AbstractProvider {
      * @return A randomly generated street address
      * @throws IllegalStateException if the locale-specific data is missing
      */
+    @SuppressWarnings("deprecation")
     public String streetAddress() {
         requireLocaleSpecificData("address", "street_patterns");
-        streetPatterns = LazyLoader.load("addressStreetPatterns", () -> DataLoader.getListData("address", "street_patterns"));
-        buildingNumbers = LazyLoader.load("addressBuildingNumbers", () -> DataLoader.getListData("address", "building_number"));
-        buildings = LazyLoader.load("addressBuildings", () -> DataLoader.getListData("address", "building"));
-        apartments = LazyLoader.load("addressApartments", () -> DataLoader.getListData("address", "apartment"));
-        
+        if (context != null) {
+            streetPatterns = context.load("addressStreetPatterns", () -> context.getListData("address", "street_patterns"));
+            buildingNumbers = context.load("addressBuildingNumbers", () -> context.getListData("address", "building_number"));
+            buildings = context.load("addressBuildings", () -> context.getListData("address", "building"));
+            apartments = context.load("addressApartments", () -> context.getListData("address", "apartment"));
+        } else {
+            streetPatterns = LazyLoader.load("addressStreetPatterns", () -> DataLoader.getListData("address", "street_patterns"));
+            buildingNumbers = LazyLoader.load("addressBuildingNumbers", () -> DataLoader.getListData("address", "building_number"));
+            buildings = LazyLoader.load("addressBuildings", () -> DataLoader.getListData("address", "building"));
+            apartments = LazyLoader.load("addressApartments", () -> DataLoader.getListData("address", "apartment"));
+        }
+
         String pattern = random.randomElement(streetPatterns);
         pattern = pattern.replace("{{streets}}", streetName());
         pattern = pattern.replace("{{street_suffixes}}", streetSuffix());
         pattern = pattern.replace("{{building_number}}", random.randomElement(buildingNumbers));
         pattern = pattern.replace("{{building}}", random.randomElement(buildings));
         pattern = pattern.replace("{{apartment}}", random.randomElement(apartments));
-        
+
         return pattern;
     }
 
@@ -189,10 +257,15 @@ public class AddressProvider extends AbstractProvider {
      * @return A randomly generated full address
      * @throws IllegalStateException if the locale-specific data is missing
      */
+    @SuppressWarnings("deprecation")
     public String fullAddress() {
         requireLocaleSpecificData("address", "full_patterns");
-        fullPatterns = LazyLoader.load("addressFullPatterns", () -> DataLoader.getListData("address", "full_patterns"));
-        
+        if (context != null) {
+            fullPatterns = context.load("addressFullPatterns", () -> context.getListData("address", "full_patterns"));
+        } else {
+            fullPatterns = LazyLoader.load("addressFullPatterns", () -> DataLoader.getListData("address", "full_patterns"));
+        }
+
         String pattern = random.randomElement(fullPatterns);
         pattern = pattern.replace("{{cities}}", city());
         pattern = pattern.replace("{{street_patterns}}", streetAddress());
@@ -200,7 +273,7 @@ public class AddressProvider extends AbstractProvider {
         pattern = pattern.replace("{{countries}}", country());
         pattern = pattern.replace("{{states}}", state());
         pattern = pattern.replace("{{districts}}", district());
-        
+
         return pattern;
     }
 
@@ -209,8 +282,13 @@ public class AddressProvider extends AbstractProvider {
      *
      * @return A randomly generated building number
      */
+    @SuppressWarnings("deprecation")
     public String buildingNumber() {
-        buildingNumbers = LazyLoader.load("addressBuildingNumbers", () -> DataLoader.getListData("address", "building_number"));
+        if (context != null) {
+            buildingNumbers = context.load("addressBuildingNumbers", () -> context.getListData("address", "building_number"));
+        } else {
+            buildingNumbers = LazyLoader.load("addressBuildingNumbers", () -> DataLoader.getListData("address", "building_number"));
+        }
         return random.randomElement(buildingNumbers);
     }
 

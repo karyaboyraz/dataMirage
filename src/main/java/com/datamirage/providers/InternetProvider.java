@@ -1,26 +1,34 @@
 package com.datamirage.providers;
 
+import com.datamirage.util.DataContext;
 import com.datamirage.util.RandomService;
-import com.datamirage.util.DataLoader;
-import com.datamirage.util.LazyLoader;
-import java.util.List;
 
 /**
  * A provider class for generating fake internet-related data.
  * This class provides methods to generate various components of internet information,
  * including email addresses, usernames, domain names, URLs, IP addresses, and more.
  */
-public class InternetProvider {
-    private final RandomService random;
-    private List<String> domainNames;
+public class InternetProvider extends AbstractProvider {
+
+    /**
+     * Constructs a new InternetProvider with the specified RandomService and DataContext.
+     *
+     * @param random The RandomService instance to use for generating random values
+     * @param context The DataContext instance for locale-specific data loading
+     */
+    public InternetProvider(RandomService random, DataContext context) {
+        super(random, context);
+    }
 
     /**
      * Constructs a new InternetProvider with the specified RandomService.
      *
      * @param random The RandomService instance to use for generating random values
+     * @deprecated Use {@link #InternetProvider(RandomService, DataContext)} instead
      */
+    @Deprecated
     public InternetProvider(RandomService random) {
-        this.random = random;
+        super(random);
     }
 
     /**
@@ -28,8 +36,10 @@ public class InternetProvider {
      *
      * @return A randomly generated email address
      */
+    @SuppressWarnings("deprecation")
     public String email() {
-        return new NameProvider(random).username() + "@" + domainName();
+        NameProvider nameProvider = context != null ? new NameProvider(random, context) : new NameProvider(random);
+        return nameProvider.username() + "@" + domainName();
     }
 
     /**
@@ -37,8 +47,10 @@ public class InternetProvider {
      *
      * @return A randomly generated username
      */
+    @SuppressWarnings("deprecation")
     public String username() {
-        return new NameProvider(random).username();
+        NameProvider nameProvider = context != null ? new NameProvider(random, context) : new NameProvider(random);
+        return nameProvider.username();
     }
 
     /**
@@ -48,8 +60,7 @@ public class InternetProvider {
      * @return A randomly selected domain name
      */
     public String domainName() {
-        domainNames = LazyLoader.load("internetDomainNames", () -> DataLoader.getListData("internet", "domainNames"));
-        String domain = random.randomElement(domainNames);
+        String domain = randomFromLocaleList("internetDomainNames", "internet", "domainNames");
         // Eğer domain adı regex formatına uymuyorsa, geçerli bir domain adı oluştur
         if (!domain.matches("^[\\w-]+\\.[a-zA-Z]{2,}$")) {
             String[] parts = domain.split("\\.");
@@ -177,6 +188,7 @@ public class InternetProvider {
      *
      * @param args Command line arguments (not used)
      */
+    @SuppressWarnings("deprecation")
     public static void main(String[] args) {
         InternetProvider internetProvider = new InternetProvider(new RandomService());
         System.out.println("Email: " + internetProvider.email());

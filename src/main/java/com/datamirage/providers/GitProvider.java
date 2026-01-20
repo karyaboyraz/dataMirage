@@ -1,30 +1,36 @@
 package com.datamirage.providers;
 
+import com.datamirage.util.DataContext;
 import com.datamirage.util.RandomService;
-import com.datamirage.util.DataLoader;
-import com.datamirage.util.LazyLoader;
 import java.time.format.DateTimeFormatter;
 import java.time.ZonedDateTime;
-import java.util.List;
 
 /**
  * A provider class for generating Git-related data.
  * This class provides methods to generate various Git-related information such as
  * branch names, commit SHAs, commit messages, dates, and complete commit entries.
  */
-public class GitProvider {
-    private final RandomService random;
-    private List<String> commitMessages;
-    private List<String> gitAuthors;
-    private List<String> gitEmails;
+public class GitProvider extends AbstractProvider {
+
+    /**
+     * Constructs a new GitProvider with the specified RandomService and DataContext.
+     *
+     * @param random The RandomService instance to use for generating random values
+     * @param context The DataContext instance for locale-specific data loading
+     */
+    public GitProvider(RandomService random, DataContext context) {
+        super(random, context);
+    }
 
     /**
      * Constructs a new GitProvider with the specified RandomService.
      *
      * @param random The RandomService instance to use for generating random values
+     * @deprecated Use {@link #GitProvider(RandomService, DataContext)} instead
      */
+    @Deprecated
     public GitProvider(RandomService random) {
-        this.random = random;
+        super(random);
     }
 
     /**
@@ -37,14 +43,14 @@ public class GitProvider {
     public String branch() {
         StringBuilder result = new StringBuilder();
         String chars = "abcdefghijklmnopqrstuvwxyz0123456789-";
-        
+
         // Branch adı en az 3 karakter olmalı
         int length = random.nextInt(3, 20);
-        
+
         for (int i = 0; i < length; i++) {
             result.append(chars.charAt(random.nextInt(0, chars.length() - 1)));
         }
-        
+
         return result.toString();
     }
 
@@ -57,11 +63,11 @@ public class GitProvider {
     public String commitSha() {
         StringBuilder sha = new StringBuilder();
         String hexChars = "0123456789abcdef";
-        
+
         for (int i = 0; i < 40; i++) {
             sha.append(hexChars.charAt(random.nextInt(0, hexChars.length() - 1)));
         }
-        
+
         return sha.toString();
     }
 
@@ -71,8 +77,7 @@ public class GitProvider {
      * @return A random Git commit message as a string
      */
     public String commitMessage() {
-        commitMessages = LazyLoader.load("gitCommitMessages", () -> DataLoader.getListData("git", "commit_messages"));
-        return random.randomElement(commitMessages);
+        return randomFromLocaleList("gitCommitMessages", "git", "commit_messages");
     }
 
     /**
@@ -94,10 +99,8 @@ public class GitProvider {
      */
     public String commitEntry() {
         String sha = commitSha();
-        gitAuthors = LazyLoader.load("gitAuthors", () -> DataLoader.getListData("git", "git_authors"));
-        String author = random.randomElement(gitAuthors);
-        gitEmails = LazyLoader.load("gitEmails", () -> DataLoader.getListData("git", "git_emails"));
-        String email = random.randomElement(gitEmails);
+        String author = randomFromLocaleList("gitAuthors", "git", "git_authors");
+        String email = randomFromLocaleList("gitEmails", "git", "git_emails");
         String date = commitDate();
         String message = commitMessage();
 
@@ -115,6 +118,7 @@ public class GitProvider {
      *
      * @param args Command line arguments (not used)
      */
+    @SuppressWarnings("deprecation")
     public static void main(String[] args) {
         GitProvider gitProvider = new GitProvider(new RandomService());
         System.out.println("Branch: " + gitProvider.branch());

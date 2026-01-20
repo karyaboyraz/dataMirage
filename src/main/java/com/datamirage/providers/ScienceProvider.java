@@ -1,31 +1,34 @@
 package com.datamirage.providers;
 
+import com.datamirage.util.DataContext;
 import com.datamirage.util.RandomService;
-import com.datamirage.util.DataLoader;
-import com.datamirage.util.LazyLoader;
-import java.util.List;
 
 /**
  * A provider class for generating science-related data.
  * This class provides methods to generate various scientific information such as
  * chemical elements, symbols, formulas, units, and unit prefixes.
  */
-public class ScienceProvider {
-    private final RandomService random;
-    private List<String> elements;
-    private List<String> symbols;
-    private List<String> units;
-    private List<String> unitSymbols;
-    private List<String> unitPrefixes;
-    private List<String> unitPrefixSymbols;
+public class ScienceProvider extends AbstractProvider {
+
+    /**
+     * Constructs a new ScienceProvider with the specified RandomService and DataContext.
+     *
+     * @param random The RandomService instance to use for generating random values
+     * @param context The DataContext instance for locale-specific data loading
+     */
+    public ScienceProvider(RandomService random, DataContext context) {
+        super(random, context);
+    }
 
     /**
      * Constructs a new ScienceProvider with the specified RandomService.
      *
      * @param random The RandomService instance to use for generating random values
+     * @deprecated Use {@link #ScienceProvider(RandomService, DataContext)} instead
      */
+    @Deprecated
     public ScienceProvider(RandomService random) {
-        this.random = random;
+        super(random);
     }
 
     /**
@@ -34,8 +37,7 @@ public class ScienceProvider {
      * @return A random chemical element name as a string
      */
     public String chemicalElement() {
-        elements = LazyLoader.load("scienceElements", () -> DataLoader.getListData("science", "elements"));
-        return random.randomElement(elements);
+        return randomFromLocaleList("scienceElements", "science", "elements");
     }
 
     /**
@@ -44,8 +46,7 @@ public class ScienceProvider {
      * @return A random chemical element symbol as a string
      */
     public String chemicalSymbol() {
-        symbols = LazyLoader.load("scienceSymbols", () -> DataLoader.getListData("science", "symbols"));
-        return random.randomElement(symbols);
+        return randomFromLocaleList("scienceSymbols", "science", "symbols");
     }
 
     /**
@@ -58,16 +59,16 @@ public class ScienceProvider {
     public String chemicalFormula() {
         StringBuilder formula = new StringBuilder();
         String symbol = chemicalSymbol();
-        
+
         formula.append(Character.toUpperCase(symbol.charAt(0)));
         if (symbol.length() > 1) {
             formula.append(Character.toLowerCase(symbol.charAt(1)));
         }
-        
+
         if (random.nextBoolean()) {
             formula.append(random.nextInt(1, 9));
         }
-        
+
         return formula.toString();
     }
 
@@ -77,8 +78,7 @@ public class ScienceProvider {
      * @return A random unit of measurement as a string
      */
     public String unit() {
-        units = LazyLoader.load("scienceUnits", () -> DataLoader.getListData("science", "units"));
-        return random.randomElement(units);
+        return randomFromLocaleList("scienceUnits", "science", "units");
     }
 
     /**
@@ -87,8 +87,7 @@ public class ScienceProvider {
      * @return A random unit symbol as a string
      */
     public String unitSymbol() {
-        unitSymbols = LazyLoader.load("scienceUnitSymbols", () -> DataLoader.getListData("science", "unit_symbols"));
-        return random.randomElement(unitSymbols);
+        return randomFromLocaleList("scienceUnitSymbols", "science", "unit_symbols");
     }
 
     /**
@@ -97,8 +96,7 @@ public class ScienceProvider {
      * @return A random unit prefix as a string
      */
     public String unitPrefix() {
-        unitPrefixes = LazyLoader.load("scienceUnitPrefixes", () -> DataLoader.getListData("science", "unit_prefixes"));
-        return random.randomElement(unitPrefixes);
+        return randomFromLocaleList("scienceUnitPrefixes", "science", "unit_prefixes");
     }
 
     /**
@@ -107,8 +105,7 @@ public class ScienceProvider {
      * @return A random unit prefix symbol as a string
      */
     public String unitPrefixSymbol() {
-        unitPrefixSymbols = LazyLoader.load("scienceUnitPrefixSymbols", () -> DataLoader.getListData("science", "unit_prefix_symbols"));
-        return random.randomElement(unitPrefixSymbols);
+        return randomFromLocaleList("scienceUnitPrefixSymbols", "science", "unit_prefix_symbols");
     }
 
     /**
@@ -140,6 +137,7 @@ public class ScienceProvider {
      *
      * @param args Command line arguments (not used)
      */
+    @SuppressWarnings("deprecation")
     public static void main(String[] args) {
         ScienceProvider scienceProvider = new ScienceProvider(new RandomService());
         System.out.println("Chemical Element: " + scienceProvider.chemicalElement());
@@ -152,4 +150,4 @@ public class ScienceProvider {
         System.out.println("Unit with Prefix: " + scienceProvider.unitWithPrefix());
         System.out.println("Unit Symbol with Prefix: " + scienceProvider.unitSymbolWithPrefix());
     }
-} 
+}
