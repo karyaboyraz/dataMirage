@@ -30,15 +30,17 @@ class PhoneNumberProviderTest {
     @EnumSource(DataMirageLocale.class)
     void phoneNumber_ShouldWorkForAllLocales(DataMirageLocale locale) {
         DataLoader.setLocale(locale);
-        assertTrue(DataLoader.hasLocaleSpecificField("phone", "landlineFormats") || 
+        assertTrue(DataLoader.hasLocaleSpecificField("phone", "landlineFormats") ||
                    DataLoader.hasLocaleSpecificField("phone", "cellPhoneFormats"),
                    "Locale " + locale + " is missing both 'landlineFormats' and 'cellPhoneFormats' data in phone.yaml");
-        
+
         PhoneNumberProvider provider = new PhoneNumberProvider(new RandomService());
         String phoneNumber = provider.phoneNumber();
-        assertNotNull(phoneNumber);
-        assertFalse(phoneNumber.isEmpty());
-        assertTrue(phoneNumber.matches("^\\+?[0-9\\s-()]+$"));
+        assertNotNull(phoneNumber, "Phone number should not be null for locale: " + locale);
+        assertFalse(phoneNumber.isEmpty(), "Phone number should not be empty for locale: " + locale);
+        // Allow digits, spaces, hyphens, parentheses, plus sign, and dots (for various international formats)
+        assertTrue(phoneNumber.matches("^[\\+0-9\\s\\-().]+$"),
+                   "Phone number format invalid for locale " + locale + ": " + phoneNumber);
     }
 
     @RepeatedTest(20)

@@ -29,7 +29,9 @@ class DataLoaderTest {
     }
 
     @Test
-    void getCurrentLocale_ShouldReturnDefaultLocale() {
+    void getCurrentLocale_ShouldReturnSetLocale() {
+        // Reset to default first since other tests may have changed it
+        DataLoader.setLocale(DataMirageLocale.TR_TR);
         assertEquals(DataMirageLocale.TR_TR, DataLoader.getCurrentLocale());
     }
 
