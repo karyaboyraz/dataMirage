@@ -24,10 +24,10 @@ jobs:
 
     - name: Import GPG Key
       run: |
-        echo "$GPG_KEY_BASE64" | base64 --decode | gpg --batch --import
+        echo "$GPG_PRIVATE_KEY" | gpg --batch --import
         gpg --list-secret-keys --keyid-format LONG
       env:
-        GPG_KEY_BASE64: ${{ secrets.GPG_PRIVATE_KEY }}
+        GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
 
     - name: Build and Test
       run: mvn -B verify --file pom.xml
