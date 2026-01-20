@@ -1,0 +1,31 @@
+name: JitPack Build Verification
+
+on:
+  push:
+    tags:
+      - 'v*'
+  release:
+    types: [ created ]
+
+jobs:
+  verify-jitpack-build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        cache: maven
+
+    - name: Build for JitPack compatibility
+      run: mvn -B install -DskipTests --file pom.xml
+
+    - name: Verify JAR creation
+      run: |
+        ls -la target/*.jar
+        echo "JitPack build verification successful"
