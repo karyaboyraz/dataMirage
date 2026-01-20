@@ -168,7 +168,7 @@ public class FinanceProvider {
      */
     public String amount(double min, double max) {
         double amount = random.nextDouble(min, max);
-        return String.format("%.2f", amount);
+        return String.format(java.util.Locale.US, "%.2f", amount);
     }
 
     /**

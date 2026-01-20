@@ -6,7 +6,9 @@ import com.datamirage.util.LazyLoader;
 import com.datamirage.util.RandomService;
 
 import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * A provider class for generating address-related data.
@@ -28,7 +30,7 @@ public class AddressProvider extends AbstractProvider {
     private List<String> buildingNumbers;
     private List<String> buildings;
     private List<String> apartments;
-    private final DecimalFormat coordinateFormat = new DecimalFormat("###.######");
+    private final DecimalFormat coordinateFormat = new DecimalFormat("###.######", DecimalFormatSymbols.getInstance(Locale.US));
 
     /**
      * Constructs a new AddressProvider with the specified RandomService and DataContext.
